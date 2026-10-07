@@ -8,6 +8,14 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.config.settings import BASE_DIR
 from app.components.navigation import render_navigation
 
+from app.views.workforce_readiness_view import render_workforce_readiness
+from app.views.counterfactual_view import render_counterfactual_simulator
+from app.views.career_gps_view import render_career_gps
+from app.views.shap_explainability_view import render_shap_explainability
+from app.views.digital_twin_view import render_digital_twin
+from app.views.future_demand_view import render_future_demand
+from app.views.llm_advisor_view import render_llm_advisor
+
 from app.views.overview import render_overview
 from app.views.market import render_market
 from app.views.capability import render_capability
@@ -16,7 +24,12 @@ from app.views.signal_map import render_signal_map
 from app.views.explorer import render_explorer
 from app.views.assistant import render_assistant
 
-st.set_page_config(page_title="8BIT Workforce Intelligence", layout="wide")
+st.set_page_config(
+    page_title="8BIT Workforce Intelligence Platform",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 @st.cache_data
 def load_data():
@@ -56,12 +69,26 @@ st.markdown('''
 .card-title { color: #D35400; font-weight: bold; }
 .caveat-box { border-left: 4px solid #D35400; padding: 10px; background-color: #2C3E50; margin-top: 10px; font-size: 0.9em; }
 </style>
-<div class="footer">8BIT Evidence Engine | Evidence-backed decision support | No causal claims</div>
+<div class="footer">8BIT Workforce Intelligence Platform | Real-Time Decision Support & Machine Learning Analytics</div>
 ''', unsafe_allow_html=True)
 
 page = render_navigation()
 
-if page == "Overview":
+if page == "Workforce Readiness":
+    render_workforce_readiness()
+elif page == "Counterfactual Simulator":
+    render_counterfactual_simulator()
+elif page == "Career GPS":
+    render_career_gps()
+elif page == "SHAP Explainability":
+    render_shap_explainability()
+elif page == "Personality Digital Twin":
+    render_digital_twin()
+elif page == "Future Demand Forecast":
+    render_future_demand()
+elif page == "LLM Career Advisor":
+    render_llm_advisor()
+elif page == "Overview":
     render_overview(market_data, jds_data, sds_data)
 elif page == "Market Intelligence":
     render_market(market_data)

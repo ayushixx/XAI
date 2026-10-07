@@ -22,3 +22,12 @@ venv.bak/
 # CatBoost temp files
 catboost_info/
 
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/*.tsbuildinfo
+
+# Vector DB
+data/chroma_db/
