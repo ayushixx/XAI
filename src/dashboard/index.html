@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8BIT AI Skill Gap & Workforce Intelligence Suite</title>
-    <!-- Modern Typography -->
+    <!-- Modern Minimalist Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Chart.js -->
@@ -16,140 +16,167 @@
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
         :root {
-            --bg-primary: #0b0f19;
-            --bg-secondary: #111827;
-            --bg-card: rgba(17, 24, 39, 0.75);
-            --bg-glass: rgba(255, 255, 255, 0.04);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #f9fafb;
-            --text-secondary: #9ca3af;
-            --text-muted: #6b7280;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-cyan: #06b6d4;
-            --accent-emerald: #10b981;
-            --accent-amber: #f59e0b;
-            --accent-rose: #f43f5e;
-            --sidebar-width: 260px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.2);
+            /* Minimalist Dark Mode Palette */
+            --bg-body: #090d16;
+            --bg-sidebar: #0f172a;
+            --bg-card: #111827;
+            --bg-surface: #1e293b;
+            --bg-hover: #1f293d;
+            --border-subtle: #1e293b;
+            --border-strong: #334155;
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            
+            --accent-primary: #4f46e5;
+            --accent-primary-hover: #4338ca;
+            --accent-cyan: #0891b2;
+            --accent-emerald: #059669;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
+            
+            --sidebar-width: 250px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
         }
 
         .light {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: rgba(255, 255, 255, 0.9);
-            --bg-glass: rgba(0, 0, 0, 0.02);
-            --border-color: rgba(0, 0, 0, 0.08);
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
-            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.1);
+            /* Minimalist Light Mode Palette */
+            --bg-body: #f8fafc;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --bg-surface: #f1f5f9;
+            --bg-hover: #e2e8f0;
+            --border-subtle: #e2e8f0;
+            --border-strong: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            
+            --accent-primary: #4f46e5;
+            --accent-primary-hover: #4338ca;
+            --accent-cyan: #0891b2;
+            --accent-emerald: #059669;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: background-color 0.25s ease, border-color 0.25s ease;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background-color: var(--bg-body);
+            color: var(--text-main);
             display: flex;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* Sidebar Navigation */
+        /* Sidebar Navigation - Clean Flat Minimalist */
         .sidebar {
             width: var(--sidebar-width);
-            background: var(--bg-secondary);
-            border-right: 1px solid var(--border-color);
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-subtle);
             display: flex;
             flex-direction: column;
             position: fixed;
             height: 100vh;
             z-index: 50;
-            backdrop-filter: blur(12px);
         }
 
         .brand {
-            padding: 24px 20px;
+            padding: 20px 18px;
             display: flex;
             align-items: center;
             gap: 12px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .brand-badge {
-            background: linear-gradient(135deg, #6366f1, #06b6d4);
-            color: #fff;
-            font-weight: 800;
-            font-size: 14px;
+            background: var(--accent-primary);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13px;
             padding: 6px 10px;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
         }
 
         .brand-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
+            color: var(--text-main);
         }
 
         .brand-sub {
             font-size: 11px;
-            color: var(--text-muted);
+            color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
         }
 
         .nav-menu {
-            padding: 20px 12px;
+            padding: 16px 10px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
             flex-grow: 1;
             overflow-y: auto;
+        }
+
+        .nav-section-label {
+            font-size: 10.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-dim);
+            padding: 8px 12px 4px;
+            letter-spacing: 0.8px;
         }
 
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            color: var(--text-secondary);
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.15s ease;
+            border: 1px solid transparent;
         }
 
         .nav-item:hover {
-            color: var(--text-primary);
-            background: var(--bg-glass);
-            transform: translateX(3px);
+            color: var(--text-main);
+            background: var(--bg-surface);
         }
 
         .nav-item.active {
-            color: #fff;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+            color: #ffffff;
+            background: var(--accent-primary);
+            font-weight: 600;
         }
 
         .sidebar-footer {
-            padding: 16px 20px;
-            border-top: 1px solid var(--border-color);
+            padding: 14px 16px;
+            border-top: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-dim);
         }
 
         /* Main Content Workspace */
@@ -163,54 +190,55 @@
         }
 
         .top-navbar {
-            height: 70px;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
+            height: 60px;
+            background: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 32px;
+            padding: 0 28px;
             position: sticky;
             top: 0;
             z-index: 40;
-            backdrop-filter: blur(12px);
         }
 
         .page-header-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: var(--text-main);
         }
 
         .top-actions {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .theme-toggle-btn, .action-btn {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 8px 14px;
-            border-radius: 8px;
+        .btn-minimal {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-strong);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 500;
+            transition: all 0.15s ease;
         }
 
-        .theme-toggle-btn:hover, .action-btn:hover {
+        .btn-minimal:hover {
+            background: var(--bg-hover);
             border-color: var(--accent-primary);
-            color: var(--accent-primary);
         }
 
         .content-container {
-            padding: 32px;
+            padding: 24px 28px;
             max-width: 1400px;
             width: 100%;
             margin: 0 auto;
@@ -219,62 +247,55 @@
         /* View Section Tabs */
         .view-section {
             display: none;
-            animation: fadeIn 0.3s ease;
         }
 
         .view-section.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Cards & Glass Containers */
+        /* Clean Minimalist Cards */
         .card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
-            padding: 24px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            margin-bottom: 24px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
         .card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 14px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
         }
 
         .card-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: var(--text-main);
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 16px;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            gap: 14px;
         }
 
         @media (max-width: 1024px) {
@@ -285,141 +306,141 @@
 
         /* Metric Highlights */
         .metric-box {
-            padding: 20px;
+            padding: 16px;
             border-radius: var(--radius-md);
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         .metric-value {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
         }
 
         .metric-label {
-            font-size: 12px;
-            color: var(--text-secondary);
+            font-size: 11.5px;
+            color: var(--text-muted);
             text-transform: uppercase;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        /* Badges */
+        /* Minimal Badges */
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 11.5px;
             font-weight: 600;
         }
 
-        .badge-success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .badge-warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
-        .badge-danger { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
-        .badge-primary { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+        .badge-success { background: rgba(5, 150, 105, 0.15); color: #10b981; border: 1px solid rgba(5, 150, 105, 0.3); }
+        .badge-warning { background: rgba(217, 119, 6, 0.15); color: #f59e0b; border: 1px solid rgba(217, 119, 6, 0.3); }
+        .badge-danger { background: rgba(225, 29, 72, 0.15); color: #f43f5e; border: 1px solid rgba(225, 29, 72, 0.3); }
+        .badge-primary { background: rgba(79, 70, 229, 0.15); color: #818cf8; border: 1px solid rgba(79, 70, 229, 0.3); }
+        .badge-neutral { background: var(--bg-surface); color: var(--text-muted); border: 1px solid var(--border-subtle); }
 
         /* Form Inputs */
         .input-group {
             display: flex;
             flex-direction: column;
             gap: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .input-label {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
 
-        .input-field, select.input-field {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            padding: 10px 14px;
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-size: 14px;
+        .input-field, select.input-field, textarea.input-field {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-strong);
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-size: 13.5px;
             outline: none;
+            width: 100%;
         }
 
         .input-field:focus {
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
+            background: var(--accent-primary);
+            color: #ffffff;
+            border: 1px solid var(--accent-primary-hover);
+            padding: 9px 16px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13.5px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            transition: all 0.2s ease;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
 
         .btn-primary:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            background: var(--accent-primary-hover);
         }
 
         /* Timeline Roadmap UI */
         .timeline {
             position: relative;
-            padding-left: 30px;
+            padding-left: 24px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 10px;
-            top: 5px;
-            bottom: 5px;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
             width: 2px;
-            background: linear-gradient(to bottom, #6366f1, #06b6d4, #10b981);
+            background: var(--border-strong);
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
 
         .timeline-dot {
             position: absolute;
-            left: -26px;
+            left: -21px;
             top: 4px;
-            width: 14px;
-            height: 14px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: var(--accent-primary);
-            border: 3px solid var(--bg-secondary);
+            border: 2px solid var(--bg-card);
         }
 
         .timeline-content {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            padding: 16px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 12px 14px;
             border-radius: var(--radius-md);
         }
 
         /* Graph Canvas */
         #kg-network-container {
             width: 100%;
-            height: 540px;
-            border: 1px solid var(--border-color);
+            height: 480px;
+            border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            background: var(--bg-primary);
+            background: var(--bg-surface);
         }
 
         /* Table Styling */
@@ -427,37 +448,37 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 13.5px;
+            font-size: 13px;
         }
 
         .table-custom th {
-            padding: 12px 16px;
-            background: var(--bg-glass);
-            color: var(--text-secondary);
+            padding: 10px 12px;
+            background: var(--bg-surface);
+            color: var(--text-muted);
             font-weight: 600;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .table-custom td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-main);
         }
 
         .table-custom tr:hover td {
-            background: var(--bg-glass);
+            background: var(--bg-surface);
         }
 
-        /* Skill Pills */
-        .skill-pill {
-            display: inline-flex;
-            align-items: center;
-            padding: 4px 10px;
-            border-radius: 20px;
+        /* Code/JSON Previews */
+        .code-box {
+            background: #020617;
+            border: 1px solid var(--border-subtle);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
-            font-weight: 500;
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            margin: 3px;
+            color: #38bdf8;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -468,370 +489,410 @@
         <div class="brand">
             <span class="brand-badge">8BIT</span>
             <div>
-                <div class="brand-title">SkillMatrix AI</div>
-                <div class="brand-sub">Intelligence Suite</div>
+                <div class="brand-title">Workforce Signal</div>
+                <div class="brand-sub">AI Talent Engine v2.1</div>
             </div>
         </div>
 
         <nav class="nav-menu">
-            <a class="nav-item active" onclick="switchTab('skill-gap')">
-                <i data-lucide="target"></i> Skill Gap Engine
-            </a>
-            <a class="nav-item" onclick="switchTab('candidate-analysis')">
+            <div class="nav-section-label">Core Intelligence</div>
+            <a class="nav-item active" onclick="switchTab('tab-candidate-analysis')">
                 <i data-lucide="user-check"></i> Candidate Analysis & XAI
             </a>
-            <a class="nav-item" onclick="switchTab('knowledge-graph')">
-                <i data-lucide="network"></i> Skill Knowledge Graph
+            <a class="nav-item" onclick="switchTab('tab-counterfactual')">
+                <i data-lucide="sparkles"></i> Counterfactual What-If
             </a>
-            <a class="nav-item" onclick="switchTab('learning-roadmap')">
-                <i data-lucide="compass"></i> Personalized Roadmap
+            <a class="nav-item" onclick="switchTab('tab-career-gps')">
+                <i data-lucide="compass"></i> Career GPS Shortest Path
             </a>
-            <a class="nav-item" onclick="switchTab('future-skills')">
-                <i data-lucide="trending-up"></i> Future Skills Demand
+            <a class="nav-item" onclick="switchTab('tab-hwef-fusion')">
+                <i data-lucide="sliders"></i> HWEF Fusion Scoring
             </a>
-            <a class="nav-item" onclick="switchTab('recruiter-analytics')">
-                <i data-lucide="users"></i> Recruiter & Weights
+
+            <div class="nav-section-label">Market & Knowledge</div>
+            <a class="nav-item" onclick="switchTab('tab-knowledge-graph')">
+                <i data-lucide="network"></i> Knowledge Graph
             </a>
-            <a class="nav-item" onclick="switchTab('counterfactual')">
-                <i data-lucide="help-circle"></i> Counterfactual Optimizer
+            <a class="nav-item" onclick="switchTab('tab-future-demand')">
+                <i data-lucide="trending-up"></i> 5-Year Demand Velocity
             </a>
-            <a class="nav-item" onclick="switchTab('career-gps')">
-                <i data-lucide="navigation"></i> Career GPS Navigator
+            <a class="nav-item" onclick="switchTab('tab-model-benchmarks')">
+                <i data-lucide="cpu"></i> Model Zoo Benchmarks
             </a>
-            <a class="nav-item" onclick="switchTab('model-benchmarks')">
-                <i data-lucide="cpu"></i> ML Model Benchmarks
+            <a class="nav-item" onclick="switchTab('tab-roadmap')">
+                <i data-lucide="map"></i> Phased Learning Roadmap
             </a>
         </nav>
 
         <div class="sidebar-footer">
-            <div style="display:flex; align-items:center; gap:8px;">
-                <span style="width:8px; height:8px; border-radius:50%; background:#10b981;"></span>
-                <span style="font-size:12px; color:var(--text-secondary);">FastAPI v2.0 Live</span>
-            </div>
-            <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light">
-                <i data-lucide="moon" id="theme-icon"></i>
-            </button>
+            <span>FastAPI Backend Active</span>
+            <span class="badge badge-success">Online</span>
         </div>
     </aside>
 
-    <!-- Main Content Area -->
+    <!-- Main Workspace -->
     <div class="main-wrapper">
+        <!-- Top Header Bar -->
         <header class="top-navbar">
-            <div class="page-header-title" id="current-page-title">
-                <i data-lucide="target" style="color:var(--accent-primary);"></i>
-                <span>Skill Gap Analysis & Semantic Matching</span>
+            <div class="page-header-title">
+                <span id="active-tab-title">Candidate Analysis & XAI</span>
             </div>
             <div class="top-actions">
-                <span class="badge badge-primary"><i data-lucide="sparkles"></i> HWEF v2.0</span>
-                <button class="action-btn" onclick="runHealthCheck()"><i data-lucide="activity"></i> System Health</button>
+                <button class="btn-minimal" onclick="testBackendHealth()">
+                    <i data-lucide="activity"></i> System Status
+                </button>
+                <button class="btn-minimal" onclick="toggleTheme()">
+                    <i data-lucide="sun-moon"></i> Theme
+                </button>
+                <a href="/docs" target="_blank" class="btn-minimal" style="text-decoration:none;">
+                    <i data-lucide="code"></i> API Docs
+                </a>
             </div>
         </header>
 
+        <!-- Main Content Area -->
         <main class="content-container">
 
-            <!-- ================= PAGE 1: SKILL GAP DASHBOARD ================= -->
-            <section id="tab-skill-gap" class="view-section active">
-                <div class="grid-3" style="margin-bottom:24px;">
-                    <div class="metric-box">
-                        <span class="metric-label">Job Fit Readiness</span>
-                        <div class="metric-value" style="color:var(--accent-emerald);" id="sg-fit-val">78.5%</div>
-                        <span class="badge badge-success">High Market Competence</span>
-                    </div>
-                    <div class="metric-box">
-                        <span class="metric-label">Estimated Skill Gap</span>
-                        <div class="metric-value" style="color:var(--accent-rose);" id="sg-gap-val">21.5%</div>
-                        <span class="badge badge-danger">2 Critical Blockers</span>
-                    </div>
-                    <div class="metric-box">
-                        <span class="metric-label">Semantic Match Rate</span>
-                        <div class="metric-value" style="color:var(--accent-cyan);" id="sg-match-val">82.0%</div>
-                        <span class="badge badge-primary">Sentence-Transformers MiniLM</span>
-                    </div>
-                </div>
-
-                <div class="grid-2">
-                    <!-- Left: Interactive Evaluator -->
+            <!-- ================= TAB 1: CANDIDATE ANALYSIS & SHAP XAI ================= -->
+            <section id="tab-candidate-analysis" class="view-section active">
+                <div class="grid-2" style="margin-bottom:20px;">
+                    <!-- Candidate Configuration Card -->
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title"><i data-lucide="sliders"></i> Candidate Skill Profile</div>
+                            <div class="card-title"><i data-lucide="user"></i> Candidate Profile & Target Role</div>
+                            <span class="badge badge-primary">Dynamic Evaluator</span>
                         </div>
                         <div class="input-group">
-                            <label class="input-label">Target Role</label>
-                            <select id="sg-target-role" class="input-field" onchange="onRoleChange()">
-                                <option value="Senior Machine Learning Engineer">Senior Machine Learning Engineer</option>
-                                <option value="Generative AI & LLM Architect">Generative AI & LLM Architect</option>
-                                <option value="Data Scientist">Data Scientist</option>
-                                <option value="Data Analyst / BI Specialist">Data Analyst / BI Specialist</option>
-                                <option value="MLOps Engineer">MLOps Engineer</option>
+                            <label class="input-label">Select Candidate Preset</label>
+                            <select id="cand-preset" class="input-field" onchange="loadCandidatePreset()">
+                                <option value="candidate_001">Alex Chen (Senior ML Engineer)</option>
+                                <option value="candidate_002">Sarah Jenkins (Data Scientist)</option>
+                                <option value="candidate_003">David Kumar (Junior Analytics Developer)</option>
                             </select>
+                        </div>
+                        <div class="grid-2">
+                            <div class="input-group">
+                                <label class="input-label">Candidate Name</label>
+                                <input id="cand-name" class="input-field" value="Alex Chen">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Target Role</label>
+                                <input id="cand-target-role" class="input-field" value="Senior Machine Learning Engineer">
+                            </div>
                         </div>
                         <div class="input-group">
                             <label class="input-label">Candidate Skills (Comma-separated)</label>
-                            <textarea id="sg-candidate-skills" class="input-field" rows="3">Python, SQL, Pandas, Scikit-Learn, Tableau, Git</textarea>
+                            <input id="cand-skills" class="input-field" value="Python, SQL, Pandas, Scikit-Learn, Tableau, Git">
                         </div>
                         <div class="input-group">
-                            <label class="input-label">Job Required Skills (Comma-separated)</label>
-                            <textarea id="sg-required-skills" class="input-field" rows="3">Python, SQL, TensorFlow, Docker, MLOps, FastAPI</textarea>
+                            <label class="input-label">Required Target Skills</label>
+                            <input id="req-skills" class="input-field" value="Python, SQL, TensorFlow, Docker, MLOps, FastAPI">
                         </div>
-                        <button class="btn-primary" onclick="runSkillGapAnalysis()">
-                            <i data-lucide="zap"></i> Run Semantic Gap Analysis
+                        <div class="grid-2">
+                            <div class="input-group">
+                                <label class="input-label">Candidate Experience (Years)</label>
+                                <input id="cand-exp" type="number" step="0.5" class="input-field" value="3.5">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Required Experience (Years)</label>
+                                <input id="req-exp" type="number" step="0.5" class="input-field" value="4.0">
+                            </div>
+                        </div>
+                        <button class="btn-primary" style="width:100%;" onclick="runCandidateAnalysis()">
+                            <i data-lucide="zap"></i> Run HWEF & SHAP Analysis
                         </button>
                     </div>
 
-                    <!-- Right: Semantic Breakdown & Gaps -->
+                    <!-- 6-Dimensional Radar Chart -->
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title"><i data-lucide="check-circle-2"></i> Semantic Match & Missing Skills</div>
+                            <div class="card-title"><i data-lucide="hexagon"></i> 6-Dimensional Competency Radar</div>
+                            <span class="badge badge-neutral" id="radar-badge">SHAP Grounded</span>
                         </div>
-                        <div style="margin-bottom:16px;">
-                            <h4 style="font-size:13px; color:var(--accent-emerald); margin-bottom:8px;">✅ Matched Skills</h4>
-                            <div id="sg-matched-pills" style="min-height:40px;"></div>
+                        <div style="height:320px; position:relative;">
+                            <canvas id="radar-chart"></canvas>
                         </div>
-                        <div style="margin-bottom:16px;">
-                            <h4 style="font-size:13px; color:var(--accent-rose); margin-bottom:8px;">❌ Missing Required Skills</h4>
-                            <div id="sg-missing-pills" style="min-height:40px;"></div>
-                        </div>
+                    </div>
+                </div>
+
+                <!-- Scores & Metrics Strip -->
+                <div class="grid-4" style="margin-bottom:20px;">
+                    <div class="metric-box">
+                        <span class="metric-label">Job Fit Score</span>
+                        <div class="metric-value" style="color:var(--accent-primary);" id="metric-fit-score">82.4%</div>
+                        <span class="badge badge-success" id="metric-fit-tier">Ready for Role</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Skill Gap Ratio</span>
+                        <div class="metric-value" style="color:var(--accent-rose);" id="metric-gap-pct">33.3%</div>
+                        <span style="font-size:12px; color:var(--text-muted);" id="metric-missing-count">2 Missing Skills</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Workforce Readiness Index</span>
+                        <div class="metric-value" style="color:var(--accent-cyan);" id="metric-wri">86.1 / 100</div>
+                        <span style="font-size:12px; color:var(--text-muted);">Calibrated Potential</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">SHAP Base Impact</span>
+                        <div class="metric-value" style="color:var(--accent-emerald);" id="metric-shap-bias">+0.14</div>
+                        <span style="font-size:12px; color:var(--text-muted);">TreeExplainer Margin</span>
+                    </div>
+                </div>
+
+                <!-- SHAP Feature Attribution Waterfall / Attribution List -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="layers"></i> SHAP Feature Impact & Decision Explainability</div>
+                        <span class="badge badge-neutral">Game-Theoretic Shapley Values</span>
+                    </div>
+                    <div class="grid-2" id="shap-attribution-container">
+                        <!-- Left: Positive Contributors -->
                         <div>
-                            <h4 style="font-size:13px; color:var(--accent-amber); margin-bottom:8px;">⚠️ Hidden Prerequisite Blockers (Knowledge Graph)</h4>
-                            <div id="sg-hidden-pills" style="min-height:40px;"></div>
+                            <h4 style="font-size:13px; font-weight:600; color:var(--accent-emerald); margin-bottom:10px;">
+                                Positive Drivers (Elevating Fit)
+                            </h4>
+                            <div id="shap-pos-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+                        </div>
+                        <!-- Right: Negative Contributors / Penalties -->
+                        <div>
+                            <h4 style="font-size:13px; font-weight:600; color:var(--accent-rose); margin-bottom:10px;">
+                                Primary Skill Deficits (Lowering Fit)
+                            </h4>
+                            <div id="shap-neg-list" style="display:flex; flex-direction:column; gap:8px;"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ================= PAGE 2: CANDIDATE ANALYSIS & EXPLAINABILITY (XAI) ================= -->
-            <section id="tab-candidate-analysis" class="view-section">
-                <div class="grid-2">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="radar"></i> Multi-Signal Evaluation Radar</div>
-                        </div>
-                        <div style="height:320px; display:flex; justify-content:center;">
-                            <canvas id="xai-radar-chart"></canvas>
-                        </div>
+            <!-- ================= TAB 2: COUNTERFACTUAL WHAT-IF SIMULATOR ================= -->
+            <section id="tab-counterfactual" class="view-section">
+                <div class="grid-3" style="margin-bottom:20px;">
+                    <div class="metric-box">
+                        <span class="metric-label">Current Baseline Fit $f(X)$</span>
+                        <div class="metric-value" style="color:var(--text-muted);" id="cf-base-val">45.7%</div>
+                        <span class="badge badge-neutral">Baseline Profile</span>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="gauge"></i> HWEF Calibrated Readiness Gauge</div>
-                        </div>
-                        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:240px;">
-                            <div style="font-size:54px; font-weight:800; color:var(--accent-emerald);" id="xai-gauge-score">82.4</div>
-                            <div style="font-size:14px; font-weight:600; color:var(--text-secondary);" id="xai-gauge-tier">Strong Candidate (Fast-track Upskilling)</div>
-                            <span class="badge badge-success" style="margin-top:12px;" id="xai-gauge-conf">Confidence: High (94.2%)</span>
-                        </div>
-                        <div style="border-top:1px solid var(--border-color); padding-top:14px; font-size:13px; color:var(--text-secondary);">
-                            Harmonic fusion combines semantic skills (40%), experience (25%), projects (15%), certs (10%), and ML probability (10%).
-                        </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Max Counterfactual Potential $f(X')$</span>
+                        <div class="metric-value" style="color:var(--accent-emerald);" id="cf-potential-val">62.3%</div>
+                        <span class="badge badge-success" id="cf-max-gain-badge">+16.6% Marginal Gain</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Minimal Skill Bundle</span>
+                        <div class="metric-value" style="color:var(--accent-cyan);" id="cf-bundle-count">3 Skills</div>
+                        <span class="badge badge-primary" id="cf-bundle-target">Optimal Greedy Set</span>
                     </div>
                 </div>
 
-                <!-- Feature Importance Attribution -->
                 <div class="grid-2">
+                    <!-- Single-Skill Marginal Gains Bar Chart -->
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title"><i data-lucide="layers"></i> Multimodal HWEF Signal Breakdown</div>
+                            <div class="card-title"><i data-lucide="bar-chart-2"></i> Single-Skill Intervention Gain ($\Delta \text{Fit}$)</div>
+                            <button class="btn-minimal" onclick="runCounterfactualSimulation()"><i data-lucide="refresh-cw"></i> Re-simulate</button>
+                        </div>
+                        <div style="height:300px;">
+                            <canvas id="cf-impact-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Minimal Action Plan -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="target"></i> Optimal Recommended Skill Bundle</div>
+                        </div>
+                        <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); padding:14px; border-radius:var(--radius-md); margin-bottom:14px;">
+                            <div style="font-size:12px; font-weight:700; color:var(--accent-primary); text-transform:uppercase; margin-bottom:4px;">Minimal Effort Plan</div>
+                            <div id="cf-bundle-text" style="font-size:13.5px; font-weight:500; color:var(--text-main);">
+                                Acquire: <strong>TensorFlow</strong>, <strong>Docker</strong>, <strong>MLOps</strong>
+                            </div>
                         </div>
                         <table class="table-custom">
                             <thead>
                                 <tr>
-                                    <th>Evaluation Signal</th>
-                                    <th>Weight</th>
-                                    <th>Score</th>
-                                    <th>Contribution</th>
+                                    <th>Skill</th>
+                                    <th>Baseline</th>
+                                    <th>New Fit</th>
+                                    <th>Marginal $\Delta$</th>
                                 </tr>
                             </thead>
-                            <tbody id="xai-attribution-tbody"></tbody>
+                            <tbody id="cf-combos-tbody"></tbody>
                         </table>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="sparkles"></i> SHAP TreeExplainer Feature Attribution (v2.0)</div>
-                            <span class="badge badge-primary" id="xai-shap-engine-badge">TreeExplainer Active</span>
-                        </div>
-                        <div style="font-size:12px; color:var(--text-secondary); margin-bottom:12px;" id="xai-shap-prior-label">
-                            Expected Model Prior $\mathbb{E}[f(x)]$: <strong>0.0663</strong>
-                        </div>
-                        <div id="xai-shap-bars-container" style="display:flex; flex-direction:column; gap:10px;"></div>
                     </div>
                 </div>
             </section>
 
-            <!-- ================= PAGE 3: KNOWLEDGE GRAPH DASHBOARD ================= -->
+            <!-- ================= TAB 3: CAREER GPS SHORT PATH NAVIGATION ================= -->
+            <section id="tab-career-gps" class="view-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="compass"></i> Career GPS Shortest Path Navigation (Dijkstra / A*)</div>
+                        <div style="display:flex; gap:10px;">
+                            <select id="gps-algo-select" class="input-field" style="width:auto; padding:6px 10px; font-size:12.5px;">
+                                <option value="shortest_duration">Dijkstra (Shortest Duration)</option>
+                                <option value="minimal_friction">A* (Minimal Difficulty Friction)</option>
+                            </select>
+                            <button class="btn-primary" onclick="runCareerGPSNavigation()">
+                                <i data-lucide="navigation"></i> Calculate Route
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom:16px;">
+                        <div class="input-group">
+                            <label class="input-label">Starting Skill Point</label>
+                            <select id="gps-start-skill" class="input-field">
+                                <option value="Python" selected>Python</option>
+                                <option value="SQL">SQL</option>
+                                <option value="NumPy">NumPy</option>
+                                <option value="Scikit-Learn">Scikit-Learn</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Destination Career Goal</label>
+                            <select id="gps-target-skill" class="input-field">
+                                <option value="LLMs" selected>Large Language Models (LLMs & RAG)</option>
+                                <option value="Transformers">Transformers & Attention Architectures</option>
+                                <option value="MLOps">MLOps & Production Deployment</option>
+                                <option value="Deep Learning">Deep Learning Specialist</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid-4" style="margin-bottom:20px;">
+                        <div class="metric-box">
+                            <span class="metric-label">Path Length</span>
+                            <div class="metric-value" style="color:var(--accent-primary);" id="gps-path-length">6 Steps</div>
+                            <span style="font-size:12px; color:var(--text-muted);">Prerequisite Nodes</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Estimated Study Duration</span>
+                            <div class="metric-value" style="color:var(--accent-cyan);" id="gps-est-time">5.1 Months</div>
+                            <span style="font-size:12px; color:var(--text-muted);" id="gps-est-weeks">22 Weeks Total</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Projected Salary Growth</span>
+                            <div class="metric-value" style="color:var(--accent-emerald);" id="gps-salary-boost">+130.0%</div>
+                            <span class="badge badge-success">High ROI</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Target Market Compensation</span>
+                            <div class="metric-value" style="color:var(--accent-amber);" id="gps-projected-comp">$240,164</div>
+                            <span style="font-size:12px; color:var(--text-muted);">Global Benchmark</span>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step Milestones Trajectory -->
+                    <h4 style="font-size:14px; font-weight:700; margin-bottom:14px; color:var(--text-main);">
+                        📍 Step-by-Step GPS Navigation Roadmap
+                    </h4>
+                    <div class="timeline" id="gps-timeline-container"></div>
+                </div>
+            </section>
+
+            <!-- ================= TAB 4: HWEF FUSION SCORING & WEIGHTS ================= -->
+            <section id="tab-hwef-fusion" class="view-section">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="sliders"></i> HWEF Signal Weights Configurator</div>
+                            <button class="btn-primary" style="padding:6px 12px; font-size:12.5px;" onclick="saveHWEFWeights()">
+                                Save Weights
+                            </button>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-skill">Semantic Skill Match: 0.40</label>
+                            <input type="range" id="w-skill" min="0" max="1" step="0.05" value="0.40" oninput="updateHWEFWeightLabels()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-exp">Experience Score: 0.25</label>
+                            <input type="range" id="w-exp" min="0" max="1" step="0.05" value="0.25" oninput="updateHWEFWeightLabels()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-proj">Project Relevance: 0.15</label>
+                            <input type="range" id="w-proj" min="0" max="1" step="0.05" value="0.15" oninput="updateHWEFWeightLabels()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-cert">Certifications: 0.10</label>
+                            <input type="range" id="w-cert" min="0" max="1" step="0.05" value="0.10" oninput="updateHWEFWeightLabels()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-ml">ML Prior Probability: 0.10</label>
+                            <input type="range" id="w-ml" min="0" max="1" step="0.05" value="0.10" oninput="updateHWEFWeightLabels()">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="list-ordered"></i> Candidate Leaderboard</div>
+                        </div>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Candidate</th>
+                                    <th>Job Fit</th>
+                                    <th>Skill Gap</th>
+                                    <th>Readiness Tier</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= TAB 5: KNOWLEDGE GRAPH ================= -->
             <section id="tab-knowledge-graph" class="view-section">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title"><i data-lucide="network"></i> Interactive Skill Knowledge Graph (NetworkX Engine)</div>
-                        <div style="display:flex; gap:8px;">
-                            <button class="action-btn" onclick="fitGraph()"><i data-lucide="maximize"></i> Reset View</button>
-                            <button class="action-btn" onclick="highlightCriticalPath()"><i data-lucide="sparkles"></i> Highlight AI Trajectory</button>
-                        </div>
+                        <div class="card-title"><i data-lucide="network"></i> Interactive Prerequisite Skill Network (40 Nodes, 46 Edges)</div>
+                        <span class="badge badge-neutral">Vis.js Physics Engine</span>
                     </div>
                     <div id="kg-network-container"></div>
                 </div>
-
-                <div class="grid-2">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="info"></i> Selected Node Inspector</div>
-                        </div>
-                        <div id="kg-node-inspector">
-                            <p style="color:var(--text-muted);">Click any node in the graph above to inspect its prerequisites, domain category, market demand score, and downstream skills unlocked.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="git-branch"></i> Career Path Route Discovery</div>
-                        </div>
-                        <div style="display:flex; gap:12px; margin-bottom:12px;">
-                            <input id="kg-start-role" class="input-field" style="flex:1;" placeholder="Start (e.g. SQL / Data Analyst)" value="SQL">
-                            <input id="kg-target-role" class="input-field" style="flex:1;" placeholder="Destination (e.g. LLMs)" value="LLMs">
-                            <button class="btn-primary" onclick="findCareerTrajectory()"><i data-lucide="search"></i> Find Path</button>
-                        </div>
-                        <div id="kg-career-path-result" style="min-height:60px;"></div>
-                    </div>
-                </div>
             </section>
 
-            <!-- ================= PAGE 4: LEARNING ROADMAP DASHBOARD ================= -->
-            <section id="tab-learning-roadmap" class="view-section">
+            <!-- ================= TAB 6: 5-YEAR DEMAND FORECASTING ================= -->
+            <section id="tab-future-demand" class="view-section">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title"><i data-lucide="compass"></i> Personalized AI Curriculum Generator</div>
-                        <button class="btn-primary" onclick="generatePersonalizedRoadmap()"><i data-lucide="refresh-cw"></i> Regenerate Roadmap</button>
-                    </div>
-                    <div class="grid-3" style="margin-bottom:20px;">
-                        <div class="metric-box">
-                            <span class="metric-label">Estimated Timeframe</span>
-                            <div class="metric-value" style="color:var(--accent-primary);" id="rm-weeks-val">8 Weeks</div>
-                            <span style="font-size:12px; color:var(--text-secondary);">10 hours / week</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Total Modules</span>
-                            <div class="metric-value" style="color:var(--accent-cyan);" id="rm-modules-val">4 Sprints</div>
-                            <span style="font-size:12px; color:var(--text-secondary);">Sequenced by KG Prereqs</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Readiness Leap</span>
-                            <div class="metric-value" style="color:var(--accent-emerald);" id="rm-leap-val">72% ➔ 100%</div>
-                            <span style="font-size:12px; color:var(--text-secondary);">Full Role Certification</span>
-                        </div>
-                    </div>
-
-                    <div class="timeline" id="rm-timeline-container"></div>
-                </div>
-            </section>
-
-            <!-- ================= PAGE 5: FUTURE SKILLS DASHBOARD ================= -->
-            <section id="tab-future-skills" class="view-section">
-                <div class="grid-2">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="trending-up"></i> 2026-2031 Tech Growth Velocity (CAGR %)</div>
-                        </div>
-                        <div style="height:300px;">
-                            <canvas id="future-cagr-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="zap"></i> Top Emerging vs Declining Technologies</div>
-                        </div>
-                        <div style="height:300px;">
-                            <canvas id="future-status-doughnut"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"><i data-lucide="table"></i> 5-Year Market Demand Predictions (XGBoost Forecaster)</div>
+                        <div class="card-title"><i data-lucide="trending-up"></i> 5-Year Skill Market Velocity & CAGR Projections (XGBoost)</div>
+                        <span class="badge badge-primary">Macro Market Trends</span>
                     </div>
                     <table class="table-custom">
                         <thead>
                             <tr>
                                 <th>Skill / Technology</th>
-                                <th>Domain Category</th>
+                                <th>Domain</th>
                                 <th>Growth CAGR</th>
-                                <th>Current Index</th>
-                                <th>2-Year Projected</th>
-                                <th>5-Year Projected</th>
+                                <th>Current Freq</th>
+                                <th>2-Yr Forecast</th>
+                                <th>5-Yr Forecast</th>
                                 <th>Market Trajectory</th>
                             </tr>
                         </thead>
-                        <tbody id="future-forecast-tbody"></tbody>
+                        <tbody id="demand-tbody"></tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- ================= PAGE 6: RECRUITER ANALYTICS & WEIGHTS ================= -->
-            <section id="tab-recruiter-analytics" class="view-section">
-                <div class="grid-2">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="sliders"></i> HWEF Fusion Weights Configurator</div>
-                            <button class="btn-primary" style="padding:6px 12px; font-size:12px;" onclick="saveWeightsToServer()">Save Config</button>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label" id="lbl-w-skill">Skill Match Weight: 0.40</label>
-                            <input type="range" id="w-skill" min="0" max="1" step="0.05" value="0.40" oninput="onWeightSliderChange()">
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label" id="lbl-w-exp">Experience Weight: 0.25</label>
-                            <input type="range" id="w-exp" min="0" max="1" step="0.05" value="0.25" oninput="onWeightSliderChange()">
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label" id="lbl-w-proj">Project Relevance Weight: 0.15</label>
-                            <input type="range" id="w-proj" min="0" max="1" step="0.05" value="0.15" oninput="onWeightSliderChange()">
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label" id="lbl-w-cert">Certifications Weight: 0.10</label>
-                            <input type="range" id="w-cert" min="0" max="1" step="0.05" value="0.10" oninput="onWeightSliderChange()">
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label" id="lbl-w-ml">ML Classifier Prior Weight: 0.10</label>
-                            <input type="range" id="w-ml" min="0" max="1" step="0.05" value="0.10" oninput="onWeightSliderChange()">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="trophy"></i> Batch Candidate Ranking Leaderboard</div>
-                        </div>
-                        <table class="table-custom">
-                            <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>Candidate Name</th>
-                                    <th>Job Fit Score</th>
-                                    <th>Skill Gap %</th>
-                                    <th>Fit Tier</th>
-                                </tr>
-                            </thead>
-                            <tbody id="recruiter-candidates-tbody"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= PAGE 7: ML MODEL BENCHMARKS ================= -->
+            <!-- ================= TAB 7: MODEL ZOO BENCHMARKS ================= -->
             <section id="tab-model-benchmarks" class="view-section">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title"><i data-lucide="cpu"></i> Advanced ML Model Comparison & Cross-Validation Benchmarks</div>
-                        <span class="badge badge-primary">XGBoost • LightGBM • CatBoost • RF • DT • LR</span>
+                        <div class="card-title"><i data-lucide="cpu"></i> Model Zoo Benchmarks (5-Fold Stratified Cross-Validation)</div>
+                        <span class="badge badge-neutral">XGBoost • CatBoost • LightGBM • RF • LR</span>
                     </div>
                     <table class="table-custom">
                         <thead>
                             <tr>
                                 <th>Rank</th>
-                                <th>Model Algorithm</th>
+                                <th>Algorithm</th>
                                 <th>Accuracy</th>
                                 <th>ROC-AUC</th>
                                 <th>F1 Score</th>
                                 <th>Precision</th>
                                 <th>Recall</th>
-                                <th>Balanced Acc</th>
                                 <th>Brier Calibration</th>
                             </tr>
                         </thead>
@@ -840,162 +901,248 @@
                 </div>
             </section>
 
-            <!-- ================= PAGE 8: COUNTERFACTUAL SKILL RECOMMENDATIONS ================= -->
-            <section id="tab-counterfactual" class="view-section">
-                <div class="grid-3" style="margin-bottom:24px;">
-                    <div class="metric-box">
-                        <span class="metric-label">Current Fit Baseline $f(X)$</span>
-                        <div class="metric-value" style="color:var(--text-secondary);" id="cf-base-val">72.0%</div>
-                        <span class="badge badge-primary">Baseline State</span>
-                    </div>
-                    <div class="metric-box">
-                        <span class="metric-label">Max Counterfactual Potential $f(X')$</span>
-                        <div class="metric-value" style="color:var(--accent-emerald);" id="cf-potential-val">91.0%</div>
-                        <span class="badge badge-success" id="cf-max-gain-badge">Max Gain: +19.0%</span>
-                    </div>
-                    <div class="metric-box">
-                        <span class="metric-label">Optimal Minimal Skill Bundle</span>
-                        <div class="metric-value" style="color:var(--accent-cyan);" id="cf-bundle-count">2 Skills</div>
-                        <span class="badge badge-primary" id="cf-bundle-target">Achieves 90%+ Target</span>
-                    </div>
-                </div>
-
-                <div class="grid-2">
-                    <!-- Left: Single-Skill Marginal Gains Bar Chart -->
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="bar-chart-2"></i> Skill Intervention Marginal Gains ($\Delta \text{Score}$)</div>
-                        </div>
-                        <div style="height:320px;">
-                            <canvas id="cf-impact-chart"></canvas>
-                        </div>
-                    </div>
-
-                    <!-- Right: Optimal Skill Bundle & Synergy Combos -->
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title"><i data-lucide="sparkles"></i> Synergistic Multi-Skill Combinations</div>
-                        </div>
-                        <div id="cf-bundle-summary-card" style="background:var(--bg-glass); border:1px solid var(--accent-primary); padding:14px; border-radius:var(--radius-md); margin-bottom:16px;">
-                            <h4 style="color:var(--accent-primary); font-size:13.5px; margin-bottom:4px;">🎯 Recommended Minimal Action Plan</h4>
-                            <div id="cf-bundle-text" style="font-size:13px; color:var(--text-secondary);">Loading optimal counterfactual set...</div>
-                        </div>
-                        <table class="table-custom">
-                            <thead>
-                                <tr>
-                                    <th>Skill Combination</th>
-                                    <th>New Score</th>
-                                    <th>Marginal Gain $\Delta$</th>
-                                    <th>Target Reached</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cf-combos-tbody"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Why It Was Recommended Explainability Cards -->
+            <!-- ================= TAB 8: PHASED LEARNING ROADMAP ================= -->
+            <section id="tab-roadmap" class="view-section">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title"><i data-lucide="help-circle"></i> Counterfactual Explainability (Why Each Skill Was Recommended)</div>
+                        <div class="card-title"><i data-lucide="map"></i> Phased Milestone Curriculum Roadmap</div>
+                        <button class="btn-primary" onclick="generateCurriculumRoadmap()"><i data-lucide="refresh-cw"></i> Generate Plan</button>
                     </div>
-                    <div class="grid-2" id="cf-explainability-cards"></div>
-                </div>
-            </section>
-
-            <!-- ================= PAGE 9: CAREER GPS NAVIGATOR ================= -->
-            <section id="tab-career-gps" class="view-section">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"><i data-lucide="navigation"></i> Career GPS Shortest Path Navigation (NetworkX Dijkstra / A*)</div>
-                        <div style="display:flex; gap:12px; align-items:center;">
-                            <select id="gps-algo-select" class="input-field" style="padding:6px 12px; font-size:12.5px;">
-                                <option value="dijkstra">Dijkstra Shortest Friction Path</option>
-                                <option value="astar">A* Heuristic Graph Search</option>
-                            </select>
-                            <button class="btn-primary" style="padding:8px 16px; font-size:13px;" onclick="runCareerGPSNavigation()">
-                                <i data-lucide="compass"></i> Recalculate Route
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="grid-2" style="margin-bottom:20px;">
-                        <div class="input-group">
-                            <label class="input-label">Current Candidate Skills</label>
-                            <input id="gps-current-skills" class="input-field" value="Python, SQL" placeholder="e.g. Python, SQL">
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">Destination Career Role</label>
-                            <select id="gps-target-role" class="input-field" onchange="runCareerGPSNavigation()">
-                                <option value="AI Engineer">AI Engineer (Deep Learning & Architecture)</option>
-                                <option value="Generative AI Architect">Generative AI Architect (LLMs & RAG)</option>
-                                <option value="MLOps Platform Engineer">MLOps Platform Engineer</option>
-                                <option value="Senior Data Scientist">Senior Data Scientist</option>
-                                <option value="Data Engineer (Lakehouse)">Data Engineer (Lakehouse & Streaming)</option>
-                                <option value="Lead BI & Analytics Translator">Lead BI & Analytics Translator</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid-4" style="margin-bottom:24px;">
-                        <div class="metric-box">
-                            <span class="metric-label">Trajectory Path Length</span>
-                            <div class="metric-value" style="color:var(--accent-primary);" id="gps-path-length">6 Skills</div>
-                            <span style="font-size:12px; color:var(--text-secondary);">Minimal Graph Steps</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Estimated Time to Master</span>
-                            <div class="metric-value" style="color:var(--accent-cyan);" id="gps-est-time">5.1 Months</div>
-                            <span style="font-size:12px; color:var(--text-secondary);" id="gps-est-weeks">22 Weeks Total</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Projected Salary Growth</span>
-                            <div class="metric-value" style="color:var(--accent-emerald);" id="gps-salary-boost">+130.0%</div>
-                            <span class="badge badge-success">High Market Premium</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Target Role Market Comp</span>
-                            <div class="metric-value" style="color:var(--accent-amber);" id="gps-projected-comp">$240,164</div>
-                            <span style="font-size:12px; color:var(--text-secondary);">Baseline Potential</span>
-                        </div>
-                    </div>
-
-                    <!-- Step-by-step GPS Milestones Trajectory -->
-                    <h4 style="font-size:15px; font-weight:700; margin-bottom:16px; color:var(--text-primary);">📍 Step-by-Step GPS Navigation Roadmap</h4>
-                    <div class="timeline" id="gps-timeline-container"></div>
+                    <div class="timeline" id="roadmap-timeline"></div>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <!-- Main Frontend Application Logic -->
+    <!-- Frontend Application Controller -->
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Sample preset role skill sets
-        const ROLE_PRESETS = {
-            "Senior Machine Learning Engineer": ["Python", "SQL", "TensorFlow", "Docker", "MLOps", "FastAPI"],
-            "Generative AI & LLM Architect": ["Python", "PyTorch", "Transformers", "LLMs", "RAG Architectures", "Docker"],
-            "Data Scientist": ["Python", "SQL", "Pandas", "Scikit-Learn", "Feature Engineering", "Tableau"],
-            "Data Analyst / BI Specialist": ["SQL", "Tableau", "Power BI", "Pandas", "Executive Storytelling"],
-            "MLOps Engineer": ["Python", "Docker", "Kubernetes", "MLflow", "FastAPI", "CI/CD"]
+        // Preset candidate repository
+        const PRESET_CANDIDATES = {
+            "candidate_001": {
+                name: "Alex Chen",
+                target_role: "Senior Machine Learning Engineer",
+                skills: "Python, SQL, Pandas, Scikit-Learn, Tableau, Git",
+                required: "Python, SQL, TensorFlow, Docker, MLOps, FastAPI",
+                exp: 3.5,
+                req_exp: 4.0
+            },
+            "candidate_002": {
+                name: "Sarah Jenkins",
+                target_role: "Data Scientist",
+                skills: "Python, SQL, Statistics, Excel, PowerBI",
+                required: "Python, SQL, Scikit-Learn, Statistics, Big Data, Tableau",
+                exp: 2.0,
+                req_exp: 3.0
+            },
+            "candidate_003": {
+                name: "David Kumar",
+                target_role: "Lead AI Solutions Architect",
+                skills: "Python, Java, SpringBoot, SQL",
+                required: "Python, PyTorch, Transformers, LLMs, Docker, Kubernetes, MLOps",
+                exp: 5.0,
+                req_exp: 6.0
+            }
         };
 
-        let radarChartInstance = null;
-        let cagrChartInstance = null;
-        let doughnutChartInstance = null;
-        let cfImpactChartInstance = null;
+        let radarChart = null;
+        let cfBarChart = null;
         let visNetwork = null;
-        let graphNodesDataset = null;
-        let graphEdgesDataset = null;
 
-        // ================= 8. COUNTERFACTUAL SIMULATION ENGINE =================
+        function initIcons() {
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+            const targetSec = document.getElementById(tabId);
+            if (targetSec) targetSec.classList.add('active');
+
+            // Find matching nav link
+            const navLinks = document.querySelectorAll('.nav-item');
+            navLinks.forEach(link => {
+                if (link.getAttribute('onclick')?.includes(tabId)) {
+                    link.classList.add('active');
+                    const text = link.innerText.trim();
+                    document.getElementById('active-tab-title').innerText = text;
+                }
+            });
+
+            initIcons();
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+            }
+        }
+
+        async function testBackendHealth() {
+            try {
+                const res = await fetch('/api/health');
+                const data = await res.json();
+                alert(`8BIT Suite Status: ${data.status.toUpperCase()}\nVersion: ${data.version}\nAll 6 Analytical Engines Active.`);
+            } catch (err) {
+                alert("Backend Connection Error: " + err);
+            }
+        }
+
+        function loadCandidatePreset() {
+            const selectedKey = document.getElementById('cand-preset').value;
+            const cand = PRESET_CANDIDATES[selectedKey];
+            if (!cand) return;
+
+            document.getElementById('cand-name').value = cand.name;
+            document.getElementById('cand-target-role').value = cand.target_role;
+            document.getElementById('cand-skills').value = cand.skills;
+            document.getElementById('req-skills').value = cand.required;
+            document.getElementById('cand-exp').value = cand.exp;
+            document.getElementById('req-exp').value = cand.req_exp;
+
+            runCandidateAnalysis();
+        }
+
+        // ================= 1. RUN CANDIDATE ANALYSIS & SHAP XAI =================
+        async function runCandidateAnalysis() {
+            const name = document.getElementById('cand-name').value;
+            const targetRole = document.getElementById('cand-target-role').value;
+            const candSkills = document.getElementById('cand-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const reqSkills = document.getElementById('req-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const candExp = parseFloat(document.getElementById('cand-exp').value) || 0;
+            const reqExp = parseFloat(document.getElementById('req-exp').value) || 0;
+
+            // 1. Fetch HWEF Evaluation
+            try {
+                const hwefRes = await fetch('/api/hwef/evaluate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        candidate_name: name,
+                        candidate_skills: candSkills,
+                        required_skills: reqSkills,
+                        candidate_years_exp: candExp,
+                        required_years_exp: reqExp,
+                        target_role: targetRole
+                    })
+                });
+                const hwefData = await hwefRes.json();
+                const evalResult = hwefData.evaluation;
+
+                document.getElementById('metric-fit-score').innerText = `${evalResult.job_fit_score}%`;
+                document.getElementById('metric-gap-pct').innerText = `${evalResult.skill_gap_percentage}%`;
+                document.getElementById('metric-fit-tier').innerText = evalResult.fit_tier;
+                document.getElementById('metric-missing-count').innerText = `${evalResult.gap_breakdown.missing_critical_skills.length} Missing Skills`;
+                document.getElementById('metric-wri').innerText = `${evalResult.workforce_readiness_index} / 100`;
+
+            } catch (err) {
+                console.error("HWEF Error:", err);
+            }
+
+            // 2. Fetch SHAP Explainability & 6D Radar
+            try {
+                const xaiRes = await fetch('/api/v1/xai/explain', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        candidate_name: name,
+                        target_role: targetRole,
+                        candidate_features: {
+                            coding_skills: 8.5,
+                            ai_and_ml_skills: 9.0,
+                            "maths-stats_skills": 8.0,
+                            big_data_skills: 7.2,
+                            dashboard_and_storytelling_skills: 6.8,
+                            skill_match_score: 85.0,
+                            experience_score: 80.0
+                        }
+                    })
+                });
+                const xaiData = await xaiRes.json();
+
+                // Render Radar Chart
+                const radarCtx = document.getElementById('radar-chart').getContext('2d');
+                if (radarChart) radarChart.destroy();
+
+                const radarLabels = xaiData.radar_chart_payload.labels;
+                const candVals = xaiData.radar_chart_payload.candidate_values;
+                const benchVals = xaiData.radar_chart_payload.benchmark_values;
+
+                radarChart = new Chart(radarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: radarLabels,
+                        datasets: [
+                            {
+                                label: 'Candidate Competency',
+                                data: candVals,
+                                backgroundColor: 'rgba(79, 70, 229, 0.25)',
+                                borderColor: '#4f46e5',
+                                pointBackgroundColor: '#4f46e5',
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Role Benchmark Target',
+                                data: benchVals,
+                                backgroundColor: 'rgba(148, 163, 184, 0.1)',
+                                borderColor: '#94a3b8',
+                                pointBackgroundColor: '#94a3b8',
+                                borderDash: [4, 4],
+                                borderWidth: 1.5
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: { color: 'rgba(255, 255, 255, 0.08)' },
+                                grid: { color: 'rgba(255, 255, 255, 0.08)' },
+                                pointLabels: { color: '#94a3b8', font: { size: 11, weight: '600' } },
+                                ticks: { display: false, min: 0, max: 10 }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#94a3b8', font: { size: 12 } } }
+                        }
+                    }
+                });
+
+                // Render SHAP Lists
+                const posList = document.getElementById('shap-pos-list');
+                const negList = document.getElementById('shap-neg-list');
+
+                posList.innerHTML = xaiData.top_positive_features.map(f => `
+                    <div style="background:var(--bg-surface); padding:8px 12px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:12.5px; font-weight:500;">${f.feature}</span>
+                        <span class="badge badge-success">+${f.shap_value.toFixed(3)}</span>
+                    </div>
+                `).join('') || '<div style="color:var(--text-muted); font-size:12px;">No strong positive drivers detected.</div>';
+
+                negList.innerHTML = xaiData.top_negative_features.map(f => `
+                    <div style="background:var(--bg-surface); padding:8px 12px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:12.5px; font-weight:500;">${f.feature}</span>
+                        <span class="badge badge-danger">${f.shap_value.toFixed(3)}</span>
+                    </div>
+                `).join('') || '<div style="color:var(--text-muted); font-size:12px;">No critical skill deficits detected.</div>';
+
+            } catch (err) {
+                console.error("XAI Error:", err);
+            }
+        }
+
+        // ================= 2. COUNTERFACTUAL WHAT-IF SIMULATOR =================
         async function runCounterfactualSimulation() {
-            const candidateSkills = document.getElementById('cf-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const requiredSkills = document.getElementById('cf-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const targetRole = document.getElementById('cf-target-role').value;
+            const candSkills = document.getElementById('cand-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const reqSkills = document.getElementById('req-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const targetRole = document.getElementById('cand-target-role').value;
 
             try {
                 const res = await fetch('/api/v2/counterfactual/simulate', {
@@ -1003,8 +1150,8 @@
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                         candidate_name: "Active Candidate",
-                        candidate_skills: candidateSkills,
-                        required_skills: requiredSkills,
+                        candidate_skills: candSkills,
+                        required_skills: reqSkills,
                         target_role: targetRole,
                         candidate_years_exp: 3.5,
                         required_years_exp: 4.0,
@@ -1014,187 +1161,295 @@
                 const data = await res.json();
                 const sim = data.counterfactual_simulation;
 
-                // Baseline Metrics
-                document.getElementById('cf-base-fit').innerText = `${sim.baseline.job_fit_score}%`;
-                document.getElementById('cf-base-wri').innerText = `${sim.baseline.workforce_readiness_index}%`;
-                document.getElementById('cf-base-gap').innerText = `${sim.baseline.skill_gap_percentage}%`;
-                document.getElementById('cf-base-tier').innerText = sim.baseline.fit_tier;
+                document.getElementById('cf-base-val').innerText = `${sim.baseline.job_fit_score}%`;
+                document.getElementById('cf-potential-val').innerText = `${sim.optimal_bundle.counterfactual_job_fit}%`;
+                document.getElementById('cf-max-gain-badge').innerText = `+${sim.optimal_bundle.total_marginal_gain}% Gain`;
+                document.getElementById('cf-bundle-count').innerText = `${sim.optimal_bundle.recommended_skills.length} Skills`;
+                document.getElementById('cf-bundle-text').innerHTML = `Acquire: <strong>${sim.optimal_bundle.recommended_skills.join(', ')}</strong>`;
 
-                // Optimal Bundle
-                const opt = sim.optimal_bundle;
-                document.getElementById('cf-opt-skills').innerText = opt.recommended_skills.join(' + ') || "None required";
-                document.getElementById('cf-opt-score').innerText = `${opt.counterfactual_job_fit}%`;
-                document.getElementById('cf-opt-gain').innerText = `+${opt.total_marginal_gain}%`;
-                document.getElementById('cf-opt-wri').innerText = `${opt.counterfactual_readiness_index}%`;
-
-                // Render Marginal Gains Bar Chart
+                // Render Bar Chart
                 const chartCtx = document.getElementById('cf-impact-chart').getContext('2d');
-                if (cfImpactChartInstance) cfImpactChartInstance.destroy();
+                if (cfBarChart) cfBarChart.destroy();
 
                 const labels = sim.top_skill_recommendations.map(s => s.skill);
                 const gains = sim.top_skill_recommendations.map(s => s.marginal_gain);
-                const colors = ['#6366f1', '#10b981', '#06b6d4', '#f59e0b', '#ec4899'];
 
-                cfImpactChartInstance = new Chart(chartCtx, {
+                cfBarChart = new Chart(chartCtx, {
                     type: 'bar',
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Marginal Score Gain (ΔScore %)',
+                            label: 'Marginal Score Gain (+Δ%)',
                             data: gains,
-                            backgroundColor: colors.slice(0, labels.length),
-                            borderRadius: 6
+                            backgroundColor: '#4f46e5',
+                            borderRadius: 4
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    afterLabel: function(context) {
-                                        const rec = sim.top_skill_recommendations[context.dataIndex];
-                                        return `New Score: ${rec.counterfactual_job_fit_score}%\nReadiness: ${rec.counterfactual_workforce_readiness}%`;
-                                    }
-                                }
-                            }
-                        },
+                        plugins: { legend: { display: false } },
                         scales: {
                             y: {
                                 grid: { color: 'rgba(255, 255, 255, 0.08)' },
-                                ticks: { color: '#9ca3af', callback: v => `+${v}%` },
-                                suggestedMax: Math.max(...gains, 15) + 5
+                                ticks: { color: '#94a3b8', callback: v => `+${v}%` }
                             },
                             x: {
                                 grid: { display: false },
-                                ticks: { color: '#9ca3af', font: { size: 12, weight: 'bold' } }
+                                ticks: { color: '#94a3b8', font: { weight: '600' } }
                             }
                         }
                     }
                 });
 
-                // Synergies Table
-                const synTbody = document.getElementById('cf-synergies-tbody');
-                synTbody.innerHTML = sim.synergistic_combinations.map(combo => `
+                // Table
+                const tbody = document.getElementById('cf-combos-tbody');
+                tbody.innerHTML = sim.top_skill_recommendations.map(rec => `
                     <tr>
-                        <td><strong>${combo.skill_combination.join(' + ')}</strong></td>
-                        <td><span class="badge badge-primary">${combo.combination_size} Skills</span></td>
-                        <td style="color:var(--accent-emerald); font-weight:700;">+${combo.marginal_gain_fit}%</td>
-                        <td style="color:var(--accent-primary); font-weight:700;">${combo.counterfactual_job_fit}%</td>
-                        <td>${combo.counterfactual_readiness}%</td>
-                        <td><span class="badge badge-success">${combo.fit_tier}</span></td>
+                        <td><strong>${rec.skill}</strong></td>
+                        <td>${sim.baseline.job_fit_score}%</td>
+                        <td style="color:var(--accent-primary); font-weight:700;">${rec.counterfactual_job_fit_score}%</td>
+                        <td style="color:var(--accent-emerald); font-weight:700;">+${rec.marginal_gain}%</td>
                     </tr>
                 `).join('');
 
-                // Explainability Cards (Why It Was Recommended)
-                const explainCards = document.getElementById('cf-explainability-cards');
-                explainCards.innerHTML = sim.top_skill_recommendations.map(rec => {
-                    const why = rec.why_recommended;
-                    return `
-                        <div style="background:var(--bg-glass); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:16px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                                <h4 style="font-size:16px; font-weight:700; color:var(--accent-primary);">${rec.skill}</h4>
-                                <span class="badge badge-success" style="font-size:12.5px;">+${rec.marginal_gain}% Fit Gain</span>
-                            </div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:var(--text-secondary); display:flex; flex-direction:column; gap:6px;">
-                                <li style="display:flex; align-items:center; gap:8px;">
-                                    <span style="color:var(--accent-emerald);">✔</span> Appears in <strong>${why.market_job_frequency_pct}%</strong> of target role jobs
-                                </li>
-                                <li style="display:flex; align-items:center; gap:8px;">
-                                    <span style="color:var(--accent-primary);">✔</span> Unlocks <strong>${why.downstream_skills_unlocked_count} downstream skills</strong> in the Knowledge Graph
-                                </li>
-                                <li style="display:flex; align-items:center; gap:8px;">
-                                    <span style="color:var(--accent-amber);">✔</span> Increases Job Fit by <strong>+${why.job_fit_increase_pct}%</strong> ($f(X') = ${rec.counterfactual_job_fit_score}\%$)
-                                </li>
-                                <li style="display:flex; align-items:center; gap:8px;">
-                                    <span style="color:var(--accent-cyan);">✔</span> Reduces Skill Gap by <strong>-${why.skill_gap_reduction_pct}%</strong>
-                                </li>
-                            </ul>
-                        </div>
-                    `;
-                }).join('');
-
             } catch (err) {
-                console.error("Counterfactual Simulation Error:", err);
+                console.error("Counterfactual Error:", err);
             }
         }
 
-        // ================= 9. CAREER GPS SHORTEST PATH NAVIGATION =================
+        // ================= 3. CAREER GPS NAVIGATION =================
         async function runCareerGPSNavigation() {
-            const startRole = document.getElementById('gps-start-role').value;
-            const targetRole = document.getElementById('gps-target-role').value;
-            const algorithm = document.getElementById('gps-algorithm').value;
-            const userHours = parseInt(document.getElementById('gps-study-hours').value) || 12;
+            const startSkill = document.getElementById('gps-start-skill').value;
+            const targetSkill = document.getElementById('gps-target-skill').value;
+            const criterion = document.getElementById('gps-algo-select').value;
 
             try {
                 const res = await fetch('/api/v2/career-gps/navigate', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
-                        start_role_or_skill: startRole,
-                        target_role: targetRole,
-                        algorithm: algorithm,
-                        user_hours_per_week: userHours
+                        start_skill: startSkill,
+                        target_skill: targetSkill,
+                        optimization_criterion: criterion
                     })
                 });
                 const data = await res.json();
-                const gps = data.career_gps_navigation;
 
-                document.getElementById('gps-path-length').innerText = `${gps.total_skills_count} Skills`;
-                document.getElementById('gps-est-months').innerText = `${gps.estimated_completion_months} Months`;
-                document.getElementById('gps-salary-boost').innerText = `+${gps.salary_growth_projection.expected_salary_growth_pct}%`;
-                document.getElementById('gps-projected-comp').innerText = `$${gps.salary_growth_projection.target_role_compensation.toLocaleString()}`;
+                document.getElementById('gps-path-length').innerText = `${data.path_length} Steps`;
+                document.getElementById('gps-est-time').innerText = `${data.estimated_learning_time_months} Months`;
+                document.getElementById('gps-est-weeks').innerText = `${data.estimated_learning_time_weeks} Weeks Total`;
+                document.getElementById('gps-salary-boost').innerText = data.expected_salary_growth_pct;
+                document.getElementById('gps-projected-comp').innerText = `$${data.final_projected_salary_usd.toLocaleString()}`;
 
                 const timeline = document.getElementById('gps-timeline-container');
-                timeline.innerHTML = gps.navigation_path.map(step => `
+                timeline.innerHTML = data.gps_trajectory.map(step => `
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                                <h4 style="font-size:16px; font-weight:700; color:var(--text-primary);">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                <h4 style="font-size:14px; font-weight:700; color:var(--text-main);">
                                     Step ${step.step_number}: ${step.skill}
-                                    <span class="badge badge-primary" style="margin-left:8px; font-size:11px;">${step.domain}</span>
+                                    <span class="badge badge-primary" style="margin-left:6px;">${step.domain}</span>
                                 </h4>
-                                <span class="badge badge-success">${step.estimated_study_weeks} Weeks (${step.learning_time_hours}h)</span>
+                                <span class="badge badge-success">${step.study_weeks} Weeks</span>
                             </div>
-                            <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
-                                <strong>Milestone:</strong> ${step.milestone_title}
-                            </div>
-                            <div class="grid-3" style="font-size:12px; margin-top:8px; background:var(--bg-glass); padding:8px; border-radius:6px;">
-                                <div><strong>Difficulty:</strong> Level ${step.difficulty_level}/3</div>
-                                <div><strong>Demand:</strong> <span style="color:var(--accent-emerald);">${step.market_demand}/100</span></div>
-                                <div><strong>Downstream Unlocks:</strong> +${step.downstream_unlocks_count} Skills</div>
+                            <div style="font-size:12.5px; color:var(--text-muted);">
+                                ${step.milestone_description}
                             </div>
                         </div>
                     </div>
                 `).join('');
 
             } catch (err) {
-                console.error("Career GPS Navigation Error:", err);
+                console.error("GPS Error:", err);
             }
         }
 
-        async function runHealthCheck() {
+        // ================= 4. HWEF WEIGHTS & LEADERBOARD =================
+        function updateHWEFWeightLabels() {
+            document.getElementById('lbl-w-skill').innerText = `Semantic Skill Match: ${parseFloat(document.getElementById('w-skill').value).toFixed(2)}`;
+            document.getElementById('lbl-w-exp').innerText = `Experience Score: ${parseFloat(document.getElementById('w-exp').value).toFixed(2)}`;
+            document.getElementById('lbl-w-proj').innerText = `Project Relevance: ${parseFloat(document.getElementById('w-proj').value).toFixed(2)}`;
+            document.getElementById('lbl-w-cert').innerText = `Certifications: ${parseFloat(document.getElementById('w-cert').value).toFixed(2)}`;
+            document.getElementById('lbl-w-ml').innerText = `ML Prior Probability: ${parseFloat(document.getElementById('w-ml').value).toFixed(2)}`;
+        }
+
+        async function saveHWEFWeights() {
+            const weights = {
+                skill_match: parseFloat(document.getElementById('w-skill').value),
+                experience: parseFloat(document.getElementById('w-exp').value),
+                projects: parseFloat(document.getElementById('w-proj').value),
+                certifications: parseFloat(document.getElementById('w-cert').value),
+                ml_prediction: parseFloat(document.getElementById('w-ml').value)
+            };
             try {
-                const res = await fetch('/api/health');
-                const data = await res.json();
-                alert(`System Online! Version: ${data.version}\nEngines: HWEF, Semantic NLP, Knowledge Graph, Counterfactual, Career GPS, Roadmap, Advanced ML all active.`);
+                const res = await fetch('/api/hwef/weights', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(weights)
+                });
+                if (res.ok) alert("HWEF Weights Saved Successfully!");
             } catch (err) {
-                alert("Health check failed: " + err);
+                alert("Failed to save weights: " + err);
             }
         }
 
-        // Initialize on load
+        async function loadLeaderboard() {
+            const tbody = document.getElementById('leaderboard-tbody');
+            tbody.innerHTML = `
+                <tr>
+                    <td><strong>Alex Chen</strong></td>
+                    <td style="color:var(--accent-emerald); font-weight:700;">82.4%</td>
+                    <td>17.6%</td>
+                    <td><span class="badge badge-success">Immediate Hire</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Sarah Jenkins</strong></td>
+                    <td style="color:var(--accent-primary); font-weight:700;">74.8%</td>
+                    <td>25.2%</td>
+                    <td><span class="badge badge-primary">Fast-track Upskill</span></td>
+                </tr>
+                <tr>
+                    <td><strong>David Kumar</strong></td>
+                    <td style="color:var(--accent-amber); font-weight:700;">58.2%</td>
+                    <td>41.8%</td>
+                    <td><span class="badge badge-warning">Targeted Learning</span></td>
+                </tr>
+            `;
+        }
+
+        // ================= 5. KNOWLEDGE GRAPH =================
+        async function initKnowledgeGraph() {
+            const container = document.getElementById('kg-network-container');
+            try {
+                const res = await fetch('/api/knowledge-graph');
+                const data = await res.json();
+
+                const nodes = new vis.DataSet(data.nodes.map(n => ({
+                    id: n.id,
+                    label: n.label,
+                    color: n.group === 'Core' ? '#4f46e5' : (n.group === 'AI/ML' ? '#059669' : '#0891b2'),
+                    font: { color: '#ffffff', size: 12 }
+                })));
+
+                const edges = new vis.DataSet(data.edges.map(e => ({
+                    from: e.from,
+                    to: e.to,
+                    arrows: 'to',
+                    color: { color: '#475569' }
+                })));
+
+                visNetwork = new vis.Network(container, { nodes, edges }, {
+                    physics: { barnesHut: { gravitationalConstant: -3000, springLength: 90 } },
+                    interaction: { hover: true }
+                });
+            } catch (err) {
+                console.error("Knowledge Graph Error:", err);
+            }
+        }
+
+        // ================= 6. 5-YEAR DEMAND VELOCITY =================
+        async function loadDemandVelocity() {
+            try {
+                const res = await fetch('/api/future-skills/forecast');
+                const data = await res.json();
+                const tbody = document.getElementById('demand-tbody');
+
+                tbody.innerHTML = data.forecasts.map(f => `
+                    <tr>
+                        <td><strong>${f.skill}</strong></td>
+                        <td>${f.domain}</td>
+                        <td style="color:var(--accent-emerald); font-weight:600;">+${f.growth_cagr}%</td>
+                        <td>${f.current_frequency.toLocaleString()}</td>
+                        <td>${f.projected_2026_demand.toLocaleString()}</td>
+                        <td style="font-weight:700; color:var(--accent-primary);">${f.projected_2029_demand.toLocaleString()}</td>
+                        <td><span class="badge badge-success">${f.market_status}</span></td>
+                    </tr>
+                `).join('');
+            } catch (err) {
+                console.error("Demand Error:", err);
+            }
+        }
+
+        // ================= 7. MODEL BENCHMARKS =================
+        async function loadModelBenchmarks() {
+            try {
+                const res = await fetch('/api/models/benchmark');
+                const data = await res.json();
+                const tbody = document.getElementById('benchmarks-tbody');
+
+                tbody.innerHTML = data.jds_models.map((m, idx) => `
+                    <tr>
+                        <td><strong>#${idx + 1}</strong></td>
+                        <td><strong>${m.model}</strong></td>
+                        <td>${(m.accuracy * 100).toFixed(1)}%</td>
+                        <td style="color:var(--accent-emerald); font-weight:700;">${m.roc_auc.toFixed(4)}</td>
+                        <td>${m.f1_score.toFixed(4)}</td>
+                        <td>${m.precision.toFixed(4)}</td>
+                        <td>${m.recall.toFixed(4)}</td>
+                        <td>${m.brier_calibration.toFixed(4)}</td>
+                    </tr>
+                `).join('');
+            } catch (err) {
+                console.error("Benchmark Error:", err);
+            }
+        }
+
+        // ================= 8. PHASED ROADMAP =================
+        async function generateCurriculumRoadmap() {
+            const timeline = document.getElementById('roadmap-timeline');
+            timeline.innerHTML = `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                            <strong>Month 1: Modern ML Foundation</strong>
+                            <span class="badge badge-primary">Weeks 1-4</span>
+                        </div>
+                        <p style="font-size:12.5px; color:var(--text-muted);">
+                            Master Scikit-Learn pipelines, feature engineering, and cross-validation protocols.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                            <strong>Month 2: Deep Learning & PyTorch</strong>
+                            <span class="badge badge-success">Weeks 5-8</span>
+                        </div>
+                        <p style="font-size:12.5px; color:var(--text-muted);">
+                            Neural network architectures, PyTorch tensor manipulation, and GPU acceleration.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                            <strong>Month 3: Transformers & Generative AI</strong>
+                            <span class="badge badge-warning">Weeks 9-12</span>
+                        </div>
+                        <p style="font-size:12.5px; color:var(--text-muted);">
+                            Hugging Face Transformers, RAG vector retrieval, and LLM fine-tuning techniques.
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize on page load
         window.addEventListener('DOMContentLoaded', () => {
-            runSkillGapAnalysis();
-            initKnowledgeGraph();
-            generatePersonalizedRoadmap();
-            loadFutureSkills();
-            loadRecruiterData();
-            loadBenchmarks();
+            initIcons();
+            runCandidateAnalysis();
             runCounterfactualSimulation();
             runCareerGPSNavigation();
+            loadLeaderboard();
+            initKnowledgeGraph();
+            loadDemandVelocity();
+            loadModelBenchmarks();
+            generateCurriculumRoadmap();
         });
     </script>
 </body>

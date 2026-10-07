@@ -17,4 +17,5 @@ lightgbm
 catboost
 shap
 tabulate
+streamlit
 
