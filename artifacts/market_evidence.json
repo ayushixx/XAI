@@ -1,0 +1,722 @@
+{
+    "...": {
+        "id": "...",
+        "domain": "MARKET",
+        "signal": "...",
+        "finding": "... is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "... is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sql": {
+        "id": "sql",
+        "domain": "MARKET",
+        "signal": "sql",
+        "finding": "sql is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sql is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "analytics": {
+        "id": "analytics",
+        "domain": "MARKET",
+        "signal": "analytics",
+        "finding": "analytics is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "analytics is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "python": {
+        "id": "python",
+        "domain": "MARKET",
+        "signal": "python",
+        "finding": "python is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "python is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "finance": {
+        "id": "finance",
+        "domain": "MARKET",
+        "signal": "finance",
+        "finding": "finance is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "finance is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "java": {
+        "id": "java",
+        "domain": "MARKET",
+        "signal": "java",
+        "finding": "java is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "java is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "r": {
+        "id": "r",
+        "domain": "MARKET",
+        "signal": "r",
+        "finding": "r is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "r is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sas": {
+        "id": "sas",
+        "domain": "MARKET",
+        "signal": "sas",
+        "finding": "sas is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sas is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "business analysis": {
+        "id": "business analysis",
+        "domain": "MARKET",
+        "signal": "business analysis",
+        "finding": "business analysis is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "business analysis is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "machine learning": {
+        "id": "machine learning",
+        "domain": "MARKET",
+        "signal": "machine learning",
+        "finding": "machine learning is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "machine learning is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "data analysis": {
+        "id": "data analysis",
+        "domain": "MARKET",
+        "signal": "data analysis",
+        "finding": "data analysis is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "data analysis is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "digital marketing": {
+        "id": "digital marketing",
+        "domain": "MARKET",
+        "signal": "digital marketing",
+        "finding": "digital marketing is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "digital marketing is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "javascript": {
+        "id": "javascript",
+        "domain": "MARKET",
+        "signal": "javascript",
+        "finding": "javascript is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "javascript is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "project management": {
+        "id": "project management",
+        "domain": "MARKET",
+        "signal": "project management",
+        "finding": "project management is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "project management is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "seo": {
+        "id": "seo",
+        "domain": "MARKET",
+        "signal": "seo",
+        "finding": "seo is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "seo is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "data analytics": {
+        "id": "data analytics",
+        "domain": "MARKET",
+        "signal": "data analytics",
+        "finding": "data analytics is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "data analytics is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sales": {
+        "id": "sales",
+        "domain": "MARKET",
+        "signal": "sales",
+        "finding": "sales is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sales is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "excel": {
+        "id": "excel",
+        "domain": "MARKET",
+        "signal": "excel",
+        "finding": "excel is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "excel is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "accounting": {
+        "id": "accounting",
+        "domain": "MARKET",
+        "signal": "accounting",
+        "finding": "accounting is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "accounting is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "outsourcing": {
+        "id": "outsourcing",
+        "domain": "MARKET",
+        "signal": "outsourcing",
+        "finding": "outsourcing is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "outsourcing is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    }
+}

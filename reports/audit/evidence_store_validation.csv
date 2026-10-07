@@ -1,0 +1,31 @@
+signal,domain,has_odds_ratio,or_validation_passed,no_fabricated_data,causal_flag_correct
+...,MARKET,False,True,True,True
+sql,MARKET,False,True,True,True
+analytics,MARKET,False,True,True,True
+python,MARKET,False,True,True,True
+finance,MARKET,False,True,True,True
+java,MARKET,False,True,True,True
+r,MARKET,False,True,True,True
+sas,MARKET,False,True,True,True
+business analysis,MARKET,False,True,True,True
+machine learning,MARKET,False,True,True,True
+data analysis,MARKET,False,True,True,True
+digital marketing,MARKET,False,True,True,True
+javascript,MARKET,False,True,True,True
+project management,MARKET,False,True,True,True
+seo,MARKET,False,True,True,True
+data analytics,MARKET,False,True,True,True
+sales,MARKET,False,True,True,True
+excel,MARKET,False,True,True,True
+accounting,MARKET,False,True,True,True
+outsourcing,MARKET,False,True,True,True
+big_data_skills,JDS,True,True,True,True
+maths-stats_skills,JDS,True,True,True,True
+coding_skills,JDS,True,True,True,True
+ai_and_ml_skills,JDS,True,True,True,True
+dashboard_and_storytelling_skills,JDS,True,True,True,True
+neuroticism,SDS,True,True,True,True
+extraversion,SDS,True,True,True,True
+openness_to_experience,SDS,True,True,True,True
+agreeableness,SDS,True,True,True,True
+conscientiousness,SDS,True,True,True,True

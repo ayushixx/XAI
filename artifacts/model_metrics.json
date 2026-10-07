@@ -1,0 +1,10 @@
+{
+    "jds_logistic_regression": {
+        "roc_auc": 0.904,
+        "f1": 0.848
+    },
+    "sds_logistic_regression": {
+        "roc_auc": 0.947,
+        "f1": 0.92
+    }
+}

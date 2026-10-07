@@ -1,0 +1,182 @@
+{
+    "big_data_skills": {
+        "id": "big_data_skills",
+        "domain": "JDS",
+        "signal": "big_data_skills",
+        "finding": "A one-unit increase in big_data_skills is associated with 2.71 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.9961732361386786,
+            "odds_ratio": 2.707899483853601,
+            "p_value": 0.0071964853695494,
+            "ci_lower": 1.3095787769586744,
+            "ci_upper": 5.599296310897677
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.2172312542928738
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1414902755123595
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in big_data_skills is associated with 2.71 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "maths-stats_skills": {
+        "id": "maths-stats_skills",
+        "domain": "JDS",
+        "signal": "maths-stats_skills",
+        "finding": "A one-unit increase in maths-stats_skills is associated with 6.18 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.8210522333190944,
+            "odds_ratio": 6.178356102909244,
+            "p_value": 0.0002472963468796,
+            "ci_lower": 2.3331140480800747,
+            "ci_upper": 16.361002226088264
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 6.657535629392647e-09
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.2465628115597126
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in maths-stats_skills is associated with 6.18 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "coding_skills": {
+        "id": "coding_skills",
+        "domain": "JDS",
+        "signal": "coding_skills",
+        "finding": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.6089666897041585,
+            "odds_ratio": 1.838530644272213,
+            "p_value": 0.0763089321712523,
+            "ci_lower": 0.9376301320732042,
+            "ci_upper": 3.6050408517205104
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 2.0275005979496897e-07
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1636785820366133
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "EXPLORATORY",
+        "business_confidence": "MODERATE",
+        "interpretation": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression.",
+        "causal": false,
+        "caveat": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression."
+    },
+    "ai_and_ml_skills": {
+        "id": "ai_and_ml_skills",
+        "domain": "JDS",
+        "signal": "ai_and_ml_skills",
+        "finding": "A one-unit increase in ai_and_ml_skills is associated with 3.54 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.263896074691708,
+            "odds_ratio": 3.5391835844706705,
+            "p_value": 0.0072515436688556,
+            "ci_lower": 1.406796570921304,
+            "ci_upper": 8.90378943444792
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 8.567173857110042e-05
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1514406572363153
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in ai_and_ml_skills is associated with 3.54 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "dashboard_and_storytelling_skills": {
+        "id": "dashboard_and_storytelling_skills",
+        "domain": "JDS",
+        "signal": "dashboard_and_storytelling_skills",
+        "finding": "A one-unit increase in dashboard_and_storytelling_skills is associated with 3.88 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.3547574262274715,
+            "odds_ratio": 3.875820670151768,
+            "p_value": 0.0002506887955497,
+            "ci_lower": 1.876822886188484,
+            "ci_upper": 8.003944313404476
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 2.3984746423395638e-11
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.2968276736549993
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in dashboard_and_storytelling_skills is associated with 3.88 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    }
+}

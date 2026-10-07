@@ -1,0 +1,1082 @@
+{
+    "...": {
+        "id": "...",
+        "domain": "MARKET",
+        "signal": "...",
+        "finding": "... is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "... is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sql": {
+        "id": "sql",
+        "domain": "MARKET",
+        "signal": "sql",
+        "finding": "sql is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sql is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "analytics": {
+        "id": "analytics",
+        "domain": "MARKET",
+        "signal": "analytics",
+        "finding": "analytics is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "analytics is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "python": {
+        "id": "python",
+        "domain": "MARKET",
+        "signal": "python",
+        "finding": "python is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "python is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "finance": {
+        "id": "finance",
+        "domain": "MARKET",
+        "signal": "finance",
+        "finding": "finance is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "finance is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "java": {
+        "id": "java",
+        "domain": "MARKET",
+        "signal": "java",
+        "finding": "java is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "java is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "r": {
+        "id": "r",
+        "domain": "MARKET",
+        "signal": "r",
+        "finding": "r is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "r is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sas": {
+        "id": "sas",
+        "domain": "MARKET",
+        "signal": "sas",
+        "finding": "sas is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sas is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "business analysis": {
+        "id": "business analysis",
+        "domain": "MARKET",
+        "signal": "business analysis",
+        "finding": "business analysis is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "business analysis is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "machine learning": {
+        "id": "machine learning",
+        "domain": "MARKET",
+        "signal": "machine learning",
+        "finding": "machine learning is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "machine learning is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "data analysis": {
+        "id": "data analysis",
+        "domain": "MARKET",
+        "signal": "data analysis",
+        "finding": "data analysis is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "data analysis is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "digital marketing": {
+        "id": "digital marketing",
+        "domain": "MARKET",
+        "signal": "digital marketing",
+        "finding": "digital marketing is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "digital marketing is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "javascript": {
+        "id": "javascript",
+        "domain": "MARKET",
+        "signal": "javascript",
+        "finding": "javascript is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "javascript is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "project management": {
+        "id": "project management",
+        "domain": "MARKET",
+        "signal": "project management",
+        "finding": "project management is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "project management is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "seo": {
+        "id": "seo",
+        "domain": "MARKET",
+        "signal": "seo",
+        "finding": "seo is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "seo is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "data analytics": {
+        "id": "data analytics",
+        "domain": "MARKET",
+        "signal": "data analytics",
+        "finding": "data analytics is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "data analytics is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "sales": {
+        "id": "sales",
+        "domain": "MARKET",
+        "signal": "sales",
+        "finding": "sales is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "sales is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "excel": {
+        "id": "excel",
+        "domain": "MARKET",
+        "signal": "excel",
+        "finding": "excel is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "excel is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "accounting": {
+        "id": "accounting",
+        "domain": "MARKET",
+        "signal": "accounting",
+        "finding": "accounting is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "accounting is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "outsourcing": {
+        "id": "outsourcing",
+        "domain": "MARKET",
+        "signal": "outsourcing",
+        "finding": "outsourcing is a top 20 baseline requirement across all postings.",
+        "primary_evidence": {
+            "model": "Frequency Analysis",
+            "coefficient": null,
+            "odds_ratio": null,
+            "p_value": null,
+            "ci_lower": null,
+            "ci_upper": null
+        },
+        "secondary_evidence": {
+            "test": "nan",
+            "p_value": null
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": null
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": null,
+            "cv_f1": null,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 93000.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "MODERATE",
+        "interpretation": "outsourcing is a top 20 baseline requirement across all postings.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "big_data_skills": {
+        "id": "big_data_skills",
+        "domain": "JDS",
+        "signal": "big_data_skills",
+        "finding": "A one-unit increase in big_data_skills is associated with 2.71 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.9961732361386786,
+            "odds_ratio": 2.707899483853601,
+            "p_value": 0.0071964853695494,
+            "ci_lower": 1.3095787769586744,
+            "ci_upper": 5.599296310897677
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.2172312542928738
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1414902755123595
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in big_data_skills is associated with 2.71 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "maths-stats_skills": {
+        "id": "maths-stats_skills",
+        "domain": "JDS",
+        "signal": "maths-stats_skills",
+        "finding": "A one-unit increase in maths-stats_skills is associated with 6.18 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.8210522333190944,
+            "odds_ratio": 6.178356102909244,
+            "p_value": 0.0002472963468796,
+            "ci_lower": 2.3331140480800747,
+            "ci_upper": 16.361002226088264
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 6.657535629392647e-09
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.2465628115597126
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in maths-stats_skills is associated with 6.18 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "coding_skills": {
+        "id": "coding_skills",
+        "domain": "JDS",
+        "signal": "coding_skills",
+        "finding": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.6089666897041585,
+            "odds_ratio": 1.838530644272213,
+            "p_value": 0.0763089321712523,
+            "ci_lower": 0.9376301320732042,
+            "ci_upper": 3.6050408517205104
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 2.0275005979496897e-07
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1636785820366133
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "EXPLORATORY",
+        "business_confidence": "MODERATE",
+        "interpretation": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression.",
+        "causal": false,
+        "caveat": "Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression."
+    },
+    "ai_and_ml_skills": {
+        "id": "ai_and_ml_skills",
+        "domain": "JDS",
+        "signal": "ai_and_ml_skills",
+        "finding": "A one-unit increase in ai_and_ml_skills is associated with 3.54 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.263896074691708,
+            "odds_ratio": 3.5391835844706705,
+            "p_value": 0.0072515436688556,
+            "ci_lower": 1.406796570921304,
+            "ci_upper": 8.90378943444792
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 8.567173857110042e-05
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1514406572363153
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in ai_and_ml_skills is associated with 3.54 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "dashboard_and_storytelling_skills": {
+        "id": "dashboard_and_storytelling_skills",
+        "domain": "JDS",
+        "signal": "dashboard_and_storytelling_skills",
+        "finding": "A one-unit increase in dashboard_and_storytelling_skills is associated with 3.88 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 1.3547574262274715,
+            "odds_ratio": 3.875820670151768,
+            "p_value": 0.0002506887955497,
+            "ci_lower": 1.876822886188484,
+            "ci_upper": 8.003944313404476
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 2.3984746423395638e-11
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.2968276736549993
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9041862899005756,
+            "cv_f1": 0.8484170445794472,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 139.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in dashboard_and_storytelling_skills is associated with 3.88 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "neuroticism": {
+        "id": "neuroticism",
+        "domain": "SDS",
+        "signal": "neuroticism",
+        "finding": "A one-unit increase in neuroticism is associated with 1.13 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.1216278995069114,
+            "odds_ratio": 1.129333797924463,
+            "p_value": 0.0013416097676867,
+            "ci_lower": 1.048429252916998,
+            "ci_upper": 1.2164815351975515
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.4539325106168251
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.0309763725526456
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in neuroticism is associated with 1.13 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "extraversion": {
+        "id": "extraversion",
+        "domain": "SDS",
+        "signal": "extraversion",
+        "finding": "A one-unit increase in extraversion is associated with 1.12 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.1128674442139085,
+            "odds_ratio": 1.119483529093693,
+            "p_value": 0.0053714946557066,
+            "ci_lower": 1.033968024444356,
+            "ci_upper": 1.2120716910811142
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 5.785878581555917e-10
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.146318862822755
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in extraversion is associated with 1.12 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "openness_to_experience": {
+        "id": "openness_to_experience",
+        "domain": "SDS",
+        "signal": "openness_to_experience",
+        "finding": "A one-unit increase in openness_to_experience is associated with 1.31 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.2687855168935673,
+            "odds_ratio": 1.3083744867254472,
+            "p_value": 3.476422052762482e-06,
+            "ci_lower": 1.167961633198633,
+            "ci_upper": 1.4656678343328309
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 3.6443711270759637e-17
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.3098184504843133
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in openness_to_experience is associated with 1.31 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "agreeableness": {
+        "id": "agreeableness",
+        "domain": "SDS",
+        "signal": "agreeableness",
+        "finding": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.0798130447116967,
+            "odds_ratio": 1.0830845603594028,
+            "p_value": 0.0557994814985173,
+            "ci_lower": 0.9980253795864747,
+            "ci_upper": 1.175393120137862
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.0008744406423124
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1529804097820871
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "EXPLORATORY",
+        "business_confidence": "MODERATE",
+        "interpretation": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression.",
+        "causal": false,
+        "caveat": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression."
+    },
+    "conscientiousness": {
+        "id": "conscientiousness",
+        "domain": "SDS",
+        "signal": "conscientiousness",
+        "finding": "A one-unit increase in conscientiousness is associated with 1.28 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.248853713444164,
+            "odds_ratio": 1.282554398880282,
+            "p_value": 2.298578559735354e-05,
+            "ci_lower": 1.1429915858907316,
+            "ci_upper": 1.439158263623837
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 1.439895844177504e-16
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.3599059043581989
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in conscientiousness is associated with 1.28 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    }
+}

@@ -1,0 +1,11 @@
+variable,report_status,model_status,signal_map_status,consistent,notes
+big_data_skills,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+maths-stats_skills,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+coding_skills,not significant,not significant,EXPLORATORY,True,Checked against primary multivariable LR evidence.
+ai_and_ml_skills,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+dashboard_and_storytelling_skills,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+neuroticism,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+extraversion,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+openness_to_experience,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.
+agreeableness,not significant,not significant,EXPLORATORY,True,Checked against primary multivariable LR evidence.
+conscientiousness,significant,significant,STRONG,True,Checked against primary multivariable LR evidence.

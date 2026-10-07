@@ -1,29 +1,31 @@
-skill_or_capability,market_signal,jds_signal,sds_relevance,evidence_level,supporting_metric,interpretation
-...,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,... is highly requested in Analytics job postings.
-sql,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sql is highly requested in Analytics job postings.
-analytics,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,analytics is highly requested in Analytics job postings.
-python,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,python is highly requested in Analytics job postings.
-finance,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,finance is highly requested in Analytics job postings.
-java,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,java is highly requested in Analytics job postings.
-r,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,r is highly requested in Analytics job postings.
-sas,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sas is highly requested in Analytics job postings.
-business analysis,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,business analysis is highly requested in Analytics job postings.
-machine learning,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,machine learning is highly requested in Analytics job postings.
-data analysis,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,data analysis is highly requested in Analytics job postings.
-digital marketing,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,digital marketing is highly requested in Analytics job postings.
-javascript,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,javascript is highly requested in Analytics job postings.
-project management,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,project management is highly requested in Analytics job postings.
-seo,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,seo is highly requested in Analytics job postings.
-data analytics,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,data analytics is highly requested in Analytics job postings.
-sales,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sales is highly requested in Analytics job postings.
-excel,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,excel is highly requested in Analytics job postings.
-accounting,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,accounting is highly requested in Analytics job postings.
-outsourcing,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,outsourcing is highly requested in Analytics job postings.
-maths-stats_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,maths-stats_skills is significantly associated with high salary hikes for junior roles.
-coding_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,coding_skills is significantly associated with high salary hikes for junior roles.
-ai_and_ml_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0001,ai_and_ml_skills is significantly associated with high salary hikes for junior roles.
-dashboard_and_storytelling_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,dashboard_and_storytelling_skills is significantly associated with high salary hikes for junior roles.
-extraversion,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,extraversion is significantly associated with success in senior/customer-facing roles.
-openness_to_experience,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,openness_to_experience is significantly associated with success in senior/customer-facing roles.
-agreeableness,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0009,agreeableness is significantly associated with success in senior/customer-facing roles.
-conscientiousness,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,conscientiousness is significantly associated with success in senior/customer-facing roles.
+signal,domain,coefficient,odds_ratio,p_value,ci_lower,ci_upper,univariate_p_value,tree_importance,cv_auc,cv_f1,sample_size,primary_evidence,secondary_evidence,evidence_level,interpretation,causal
+...,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,... is a top 20 baseline requirement across all postings.,False
+sql,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,sql is a top 20 baseline requirement across all postings.,False
+analytics,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,analytics is a top 20 baseline requirement across all postings.,False
+python,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,python is a top 20 baseline requirement across all postings.,False
+finance,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,finance is a top 20 baseline requirement across all postings.,False
+java,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,java is a top 20 baseline requirement across all postings.,False
+r,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,r is a top 20 baseline requirement across all postings.,False
+sas,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,sas is a top 20 baseline requirement across all postings.,False
+business analysis,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,business analysis is a top 20 baseline requirement across all postings.,False
+machine learning,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,machine learning is a top 20 baseline requirement across all postings.,False
+data analysis,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,data analysis is a top 20 baseline requirement across all postings.,False
+digital marketing,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,digital marketing is a top 20 baseline requirement across all postings.,False
+javascript,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,javascript is a top 20 baseline requirement across all postings.,False
+project management,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,project management is a top 20 baseline requirement across all postings.,False
+seo,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,seo is a top 20 baseline requirement across all postings.,False
+data analytics,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,data analytics is a top 20 baseline requirement across all postings.,False
+sales,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,sales is a top 20 baseline requirement across all postings.,False
+excel,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,excel is a top 20 baseline requirement across all postings.,False
+accounting,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,accounting is a top 20 baseline requirement across all postings.,False
+outsourcing,MARKET,,,,,,,,,,93000,Frequency Analysis,None,STRONG,outsourcing is a top 20 baseline requirement across all postings.,False
+big_data_skills,JDS,0.9961732361386786,2.707899483853601,0.0071964853695494,1.3095787769586744,5.599296310897677,0.2172312542928738,0.1414902755123595,0.9041862899005756,0.8484170445794472,139,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in big_data_skills is associated with 2.71 times higher odds of the outcome, holding other variables constant.",False
+maths-stats_skills,JDS,1.8210522333190944,6.178356102909244,0.0002472963468796,2.3331140480800747,16.361002226088264,6.657535629392647e-09,0.2465628115597126,0.9041862899005756,0.8484170445794472,139,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in maths-stats_skills is associated with 6.18 times higher odds of the outcome, holding other variables constant.",False
+coding_skills,JDS,0.6089666897041585,1.838530644272213,0.0763089321712523,0.9376301320732042,3.6050408517205104,2.0275005979496897e-07,0.1636785820366133,0.9041862899005756,0.8484170445794472,139,Logistic Regression,Mann-Whitney U,EXPLORATORY,"Observed group difference exists for coding_skills, but independent multivariable significance is not established in the final Logistic Regression.",False
+ai_and_ml_skills,JDS,1.263896074691708,3.5391835844706705,0.0072515436688556,1.406796570921304,8.90378943444792,8.567173857110042e-05,0.1514406572363153,0.9041862899005756,0.8484170445794472,139,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in ai_and_ml_skills is associated with 3.54 times higher odds of the outcome, holding other variables constant.",False
+dashboard_and_storytelling_skills,JDS,1.3547574262274715,3.875820670151768,0.0002506887955497,1.8768228861884837,8.003944313404476,2.398474642339564e-11,0.2968276736549993,0.9041862899005756,0.8484170445794472,139,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in dashboard_and_storytelling_skills is associated with 3.88 times higher odds of the outcome, holding other variables constant.",False
+neuroticism,SDS,0.1216278995069114,1.129333797924463,0.0013416097676867,1.048429252916998,1.2164815351975515,0.4539325106168251,0.0309763725526456,0.9470098039215684,0.919571917218976,161,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in neuroticism is associated with 1.13 times higher odds of the outcome, holding other variables constant.",False
+extraversion,SDS,0.1128674442139085,1.119483529093693,0.0053714946557066,1.033968024444356,1.2120716910811142,5.785878581555917e-10,0.146318862822755,0.9470098039215684,0.919571917218976,161,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in extraversion is associated with 1.12 times higher odds of the outcome, holding other variables constant.",False
+openness_to_experience,SDS,0.2687855168935673,1.3083744867254472,3.476422052762482e-06,1.1679616331986333,1.4656678343328309,3.644371127075964e-17,0.3098184504843133,0.9470098039215684,0.919571917218976,161,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in openness_to_experience is associated with 1.31 times higher odds of the outcome, holding other variables constant.",False
+agreeableness,SDS,0.0798130447116967,1.0830845603594028,0.0557994814985173,0.9980253795864749,1.175393120137862,0.0008744406423124,0.1529804097820871,0.9470098039215684,0.919571917218976,161,Logistic Regression,Mann-Whitney U,EXPLORATORY,"Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression.",False
+conscientiousness,SDS,0.248853713444164,1.282554398880282,2.298578559735354e-05,1.1429915858907316,1.439158263623837,1.439895844177504e-16,0.3599059043581989,0.9470098039215684,0.919571917218976,161,Logistic Regression,Mann-Whitney U,STRONG,"A one-unit increase in conscientiousness is associated with 1.28 times higher odds of the outcome, holding other variables constant.",False

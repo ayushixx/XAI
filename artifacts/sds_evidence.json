@@ -1,0 +1,182 @@
+{
+    "neuroticism": {
+        "id": "neuroticism",
+        "domain": "SDS",
+        "signal": "neuroticism",
+        "finding": "A one-unit increase in neuroticism is associated with 1.13 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.1216278995069114,
+            "odds_ratio": 1.129333797924463,
+            "p_value": 0.0013416097676867,
+            "ci_lower": 1.048429252916998,
+            "ci_upper": 1.2164815351975515
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.4539325106168251
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.0309763725526456
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in neuroticism is associated with 1.13 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "extraversion": {
+        "id": "extraversion",
+        "domain": "SDS",
+        "signal": "extraversion",
+        "finding": "A one-unit increase in extraversion is associated with 1.12 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.1128674442139085,
+            "odds_ratio": 1.119483529093693,
+            "p_value": 0.0053714946557066,
+            "ci_lower": 1.033968024444356,
+            "ci_upper": 1.2120716910811142
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 5.785878581555917e-10
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.146318862822755
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in extraversion is associated with 1.12 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "openness_to_experience": {
+        "id": "openness_to_experience",
+        "domain": "SDS",
+        "signal": "openness_to_experience",
+        "finding": "A one-unit increase in openness_to_experience is associated with 1.31 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.2687855168935673,
+            "odds_ratio": 1.3083744867254472,
+            "p_value": 3.476422052762482e-06,
+            "ci_lower": 1.167961633198633,
+            "ci_upper": 1.4656678343328309
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 3.6443711270759637e-17
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.3098184504843133
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in openness_to_experience is associated with 1.31 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    },
+    "agreeableness": {
+        "id": "agreeableness",
+        "domain": "SDS",
+        "signal": "agreeableness",
+        "finding": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.0798130447116967,
+            "odds_ratio": 1.0830845603594028,
+            "p_value": 0.0557994814985173,
+            "ci_lower": 0.9980253795864747,
+            "ci_upper": 1.175393120137862
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 0.0008744406423124
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.1529804097820871
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "EXPLORATORY",
+        "business_confidence": "MODERATE",
+        "interpretation": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression.",
+        "causal": false,
+        "caveat": "Observed group difference exists for agreeableness, but independent multivariable significance is not established in the final Logistic Regression."
+    },
+    "conscientiousness": {
+        "id": "conscientiousness",
+        "domain": "SDS",
+        "signal": "conscientiousness",
+        "finding": "A one-unit increase in conscientiousness is associated with 1.28 times higher odds of the outcome, holding other variables constant.",
+        "primary_evidence": {
+            "model": "Logistic Regression",
+            "coefficient": 0.248853713444164,
+            "odds_ratio": 1.282554398880282,
+            "p_value": 2.298578559735354e-05,
+            "ci_lower": 1.1429915858907316,
+            "ci_upper": 1.439158263623837
+        },
+        "secondary_evidence": {
+            "test": "Mann-Whitney U",
+            "p_value": 1.439895844177504e-16
+        },
+        "tertiary_evidence": {
+            "model": "Random Forest",
+            "feature_importance": 0.3599059043581989
+        },
+        "validation": {
+            "cv_folds": 5,
+            "cv_auc": 0.9470098039215684,
+            "cv_f1": 0.919571917218976,
+            "cv_accuracy": null,
+            "cv_precision": null,
+            "cv_recall": null
+        },
+        "sample_size": 161.0,
+        "evidence_level": "STRONG",
+        "business_confidence": "HIGH",
+        "interpretation": "A one-unit increase in conscientiousness is associated with 1.28 times higher odds of the outcome, holding other variables constant.",
+        "causal": false,
+        "caveat": "Observational data, causality not implied."
+    }
+}
