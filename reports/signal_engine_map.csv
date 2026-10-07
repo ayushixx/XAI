@@ -1,0 +1,29 @@
+skill_or_capability,market_signal,jds_signal,sds_relevance,evidence_level,supporting_metric,interpretation
+...,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,... is highly requested in Analytics job postings.
+sql,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sql is highly requested in Analytics job postings.
+analytics,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,analytics is highly requested in Analytics job postings.
+python,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,python is highly requested in Analytics job postings.
+finance,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,finance is highly requested in Analytics job postings.
+java,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,java is highly requested in Analytics job postings.
+r,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,r is highly requested in Analytics job postings.
+sas,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sas is highly requested in Analytics job postings.
+business analysis,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,business analysis is highly requested in Analytics job postings.
+machine learning,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,machine learning is highly requested in Analytics job postings.
+data analysis,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,data analysis is highly requested in Analytics job postings.
+digital marketing,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,digital marketing is highly requested in Analytics job postings.
+javascript,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,javascript is highly requested in Analytics job postings.
+project management,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,project management is highly requested in Analytics job postings.
+seo,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,seo is highly requested in Analytics job postings.
+data analytics,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,data analytics is highly requested in Analytics job postings.
+sales,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,sales is highly requested in Analytics job postings.
+excel,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,excel is highly requested in Analytics job postings.
+accounting,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,accounting is highly requested in Analytics job postings.
+outsourcing,HIGH DEMAND,,,STRONG,Top 20 skill by frequency,outsourcing is highly requested in Analytics job postings.
+maths-stats_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,maths-stats_skills is significantly associated with high salary hikes for junior roles.
+coding_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,coding_skills is significantly associated with high salary hikes for junior roles.
+ai_and_ml_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0001,ai_and_ml_skills is significantly associated with high salary hikes for junior roles.
+dashboard_and_storytelling_skills,,PREDICTS JUNIOR SALARY HIKE,,STRONG,Mann-Whitney p=0.0000,dashboard_and_storytelling_skills is significantly associated with high salary hikes for junior roles.
+extraversion,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,extraversion is significantly associated with success in senior/customer-facing roles.
+openness_to_experience,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,openness_to_experience is significantly associated with success in senior/customer-facing roles.
+agreeableness,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0009,agreeableness is significantly associated with success in senior/customer-facing roles.
+conscientiousness,,,PREDICTS SENIOR SUCCESS,STRONG,Mann-Whitney p=0.0000,conscientiousness is significantly associated with success in senior/customer-facing roles.

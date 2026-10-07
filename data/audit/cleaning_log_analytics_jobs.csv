@@ -1,0 +1,2 @@
+dataset,column,issue,action,rows_affected,reason
+analytics_jobs,job_type,missing values,filled with Analytics,12011,domain assumption

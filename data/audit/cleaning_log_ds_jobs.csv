@@ -1,0 +1,2 @@
+dataset,column,issue,action,rows_affected,reason
+ds_jobs,all,whitespace and duplicates,trimmed and deduplicated,0,standardize text and remove exact dupes
