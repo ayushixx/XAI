@@ -19,5 +19,6 @@ venv.bak/
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db
+# CatBoost temp files
+catboost_info/
+

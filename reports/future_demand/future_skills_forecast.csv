@@ -1,0 +1,17 @@
+skill,category,status,growth_cagr_pct,current_index,projected_demand_2yr,projected_demand_5yr,demand_score_100,is_emerging,is_declining
+Generative AI & LLMs,AI / GenAI,Hyper-Growth,48.5,4200,9261,30330,99.7,True,False
+RAG Architectures,AI / GenAI,Hyper-Growth,54.2,2800,6657,24410,99.7,True,False
+MLOps & Model Monitoring,DevOps / MLOps,High Growth,38.0,3900,7427,19519,99.7,True,False
+Vector Databases (Milvus/Pinecone),Data Infrastructure,Hyper-Growth,62.1,2400,6306,26861,99.7,True,False
+PyTorch,Deep Learning,High Growth,32.4,5100,8940,20749,97.1,True,False
+FastAPI,Backend / AI Serving,High Growth,28.5,4600,7595,16116,93.8,False,False
+Docker & Kubernetes,Cloud & DevOps,Steady Growth,22.0,6800,10121,18378,89.5,False,False
+Python,Core Programming,Dominant Core,18.2,14200,19839,32762,88.4,False,False
+SQL,Data Management,Dominant Core,14.5,13800,18092,27158,85.1,False,False
+Apache Spark / PySpark,Big Data,Steady Growth,16.8,4900,6684,10651,84.6,False,False
+Scikit-Learn,Classical ML,Steady Core,15.0,7100,9389,14280,84.5,False,False
+Tableau / Power BI,Business Intelligence,Steady Demand,12.0,7500,9408,13217,82.0,False,False
+Legacy SAS Programming,Legacy Analytics,Declining,-12.4,1900,1458,980,59.2,False,True
+Static On-Prem ETL (Informatica 9.x),Legacy ETL,Declining,-16.8,1400,969,558,55.1,False,True
+VBA / Macro Scripting,Legacy Automation,Rapid Decline,-21.5,1200,739,357,51.2,False,True
+Hadoop MapReduce (Java),Legacy Big Data,Rapid Decline,-28.0,900,466,174,47.3,False,True

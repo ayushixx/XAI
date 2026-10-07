@@ -1,0 +1,626 @@
+{
+  "nodes": [
+    {
+      "id": "Python",
+      "label": "Python",
+      "domain": "Core Programming",
+      "level": "Foundational",
+      "demand": 98,
+      "difficulty": 1,
+      "in_degree": 0,
+      "out_degree": 4
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "domain": "Core Programming",
+      "level": "Foundational",
+      "demand": 75,
+      "difficulty": 1,
+      "in_degree": 0,
+      "out_degree": 0
+    },
+    {
+      "id": "SQL",
+      "label": "SQL",
+      "domain": "Data Management",
+      "level": "Foundational",
+      "demand": 95,
+      "difficulty": 1,
+      "in_degree": 0,
+      "out_degree": 4
+    },
+    {
+      "id": "Linear Algebra",
+      "label": "Linear Algebra",
+      "domain": "Math & Statistics",
+      "level": "Foundational",
+      "demand": 82,
+      "difficulty": 2,
+      "in_degree": 0,
+      "out_degree": 2
+    },
+    {
+      "id": "Calculus",
+      "label": "Calculus",
+      "domain": "Math & Statistics",
+      "level": "Foundational",
+      "demand": 78,
+      "difficulty": 2,
+      "in_degree": 0,
+      "out_degree": 1
+    },
+    {
+      "id": "Probability & Statistics",
+      "label": "Probability & Statistics",
+      "domain": "Math & Statistics",
+      "level": "Foundational",
+      "demand": 92,
+      "difficulty": 2,
+      "in_degree": 0,
+      "out_degree": 2
+    },
+    {
+      "id": "NumPy",
+      "label": "NumPy",
+      "domain": "Data Engineering & Prep",
+      "level": "Intermediate",
+      "demand": 90,
+      "difficulty": 2,
+      "in_degree": 2,
+      "out_degree": 2
+    },
+    {
+      "id": "Pandas",
+      "label": "Pandas",
+      "domain": "Data Engineering & Prep",
+      "level": "Intermediate",
+      "demand": 94,
+      "difficulty": 2,
+      "in_degree": 2,
+      "out_degree": 3
+    },
+    {
+      "id": "Data Cleaning",
+      "label": "Data Cleaning",
+      "domain": "Data Engineering & Prep",
+      "level": "Foundational",
+      "demand": 88,
+      "difficulty": 1,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "EDA",
+      "label": "EDA",
+      "domain": "Data Analytics",
+      "level": "Foundational",
+      "demand": 89,
+      "difficulty": 1,
+      "in_degree": 2,
+      "out_degree": 1
+    },
+    {
+      "id": "Matplotlib",
+      "label": "Matplotlib",
+      "domain": "Data Visualization",
+      "level": "Intermediate",
+      "demand": 80,
+      "difficulty": 2,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "Seaborn",
+      "label": "Seaborn",
+      "domain": "Data Visualization",
+      "level": "Intermediate",
+      "demand": 82,
+      "difficulty": 2,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "Tableau",
+      "label": "Tableau",
+      "domain": "Business Intelligence",
+      "level": "Intermediate",
+      "demand": 86,
+      "difficulty": 2,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "Power BI",
+      "label": "Power BI",
+      "domain": "Business Intelligence",
+      "level": "Intermediate",
+      "demand": 89,
+      "difficulty": 2,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "Executive Storytelling",
+      "label": "Executive Storytelling",
+      "domain": "Business Intelligence",
+      "level": "Advanced",
+      "demand": 85,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "Scikit-Learn",
+      "label": "Scikit-Learn",
+      "domain": "Machine Learning",
+      "level": "Intermediate",
+      "demand": 92,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 5
+    },
+    {
+      "id": "Feature Engineering",
+      "label": "Feature Engineering",
+      "domain": "Machine Learning",
+      "level": "Intermediate",
+      "demand": 89,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "Model Evaluation",
+      "label": "Model Evaluation",
+      "domain": "Machine Learning",
+      "level": "Intermediate",
+      "demand": 88,
+      "difficulty": 2,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "XGBoost",
+      "label": "XGBoost",
+      "domain": "Machine Learning",
+      "level": "Advanced",
+      "demand": 91,
+      "difficulty": 3,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "LightGBM",
+      "label": "LightGBM",
+      "domain": "Machine Learning",
+      "level": "Advanced",
+      "demand": 87,
+      "difficulty": 3,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "Deep Learning",
+      "label": "Deep Learning",
+      "domain": "Artificial Intelligence",
+      "level": "Advanced",
+      "demand": 93,
+      "difficulty": 4,
+      "in_degree": 3,
+      "out_degree": 4
+    },
+    {
+      "id": "PyTorch",
+      "label": "PyTorch",
+      "domain": "Artificial Intelligence",
+      "level": "Advanced",
+      "demand": 95,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "TensorFlow",
+      "label": "TensorFlow",
+      "domain": "Artificial Intelligence",
+      "level": "Advanced",
+      "demand": 88,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "Computer Vision",
+      "label": "Computer Vision",
+      "domain": "Artificial Intelligence",
+      "level": "Specialized",
+      "demand": 84,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "NLP",
+      "label": "NLP",
+      "domain": "Artificial Intelligence",
+      "level": "Specialized",
+      "demand": 94,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "Transformers",
+      "label": "Transformers",
+      "domain": "Generative AI",
+      "level": "Specialized",
+      "demand": 97,
+      "difficulty": 5,
+      "in_degree": 2,
+      "out_degree": 2
+    },
+    {
+      "id": "LLMs",
+      "label": "LLMs",
+      "domain": "Generative AI",
+      "level": "Specialized",
+      "demand": 99,
+      "difficulty": 5,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "RAG Architectures",
+      "label": "RAG Architectures",
+      "domain": "Generative AI",
+      "level": "Specialized",
+      "demand": 96,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "Apache Spark",
+      "label": "Apache Spark",
+      "domain": "Big Data Engineering",
+      "level": "Advanced",
+      "demand": 89,
+      "difficulty": 4,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "PySpark",
+      "label": "PySpark",
+      "domain": "Big Data Engineering",
+      "level": "Advanced",
+      "demand": 88,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "Airflow",
+      "label": "Airflow",
+      "domain": "Data Engineering & Prep",
+      "level": "Advanced",
+      "demand": 86,
+      "difficulty": 3,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "Kafka",
+      "label": "Kafka",
+      "domain": "Big Data Engineering",
+      "level": "Advanced",
+      "demand": 84,
+      "difficulty": 4,
+      "in_degree": 0,
+      "out_degree": 0
+    },
+    {
+      "id": "Git",
+      "label": "Git",
+      "domain": "Software Engineering",
+      "level": "Foundational",
+      "demand": 95,
+      "difficulty": 1,
+      "in_degree": 0,
+      "out_degree": 1
+    },
+    {
+      "id": "Docker",
+      "label": "Docker",
+      "domain": "Cloud & DevOps",
+      "level": "Intermediate",
+      "demand": 93,
+      "difficulty": 3,
+      "in_degree": 0,
+      "out_degree": 2
+    },
+    {
+      "id": "Kubernetes",
+      "label": "Kubernetes",
+      "domain": "Cloud & DevOps",
+      "level": "Advanced",
+      "demand": 88,
+      "difficulty": 4,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "FastAPI",
+      "label": "FastAPI",
+      "domain": "Software Engineering",
+      "level": "Intermediate",
+      "demand": 89,
+      "difficulty": 2,
+      "in_degree": 1,
+      "out_degree": 1
+    },
+    {
+      "id": "CI/CD",
+      "label": "CI/CD",
+      "domain": "Cloud & DevOps",
+      "level": "Intermediate",
+      "demand": 87,
+      "difficulty": 3,
+      "in_degree": 1,
+      "out_degree": 0
+    },
+    {
+      "id": "MLflow",
+      "label": "MLflow",
+      "domain": "MLOps",
+      "level": "Advanced",
+      "demand": 90,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 1
+    },
+    {
+      "id": "Model Monitoring",
+      "label": "Model Monitoring",
+      "domain": "MLOps",
+      "level": "Advanced",
+      "demand": 89,
+      "difficulty": 3,
+      "in_degree": 2,
+      "out_degree": 0
+    },
+    {
+      "id": "Cloud Computing (AWS/GCP)",
+      "label": "Cloud Computing (AWS/GCP)",
+      "domain": "Cloud & DevOps",
+      "level": "Intermediate",
+      "demand": 94,
+      "difficulty": 3,
+      "in_degree": 0,
+      "out_degree": 2
+    }
+  ],
+  "edges": [
+    {
+      "source": "Python",
+      "target": "NumPy",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Python",
+      "target": "Pandas",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Python",
+      "target": "FastAPI",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Python",
+      "target": "PySpark",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "SQL",
+      "target": "Data Cleaning",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "SQL",
+      "target": "Tableau",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "SQL",
+      "target": "Power BI",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "SQL",
+      "target": "Apache Spark",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Linear Algebra",
+      "target": "NumPy",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Linear Algebra",
+      "target": "Deep Learning",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Calculus",
+      "target": "Deep Learning",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Probability & Statistics",
+      "target": "Scikit-Learn",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Probability & Statistics",
+      "target": "EDA",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "NumPy",
+      "target": "Pandas",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "NumPy",
+      "target": "Scikit-Learn",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Pandas",
+      "target": "Matplotlib",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Pandas",
+      "target": "Seaborn",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Pandas",
+      "target": "Feature Engineering",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Data Cleaning",
+      "target": "EDA",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "EDA",
+      "target": "Feature Engineering",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Matplotlib",
+      "target": "Seaborn",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Tableau",
+      "target": "Executive Storytelling",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Power BI",
+      "target": "Executive Storytelling",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Scikit-Learn",
+      "target": "XGBoost",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Scikit-Learn",
+      "target": "LightGBM",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Scikit-Learn",
+      "target": "Model Evaluation",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Scikit-Learn",
+      "target": "Deep Learning",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Scikit-Learn",
+      "target": "MLflow",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "PyTorch",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "TensorFlow",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "NLP",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "Computer Vision",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "PyTorch",
+      "target": "Transformers",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "TensorFlow",
+      "target": "Transformers",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Transformers",
+      "target": "LLMs",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Transformers",
+      "target": "RAG Architectures",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Apache Spark",
+      "target": "PySpark",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Git",
+      "target": "CI/CD",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Docker",
+      "target": "Kubernetes",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Docker",
+      "target": "MLflow",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "FastAPI",
+      "target": "Model Monitoring",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "MLflow",
+      "target": "Model Monitoring",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Cloud Computing (AWS/GCP)",
+      "target": "Kubernetes",
+      "relation": "PREREQUISITE_FOR"
+    },
+    {
+      "source": "Cloud Computing (AWS/GCP)",
+      "target": "Airflow",
+      "relation": "PREREQUISITE_FOR"
+    }
+  ]
+}

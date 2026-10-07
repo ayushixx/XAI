@@ -1,0 +1,19 @@
+dataset,model,feature,importance
+SDS,Logistic Regression,extraversion,0.0969
+SDS,Logistic Regression,agreeableness,0.0279
+SDS,Logistic Regression,conscientiousness,0.1657
+SDS,Decision Tree,extraversion,0.193
+SDS,Decision Tree,agreeableness,0.1898
+SDS,Decision Tree,conscientiousness,0.6172
+SDS,Random Forest,extraversion,0.2838
+SDS,Random Forest,agreeableness,0.3058
+SDS,Random Forest,conscientiousness,0.4104
+SDS,XGBoost,extraversion,0.2222
+SDS,XGBoost,agreeableness,0.1564
+SDS,XGBoost,conscientiousness,0.6214
+SDS,LightGBM,extraversion,162.0
+SDS,LightGBM,agreeableness,174.0
+SDS,LightGBM,conscientiousness,150.0
+SDS,CatBoost,extraversion,27.293
+SDS,CatBoost,agreeableness,29.7638
+SDS,CatBoost,conscientiousness,42.9431

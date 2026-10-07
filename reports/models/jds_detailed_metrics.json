@@ -1,0 +1,326 @@
+[
+  {
+    "model_name": "Logistic Regression",
+    "accuracy": 0.8417,
+    "roc_auc": 0.8936,
+    "f1_score": 0.8533,
+    "precision": 0.8312,
+    "recall": 0.8767,
+    "balanced_accuracy": 0.8399,
+    "brier_calibration_score": 0.1246,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 13,
+      "false_negative": 9,
+      "true_positive": 64,
+      "matrix_2x2": [
+        [
+          53,
+          13
+        ],
+        [
+          9,
+          64
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.8548387096774194,
+        "recall": 0.803030303030303,
+        "f1-score": 0.828125,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.8311688311688312,
+        "recall": 0.8767123287671232,
+        "f1-score": 0.8533333333333334,
+        "support": 73.0
+      },
+      "accuracy": 0.841726618705036,
+      "macro avg": {
+        "precision": 0.8430037704231252,
+        "recall": 0.8398713158987131,
+        "f1-score": 0.8407291666666667,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.8424077662880171,
+        "recall": 0.841726618705036,
+        "f1-score": 0.8413639088729017,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  },
+  {
+    "model_name": "Decision Tree",
+    "accuracy": 0.7842,
+    "roc_auc": 0.7708,
+    "f1_score": 0.7945,
+    "precision": 0.7945,
+    "recall": 0.7945,
+    "balanced_accuracy": 0.7836,
+    "brier_calibration_score": 0.2132,
+    "confusion_matrix": {
+      "true_negative": 51,
+      "false_positive": 15,
+      "false_negative": 15,
+      "true_positive": 58,
+      "matrix_2x2": [
+        [
+          51,
+          15
+        ],
+        [
+          15,
+          58
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.7727272727272727,
+        "recall": 0.7727272727272727,
+        "f1-score": 0.7727272727272727,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.7945205479452054,
+        "recall": 0.7945205479452054,
+        "f1-score": 0.7945205479452054,
+        "support": 73.0
+      },
+      "accuracy": 0.7841726618705036,
+      "macro avg": {
+        "precision": 0.783623910336239,
+        "recall": 0.783623910336239,
+        "f1-score": 0.783623910336239,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.7841726618705036,
+        "recall": 0.7841726618705036,
+        "f1-score": 0.7841726618705036,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  },
+  {
+    "model_name": "Random Forest",
+    "accuracy": 0.777,
+    "roc_auc": 0.8464,
+    "f1_score": 0.7801,
+    "precision": 0.8088,
+    "recall": 0.7534,
+    "balanced_accuracy": 0.7782,
+    "brier_calibration_score": 0.1673,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 13,
+      "false_negative": 18,
+      "true_positive": 55,
+      "matrix_2x2": [
+        [
+          53,
+          13
+        ],
+        [
+          18,
+          55
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.7464788732394366,
+        "recall": 0.803030303030303,
+        "f1-score": 0.7737226277372263,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.8088235294117647,
+        "recall": 0.7534246575342466,
+        "f1-score": 0.7801418439716312,
+        "support": 73.0
+      },
+      "accuracy": 0.7769784172661871,
+      "macro avg": {
+        "precision": 0.7776512013256007,
+        "recall": 0.7782274802822748,
+        "f1-score": 0.7769322358544288,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.7792210307975658,
+        "recall": 0.7769784172661871,
+        "f1-score": 0.7770938707955828,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  },
+  {
+    "model_name": "XGBoost",
+    "accuracy": 0.7914,
+    "roc_auc": 0.8499,
+    "f1_score": 0.7972,
+    "precision": 0.8143,
+    "recall": 0.7808,
+    "balanced_accuracy": 0.7919,
+    "brier_calibration_score": 0.1631,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 13,
+      "false_negative": 16,
+      "true_positive": 57,
+      "matrix_2x2": [
+        [
+          53,
+          13
+        ],
+        [
+          16,
+          57
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.7681159420289855,
+        "recall": 0.803030303030303,
+        "f1-score": 0.7851851851851852,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.8142857142857143,
+        "recall": 0.7808219178082192,
+        "f1-score": 0.7972027972027972,
+        "support": 73.0
+      },
+      "accuracy": 0.7913669064748201,
+      "macro avg": {
+        "precision": 0.7912008281573499,
+        "recall": 0.7919261104192611,
+        "f1-score": 0.7911939911939911,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.7923633763796416,
+        "recall": 0.7913669064748201,
+        "f1-score": 0.7914965929354418,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  },
+  {
+    "model_name": "LightGBM",
+    "accuracy": 0.7914,
+    "roc_auc": 0.8591,
+    "f1_score": 0.7972,
+    "precision": 0.8143,
+    "recall": 0.7808,
+    "balanced_accuracy": 0.7919,
+    "brier_calibration_score": 0.1532,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 13,
+      "false_negative": 16,
+      "true_positive": 57,
+      "matrix_2x2": [
+        [
+          53,
+          13
+        ],
+        [
+          16,
+          57
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.7681159420289855,
+        "recall": 0.803030303030303,
+        "f1-score": 0.7851851851851852,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.8142857142857143,
+        "recall": 0.7808219178082192,
+        "f1-score": 0.7972027972027972,
+        "support": 73.0
+      },
+      "accuracy": 0.7913669064748201,
+      "macro avg": {
+        "precision": 0.7912008281573499,
+        "recall": 0.7919261104192611,
+        "f1-score": 0.7911939911939911,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.7923633763796416,
+        "recall": 0.7913669064748201,
+        "f1-score": 0.7914965929354418,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  },
+  {
+    "model_name": "CatBoost",
+    "accuracy": 0.8129,
+    "roc_auc": 0.8623,
+    "f1_score": 0.8219,
+    "precision": 0.8219,
+    "recall": 0.8219,
+    "balanced_accuracy": 0.8125,
+    "brier_calibration_score": 0.1427,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 13,
+      "false_negative": 13,
+      "true_positive": 60,
+      "matrix_2x2": [
+        [
+          53,
+          13
+        ],
+        [
+          13,
+          60
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.803030303030303,
+        "recall": 0.803030303030303,
+        "f1-score": 0.803030303030303,
+        "support": 66.0
+      },
+      "1": {
+        "precision": 0.821917808219178,
+        "recall": 0.821917808219178,
+        "f1-score": 0.821917808219178,
+        "support": 73.0
+      },
+      "accuracy": 0.8129496402877698,
+      "macro avg": {
+        "precision": 0.8124740556247405,
+        "recall": 0.8124740556247405,
+        "f1-score": 0.8124740556247405,
+        "support": 139.0
+      },
+      "weighted avg": {
+        "precision": 0.8129496402877698,
+        "recall": 0.8129496402877698,
+        "f1-score": 0.8129496402877698,
+        "support": 139.0
+      }
+    },
+    "dataset": "JDS"
+  }
+]

@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8BIT AI Skill Gap & Workforce Intelligence Suite</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Vis.js Network for interactive Knowledge Graph -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.04);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --sidebar-width: 260px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.2);
+        }
+
+        .light {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-glass: rgba(0, 0, 0, 0.02);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+        }
+
+        .brand {
+            padding: 24px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, #6366f1, #06b6d4);
+            color: #fff;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .brand-title {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            padding: 20px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover {
+            color: var(--text-primary);
+            background: var(--bg-glass);
+            transform: translateX(3px);
+        }
+
+        .nav-item.active {
+            color: #fff;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        }
+
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Main Content Workspace */
+        .main-wrapper {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .top-navbar {
+            height: 70px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(12px);
+        }
+
+        .page-header-title {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .theme-toggle-btn, .action-btn {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .theme-toggle-btn:hover, .action-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .content-container {
+            padding: 32px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* View Section Tabs */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards & Glass Containers */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 24px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Metric Highlights */
+        .metric-box {
+            padding: 20px;
+            border-radius: var(--radius-md);
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-danger { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
+        .badge-primary { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+
+        /* Form Inputs */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .input-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .input-field, select.input-field {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Timeline Roadmap UI */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: linear-gradient(to bottom, #6366f1, #06b6d4, #10b981);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: 3px solid var(--bg-secondary);
+        }
+
+        .timeline-content {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: var(--radius-md);
+        }
+
+        /* Graph Canvas */
+        #kg-network-container {
+            width: 100%;
+            height: 540px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+        }
+
+        /* Table Styling */
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13.5px;
+        }
+
+        .table-custom th {
+            padding: 12px 16px;
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table-custom td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table-custom tr:hover td {
+            background: var(--bg-glass);
+        }
+
+        /* Skill Pills */
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-badge">8BIT</span>
+            <div>
+                <div class="brand-title">SkillMatrix AI</div>
+                <div class="brand-sub">Intelligence Suite</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a class="nav-item active" onclick="switchTab('skill-gap')">
+                <i data-lucide="target"></i> Skill Gap Engine
+            </a>
+            <a class="nav-item" onclick="switchTab('candidate-analysis')">
+                <i data-lucide="user-check"></i> Candidate Analysis & XAI
+            </a>
+            <a class="nav-item" onclick="switchTab('knowledge-graph')">
+                <i data-lucide="network"></i> Skill Knowledge Graph
+            </a>
+            <a class="nav-item" onclick="switchTab('learning-roadmap')">
+                <i data-lucide="compass"></i> Personalized Roadmap
+            </a>
+            <a class="nav-item" onclick="switchTab('future-skills')">
+                <i data-lucide="trending-up"></i> Future Skills Demand
+            </a>
+            <a class="nav-item" onclick="switchTab('recruiter-analytics')">
+                <i data-lucide="users"></i> Recruiter & Weights
+            </a>
+            <a class="nav-item" onclick="switchTab('model-benchmarks')">
+                <i data-lucide="cpu"></i> ML Model Benchmarks
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div style="display:flex; align-items:center; gap:8px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:#10b981;"></span>
+                <span style="font-size:12px; color:var(--text-secondary);">FastAPI v2.0 Live</span>
+            </div>
+            <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light">
+                <i data-lucide="moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+        <header class="top-navbar">
+            <div class="page-header-title" id="current-page-title">
+                <i data-lucide="target" style="color:var(--accent-primary);"></i>
+                <span>Skill Gap Analysis & Semantic Matching</span>
+            </div>
+            <div class="top-actions">
+                <span class="badge badge-primary"><i data-lucide="sparkles"></i> HWEF v2.0</span>
+                <button class="action-btn" onclick="runHealthCheck()"><i data-lucide="activity"></i> System Health</button>
+            </div>
+        </header>
+
+        <main class="content-container">
+
+            <!-- ================= PAGE 1: SKILL GAP DASHBOARD ================= -->
+            <section id="tab-skill-gap" class="view-section active">
+                <div class="grid-3" style="margin-bottom:24px;">
+                    <div class="metric-box">
+                        <span class="metric-label">Job Fit Readiness</span>
+                        <div class="metric-value" style="color:var(--accent-emerald);" id="sg-fit-val">78.5%</div>
+                        <span class="badge badge-success">High Market Competence</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Estimated Skill Gap</span>
+                        <div class="metric-value" style="color:var(--accent-rose);" id="sg-gap-val">21.5%</div>
+                        <span class="badge badge-danger">2 Critical Blockers</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Semantic Match Rate</span>
+                        <div class="metric-value" style="color:var(--accent-cyan);" id="sg-match-val">82.0%</div>
+                        <span class="badge badge-primary">Sentence-Transformers MiniLM</span>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Left: Interactive Evaluator -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="sliders"></i> Candidate Skill Profile</div>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Target Role</label>
+                            <select id="sg-target-role" class="input-field" onchange="onRoleChange()">
+                                <option value="Senior Machine Learning Engineer">Senior Machine Learning Engineer</option>
+                                <option value="Generative AI & LLM Architect">Generative AI & LLM Architect</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Data Analyst / BI Specialist">Data Analyst / BI Specialist</option>
+                                <option value="MLOps Engineer">MLOps Engineer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Candidate Skills (Comma-separated)</label>
+                            <textarea id="sg-candidate-skills" class="input-field" rows="3">Python, SQL, Pandas, Scikit-Learn, Tableau, Git</textarea>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Job Required Skills (Comma-separated)</label>
+                            <textarea id="sg-required-skills" class="input-field" rows="3">Python, SQL, TensorFlow, Docker, MLOps, FastAPI</textarea>
+                        </div>
+                        <button class="btn-primary" onclick="runSkillGapAnalysis()">
+                            <i data-lucide="zap"></i> Run Semantic Gap Analysis
+                        </button>
+                    </div>
+
+                    <!-- Right: Semantic Breakdown & Gaps -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="check-circle-2"></i> Semantic Match & Missing Skills</div>
+                        </div>
+                        <div style="margin-bottom:16px;">
+                            <h4 style="font-size:13px; color:var(--accent-emerald); margin-bottom:8px;">✅ Matched Skills</h4>
+                            <div id="sg-matched-pills" style="min-height:40px;"></div>
+                        </div>
+                        <div style="margin-bottom:16px;">
+                            <h4 style="font-size:13px; color:var(--accent-rose); margin-bottom:8px;">❌ Missing Required Skills</h4>
+                            <div id="sg-missing-pills" style="min-height:40px;"></div>
+                        </div>
+                        <div>
+                            <h4 style="font-size:13px; color:var(--accent-amber); margin-bottom:8px;">⚠️ Hidden Prerequisite Blockers (Knowledge Graph)</h4>
+                            <div id="sg-hidden-pills" style="min-height:40px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 2: CANDIDATE ANALYSIS & EXPLAINABILITY (XAI) ================= -->
+            <section id="tab-candidate-analysis" class="view-section">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="radar"></i> Multi-Signal Evaluation Radar</div>
+                        </div>
+                        <div style="height:320px; display:flex; justify-content:center;">
+                            <canvas id="xai-radar-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="gauge"></i> HWEF Calibrated Readiness Gauge</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:240px;">
+                            <div style="font-size:54px; font-weight:800; color:var(--accent-emerald);" id="xai-gauge-score">82.4</div>
+                            <div style="font-size:14px; font-weight:600; color:var(--text-secondary);" id="xai-gauge-tier">Strong Candidate (Fast-track Upskilling)</div>
+                            <span class="badge badge-success" style="margin-top:12px;" id="xai-gauge-conf">Confidence: High (94.2%)</span>
+                        </div>
+                        <div style="border-top:1px solid var(--border-color); padding-top:14px; font-size:13px; color:var(--text-secondary);">
+                            Harmonic fusion combines semantic skills (40%), experience (25%), projects (15%), certs (10%), and ML probability (10%).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Importance Attribution -->
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="layers"></i> Multimodal HWEF Signal Breakdown</div>
+                        </div>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Evaluation Signal</th>
+                                    <th>Weight</th>
+                                    <th>Score</th>
+                                    <th>Contribution</th>
+                                </tr>
+                            </thead>
+                            <tbody id="xai-attribution-tbody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="sparkles"></i> SHAP TreeExplainer Feature Attribution (v2.0)</div>
+                            <span class="badge badge-primary" id="xai-shap-engine-badge">TreeExplainer Active</span>
+                        </div>
+                        <div style="font-size:12px; color:var(--text-secondary); margin-bottom:12px;" id="xai-shap-prior-label">
+                            Expected Model Prior $\mathbb{E}[f(x)]$: <strong>0.0663</strong>
+                        </div>
+                        <div id="xai-shap-bars-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 3: KNOWLEDGE GRAPH DASHBOARD ================= -->
+            <section id="tab-knowledge-graph" class="view-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="network"></i> Interactive Skill Knowledge Graph (NetworkX Engine)</div>
+                        <div style="display:flex; gap:8px;">
+                            <button class="action-btn" onclick="fitGraph()"><i data-lucide="maximize"></i> Reset View</button>
+                            <button class="action-btn" onclick="highlightCriticalPath()"><i data-lucide="sparkles"></i> Highlight AI Trajectory</button>
+                        </div>
+                    </div>
+                    <div id="kg-network-container"></div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="info"></i> Selected Node Inspector</div>
+                        </div>
+                        <div id="kg-node-inspector">
+                            <p style="color:var(--text-muted);">Click any node in the graph above to inspect its prerequisites, domain category, market demand score, and downstream skills unlocked.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="git-branch"></i> Career Path Route Discovery</div>
+                        </div>
+                        <div style="display:flex; gap:12px; margin-bottom:12px;">
+                            <input id="kg-start-role" class="input-field" style="flex:1;" placeholder="Start (e.g. SQL / Data Analyst)" value="SQL">
+                            <input id="kg-target-role" class="input-field" style="flex:1;" placeholder="Destination (e.g. LLMs)" value="LLMs">
+                            <button class="btn-primary" onclick="findCareerTrajectory()"><i data-lucide="search"></i> Find Path</button>
+                        </div>
+                        <div id="kg-career-path-result" style="min-height:60px;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 4: LEARNING ROADMAP DASHBOARD ================= -->
+            <section id="tab-learning-roadmap" class="view-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="compass"></i> Personalized AI Curriculum Generator</div>
+                        <button class="btn-primary" onclick="generatePersonalizedRoadmap()"><i data-lucide="refresh-cw"></i> Regenerate Roadmap</button>
+                    </div>
+                    <div class="grid-3" style="margin-bottom:20px;">
+                        <div class="metric-box">
+                            <span class="metric-label">Estimated Timeframe</span>
+                            <div class="metric-value" style="color:var(--accent-primary);" id="rm-weeks-val">8 Weeks</div>
+                            <span style="font-size:12px; color:var(--text-secondary);">10 hours / week</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Total Modules</span>
+                            <div class="metric-value" style="color:var(--accent-cyan);" id="rm-modules-val">4 Sprints</div>
+                            <span style="font-size:12px; color:var(--text-secondary);">Sequenced by KG Prereqs</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Readiness Leap</span>
+                            <div class="metric-value" style="color:var(--accent-emerald);" id="rm-leap-val">72% ➔ 100%</div>
+                            <span style="font-size:12px; color:var(--text-secondary);">Full Role Certification</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline" id="rm-timeline-container"></div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 5: FUTURE SKILLS DASHBOARD ================= -->
+            <section id="tab-future-skills" class="view-section">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="trending-up"></i> 2026-2031 Tech Growth Velocity (CAGR %)</div>
+                        </div>
+                        <div style="height:300px;">
+                            <canvas id="future-cagr-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="zap"></i> Top Emerging vs Declining Technologies</div>
+                        </div>
+                        <div style="height:300px;">
+                            <canvas id="future-status-doughnut"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="table"></i> 5-Year Market Demand Predictions (XGBoost Forecaster)</div>
+                    </div>
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Skill / Technology</th>
+                                <th>Domain Category</th>
+                                <th>Growth CAGR</th>
+                                <th>Current Index</th>
+                                <th>2-Year Projected</th>
+                                <th>5-Year Projected</th>
+                                <th>Market Trajectory</th>
+                            </tr>
+                        </thead>
+                        <tbody id="future-forecast-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 6: RECRUITER ANALYTICS & WEIGHTS ================= -->
+            <section id="tab-recruiter-analytics" class="view-section">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="sliders"></i> HWEF Fusion Weights Configurator</div>
+                            <button class="btn-primary" style="padding:6px 12px; font-size:12px;" onclick="saveWeightsToServer()">Save Config</button>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-skill">Skill Match Weight: 0.40</label>
+                            <input type="range" id="w-skill" min="0" max="1" step="0.05" value="0.40" oninput="onWeightSliderChange()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-exp">Experience Weight: 0.25</label>
+                            <input type="range" id="w-exp" min="0" max="1" step="0.05" value="0.25" oninput="onWeightSliderChange()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-proj">Project Relevance Weight: 0.15</label>
+                            <input type="range" id="w-proj" min="0" max="1" step="0.05" value="0.15" oninput="onWeightSliderChange()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-cert">Certifications Weight: 0.10</label>
+                            <input type="range" id="w-cert" min="0" max="1" step="0.05" value="0.10" oninput="onWeightSliderChange()">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" id="lbl-w-ml">ML Classifier Prior Weight: 0.10</label>
+                            <input type="range" id="w-ml" min="0" max="1" step="0.05" value="0.10" oninput="onWeightSliderChange()">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="trophy"></i> Batch Candidate Ranking Leaderboard</div>
+                        </div>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Candidate Name</th>
+                                    <th>Job Fit Score</th>
+                                    <th>Skill Gap %</th>
+                                    <th>Fit Tier</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recruiter-candidates-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 7: ML MODEL BENCHMARKS ================= -->
+            <section id="tab-model-benchmarks" class="view-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="cpu"></i> Advanced ML Model Comparison & Cross-Validation Benchmarks</div>
+                        <span class="badge badge-primary">XGBoost • LightGBM • CatBoost • RF • DT • LR</span>
+                    </div>
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model Algorithm</th>
+                                <th>Accuracy</th>
+                                <th>ROC-AUC</th>
+                                <th>F1 Score</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>Balanced Acc</th>
+                                <th>Brier Calibration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="benchmarks-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Main Frontend Application Logic -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Sample preset role skill sets
+        const ROLE_PRESETS = {
+            "Senior Machine Learning Engineer": ["Python", "SQL", "TensorFlow", "Docker", "MLOps", "FastAPI"],
+            "Generative AI & LLM Architect": ["Python", "PyTorch", "Transformers", "LLMs", "RAG Architectures", "Docker"],
+            "Data Scientist": ["Python", "SQL", "Pandas", "Scikit-Learn", "Feature Engineering", "Tableau"],
+            "Data Analyst / BI Specialist": ["SQL", "Tableau", "Power BI", "Pandas", "Executive Storytelling"],
+            "MLOps Engineer": ["Python", "Docker", "Kubernetes", "MLflow", "FastAPI", "CI/CD"]
+        };
+
+        let radarChartInstance = null;
+        let cagrChartInstance = null;
+        let doughnutChartInstance = null;
+        let visNetwork = null;
+        let graphNodesDataset = null;
+        let graphEdgesDataset = null;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            const targetSection = document.getElementById(`tab-${tabId}`);
+            if (targetSection) targetSection.classList.add('active');
+
+            const pageTitleEl = document.getElementById('current-page-title');
+            const titles = {
+                'skill-gap': 'Skill Gap Analysis & Semantic Matching',
+                'candidate-analysis': 'Candidate Evaluation & Explainable AI (XAI)',
+                'knowledge-graph': 'NetworkX Skill Knowledge Graph Visualizer',
+                'learning-roadmap': 'AI-Powered Personalized Learning Roadmap',
+                'future-skills': 'Future Skill Demand Forecasting & Velocity',
+                'recruiter-analytics': 'Recruiter Talent Leaderboard & HWEF Weights',
+                'model-benchmarks': 'Advanced Machine Learning Model Benchmarks'
+            };
+            if (pageTitleEl && titles[tabId]) {
+                pageTitleEl.querySelector('span').innerText = titles[tabId];
+            }
+
+            if (tabId === 'knowledge-graph' && visNetwork) {
+                setTimeout(() => { visNetwork.fit(); }, 200);
+            }
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            document.documentElement.classList.toggle('light');
+            const icon = document.getElementById('theme-icon');
+            if (document.documentElement.classList.contains('light')) {
+                icon.setAttribute('data-lucide', 'sun');
+            } else {
+                icon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
+        }
+
+        function onRoleChange() {
+            const role = document.getElementById('sg-target-role').value;
+            if (ROLE_PRESETS[role]) {
+                document.getElementById('sg-required-skills').value = ROLE_PRESETS[role].join(', ');
+            }
+        }
+
+        // ================= 1. RUN SKILL GAP ANALYSIS =================
+        async function runSkillGapAnalysis() {
+            const candidateSkills = document.getElementById('sg-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const requiredSkills = document.getElementById('sg-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const targetRole = document.getElementById('sg-target-role').value;
+
+            try {
+                const res = await fetch('/api/hwef/evaluate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        candidate_name: "Active Candidate",
+                        candidate_skills: candidateSkills,
+                        required_skills: requiredSkills,
+                        candidate_years_exp: 3.5,
+                        required_years_exp: 4.0,
+                        target_role: targetRole
+                    })
+                });
+                const data = await res.json();
+                const evalData = data.evaluation;
+
+                // Update metrics
+                document.getElementById('sg-fit-val').innerText = `${evalData.job_fit_score}%`;
+                document.getElementById('sg-gap-val').innerText = `${evalData.skill_gap_percentage}%`;
+                document.getElementById('sg-match-val').innerText = `${evalData.semantic_matching_details.match_rate_pct}%`;
+
+                // Render Pills
+                const matchedContainer = document.getElementById('sg-matched-pills');
+                matchedContainer.innerHTML = evalData.semantic_matching_details.matched_skills.map(m => 
+                    `<span class="badge badge-success" style="margin:4px;">${m.required_skill} ≈ ${m.matched_candidate_skill} (${Math.round(m.similarity_score * 100)}%)</span>`
+                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No direct semantic matches</span>';
+
+                const missingContainer = document.getElementById('sg-missing-pills');
+                missingContainer.innerHTML = evalData.semantic_matching_details.missing_skills.map(m => 
+                    `<span class="badge badge-danger" style="margin:4px;">${m.skill}</span>`
+                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No missing required skills!</span>';
+
+                const hiddenContainer = document.getElementById('sg-hidden-pills');
+                hiddenContainer.innerHTML = evalData.hidden_skill_gaps.map(h => 
+                    `<span class="badge badge-warning" style="margin:4px;">${h.skill} (Prereq for ${h.required_for})</span>`
+                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No hidden prerequisite blockers</span>';
+
+                // Update XAI and Radar
+                updateXAI(evalData);
+            } catch (err) {
+                console.error("Analysis Error:", err);
+            }
+        }
+
+        // ================= 2. UPDATE XAI RADAR & ATTRIBUTION =================
+        function updateXAI(evalData) {
+            const bd = evalData.signal_breakdown;
+            document.getElementById('xai-gauge-score').innerText = evalData.job_fit_score;
+            document.getElementById('xai-gauge-tier').innerText = evalData.fit_tier;
+
+            const tbody = document.getElementById('xai-attribution-tbody');
+            tbody.innerHTML = `
+                <tr>
+                    <td><strong>Semantic Skill Match</strong></td>
+                    <td>${bd.skill_match.weight * 100}%</td>
+                    <td>${bd.skill_match.raw_score}</td>
+                    <td style="color:var(--accent-emerald);">+${bd.skill_match.weighted_contribution}</td>
+                    <td><span class="badge badge-success">High Relevance</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Experience Match</strong></td>
+                    <td>${bd.experience.weight * 100}%</td>
+                    <td>${bd.experience.raw_score}</td>
+                    <td style="color:var(--accent-emerald);">+${bd.experience.weighted_contribution}</td>
+                    <td><span class="badge badge-primary">Meets Benchmark</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Project Complexity</strong></td>
+                    <td>${bd.projects.weight * 100}%</td>
+                    <td>${bd.projects.raw_score}</td>
+                    <td style="color:var(--accent-emerald);">+${bd.projects.weighted_contribution}</td>
+                    <td><span class="badge badge-success">Portfolio Verified</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Industry Certifications</strong></td>
+                    <td>${bd.certifications.weight * 100}%</td>
+                    <td>${bd.certifications.raw_score}</td>
+                    <td style="color:var(--accent-emerald);">+${bd.certifications.weighted_contribution}</td>
+                    <td><span class="badge badge-warning">Standard Credentials</span></td>
+                </tr>
+                <tr>
+                    <td><strong>ML Predictive Prior</strong></td>
+                    <td>${bd.ml_prediction.weight * 100}%</td>
+                    <td>${bd.ml_prediction.raw_score}</td>
+                    <td style="color:var(--accent-emerald);">+${bd.ml_prediction.weighted_contribution}</td>
+                </tr>
+            `;
+
+            // Query SHAP TreeExplainer Endpoint
+            fetch('/api/v2/xai/candidate/candidate_001', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    candidate_name: "Active Candidate",
+                    target_role: evalData.target_role || "ML Engineer",
+                    candidate_features: {
+                        coding_skills: 8.5,
+                        ai_and_ml_skills: (evalData.semantic_matching_details.match_rate_pct / 10.0),
+                        maths_stats_skills: 8.0,
+                        big_data_skills: 7.2,
+                        dashboard_and_storytelling_skills: 7.0,
+                        skill_match_score: evalData.signal_breakdown.skill_match.raw_score,
+                        experience_score: evalData.signal_breakdown.experience.raw_score,
+                        project_score: evalData.signal_breakdown.projects.raw_score,
+                        certification_score: evalData.signal_breakdown.certifications.raw_score
+                    }
+                })
+            }).then(r => r.json()).then(shapData => {
+                if (shapData && shapData.feature_attributions_detailed) {
+                    document.getElementById('xai-shap-prior-label').innerHTML = `Expected Model Prior $\\mathbb{E}[f(x)]$: <strong>${shapData.base_value}</strong> | Engine: <span class="badge badge-primary">${shapData.explainer_engine}</span>`;
+                    
+                    const container = document.getElementById('xai-shap-bars-container');
+                    container.innerHTML = shapData.feature_attributions_detailed.map(attr => {
+                        const isPos = attr.direction === 'positive';
+                        const color = isPos ? '#10b981' : '#f43f5e';
+                        const widthPct = Math.min(100, Math.max(10, attr.impact_pct * 1.5));
+                        return `
+                            <div>
+                                <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
+                                    <span><strong>${attr.feature_name}</strong> (${attr.feature_value})</span>
+                                    <span style="color:${color}; font-weight:700;">${isPos ? '+' : ''}${attr.shap_value} SHAP (${attr.impact_pct}%)</span>
+                                </div>
+                                <div style="background:var(--bg-glass); border:1px solid var(--border-color); height:7px; border-radius:4px; overflow:hidden;">
+                                    <div style="background:${color}; width:${widthPct}%; height:100%; border-radius:4px;"></div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }).catch(e => console.warn("SHAP fetch error:", e));
+
+
+            // Draw Radar Chart
+            const ctx = document.getElementById('xai-radar-chart').getContext('2d');
+            if (radarChartInstance) radarChartInstance.destroy();
+
+            radarChartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Semantic Skill', 'Experience', 'Projects', 'Certifications', 'ML Prior', 'Prerequisites'],
+                    datasets: [
+                        {
+                            label: 'Candidate Score',
+                            data: [
+                                bd.skill_match.raw_score,
+                                bd.experience.raw_score,
+                                bd.projects.raw_score,
+                                bd.certifications.raw_score,
+                                bd.ml_prediction.raw_score,
+                                Math.max(20, 100 - (evalData.hidden_skill_gaps.length * 15))
+                            ],
+                            backgroundColor: 'rgba(99, 102, 241, 0.25)',
+                            borderColor: '#6366f1',
+                            pointBackgroundColor: '#6366f1',
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Role Target Benchmark',
+                            data: [85, 80, 75, 70, 80, 90],
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            borderColor: '#10b981',
+                            borderDash: [4, 4],
+                            borderWidth: 1.5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            ticks: { display: false },
+                            grid: { color: 'rgba(255, 255, 255, 0.08)' },
+                            angleLines: { color: 'rgba(255, 255, 255, 0.08)' },
+                            pointLabels: { color: '#9ca3af', font: { size: 11 } }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
+                    }
+                }
+            });
+        }
+
+        // ================= 3. LOAD KNOWLEDGE GRAPH =================
+        async function initKnowledgeGraph() {
+            try {
+                const res = await fetch('/api/knowledge-graph/data');
+                const data = await res.json();
+
+                const container = document.getElementById('kg-network-container');
+                
+                // Color palette for domain categories
+                const domainColors = {
+                    "Core Programming": "#6366f1",
+                    "Data Management": "#06b6d4",
+                    "Math & Statistics": "#8b5cf6",
+                    "Data Engineering & Prep": "#3b82f6",
+                    "Data Analytics": "#14b8a6",
+                    "Data Visualization": "#ec4899",
+                    "Business Intelligence": "#f59e0b",
+                    "Machine Learning": "#10b981",
+                    "Artificial Intelligence": "#a855f7",
+                    "Generative AI": "#ef4444",
+                    "Cloud & DevOps": "#64748b",
+                    "MLOps": "#f97316"
+                };
+
+                const nodes = data.nodes.map(n => ({
+                    id: n.id,
+                    label: n.label,
+                    color: {
+                        background: domainColors[n.domain] || '#6366f1',
+                        border: '#ffffff',
+                        highlight: { background: '#ffffff', border: '#6366f1' }
+                    },
+                    font: { color: '#ffffff', size: 12 },
+                    shape: 'dot',
+                    size: 14 + (n.out_degree * 2),
+                    nodeData: n
+                }));
+
+                const edges = data.edges.map(e => ({
+                    from: e.source,
+                    to: e.target,
+                    arrows: 'to',
+                    color: { color: 'rgba(255, 255, 255, 0.2)', highlight: '#6366f1' },
+                    smooth: { type: 'cubicBezier' }
+                }));
+
+                graphNodesDataset = new vis.DataSet(nodes);
+                graphEdgesDataset = new vis.DataSet(edges);
+
+                const networkData = { nodes: graphNodesDataset, edges: graphEdgesDataset };
+                const options = {
+                    physics: {
+                        solver: 'forceAtlas2Based',
+                        forceAtlas2Based: { gravitationalConstant: -35, centralGravity: 0.01, springLength: 70, damping: 0.4 }
+                    },
+                    interaction: { hover: true, tooltipDelay: 100 }
+                };
+
+                visNetwork = new vis.Network(container, networkData, options);
+
+                visNetwork.on("click", function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        const clickedNode = nodes.find(n => n.id === nodeId);
+                        if (clickedNode) inspectNode(clickedNode.nodeData);
+                    }
+                });
+            } catch (err) {
+                console.error("KG Init Error:", err);
+            }
+        }
+
+        async function inspectNode(n) {
+            const insp = document.getElementById('kg-node-inspector');
+            try {
+                const res = await fetch(`/api/knowledge-graph/dependencies/${encodeURIComponent(n.id)}`);
+                const dep = await res.json();
+
+                insp.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                        <h3 style="font-size:18px; font-weight:700; color:var(--text-primary);">${n.label}</h3>
+                        <span class="badge badge-primary">${n.domain}</span>
+                    </div>
+                    <div class="grid-3" style="margin-bottom:16px;">
+                        <div class="metric-box"><span class="metric-label">Difficulty</span><div style="font-size:18px; font-weight:700;">Level ${n.difficulty}</div></div>
+                        <div class="metric-box"><span class="metric-label">Market Demand</span><div style="font-size:18px; font-weight:700; color:var(--accent-emerald);">${n.demand}/100</div></div>
+                        <div class="metric-box"><span class="metric-label">Level</span><div style="font-size:18px; font-weight:700;">${n.level}</div></div>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <strong>Direct Prerequisites:</strong> ${dep.direct_prerequisites.length > 0 ? dep.direct_prerequisites.map(p => `<span class="badge badge-warning" style="margin:2px;">${p}</span>`).join('') : '<span style="color:var(--text-muted);">None (Foundational Entrypoint)</span>'}
+                    </div>
+                    <div>
+                        <strong>Unlocks Skills:</strong> ${dep.unlocks_skills.length > 0 ? dep.unlocks_skills.map(u => `<span class="badge badge-success" style="margin:2px;">${u}</span>`).join('') : '<span style="color:var(--text-muted);">Terminal/Specialized Skill</span>'}
+                    </div>
+                `;
+            } catch (err) {
+                console.error("Inspector error:", err);
+            }
+        }
+
+        async function findCareerTrajectory() {
+            const src = document.getElementById('kg-start-role').value;
+            const dst = document.getElementById('kg-target-role').value;
+            try {
+                const res = await fetch('/api/knowledge-graph/path', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ start_skill_or_role: src, target_skill_or_role: dst })
+                });
+                const data = await res.json();
+                const container = document.getElementById('kg-career-path-result');
+                container.innerHTML = `
+                    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:8px;">
+                        ${data.trajectory_path.map((p, idx) => `
+                            <span class="badge badge-primary" style="font-size:13px; padding:6px 12px;">Step ${idx+1}: ${p}</span>
+                            ${idx < data.trajectory_path.length - 1 ? '<i data-lucide="arrow-right" style="color:var(--text-muted); width:14px;"></i>' : ''}
+                        `).join('')}
+                    </div>
+                `;
+                lucide.createIcons();
+            } catch (err) {
+                console.error("Path search error:", err);
+            }
+        }
+
+        function fitGraph() {
+            if (visNetwork) visNetwork.fit();
+        }
+
+        function highlightCriticalPath() {
+            if (visNetwork) {
+                visNetwork.selectNodes(['Python', 'Linear Algebra', 'NumPy', 'Scikit-Learn', 'Deep Learning', 'PyTorch', 'Transformers', 'LLMs']);
+            }
+        }
+
+        // ================= 4. PERSONALIZED LEARNING ROADMAP =================
+        async function generatePersonalizedRoadmap() {
+            const candidateSkills = document.getElementById('sg-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const requiredSkills = document.getElementById('sg-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const targetRole = document.getElementById('sg-target-role').value;
+
+            try {
+                const res = await fetch('/api/roadmap/generate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        candidate_skills: candidateSkills,
+                        target_role: targetRole,
+                        target_role_skills: requiredSkills,
+                        hours_per_week: 10
+                    })
+                });
+                const data = await res.json();
+
+                document.getElementById('rm-weeks-val').innerText = `${data.total_estimated_weeks} Weeks`;
+                document.getElementById('rm-modules-val').innerText = `${data.roadmap_phases.length} Phases`;
+                document.getElementById('rm-leap-val').innerText = `${data.current_readiness_pct}% ➔ ${data.projected_final_readiness_pct}%`;
+
+                const timelineContainer = document.getElementById('rm-timeline-container');
+                timelineContainer.innerHTML = data.roadmap_phases.map((phase, idx) => `
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                <h3 style="font-size:15px; font-weight:700; color:var(--text-primary);">${phase.timeframe}: ${phase.skills_covered.join(' & ')}</h3>
+                                <span class="badge badge-success">Target Readiness: ${phase.projected_readiness_after_phase}%</span>
+                            </div>
+                            ${phase.modules.map(m => `
+                                <div style="margin-top:8px; padding-top:8px; border-top:1px solid var(--border-color);">
+                                    <div style="font-weight:600; font-size:13.5px; color:var(--accent-primary);">${m.module_title}</div>
+                                    <div style="font-size:12.5px; color:var(--text-secondary); margin-top:2px;">
+                                        <strong>Format:</strong> ${m.learning_format} • <strong>Est Hours:</strong> ${m.estimated_hours}h
+                                    </div>
+                                    <div style="font-size:12.5px; color:var(--accent-emerald); margin-top:4px;">
+                                        🎯 <strong>Capstone:</strong> ${m.capstone_project}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error("Roadmap generation error:", err);
+            }
+        }
+
+        // ================= 5. FUTURE SKILL DEMAND =================
+        async function loadFutureSkills() {
+            try {
+                const res = await fetch('/api/future-skills/forecast');
+                const data = await res.json();
+
+                const tbody = document.getElementById('future-forecast-tbody');
+                tbody.innerHTML = data.full_skill_forecast_table.map(s => `
+                    <tr>
+                        <td><strong>${s.skill}</strong></td>
+                        <td><span class="badge badge-primary">${s.category}</span></td>
+                        <td style="color:${s.growth_cagr_pct > 0 ? 'var(--accent-emerald)' : 'var(--accent-rose)'}; font-weight:700;">
+                            ${s.growth_cagr_pct > 0 ? '+' : ''}${s.growth_cagr_pct}%
+                        </td>
+                        <td>${s.current_index.toLocaleString()}</td>
+                        <td>${s.projected_demand_2yr.toLocaleString()}</td>
+                        <td>${s.projected_demand_5yr.toLocaleString()}</td>
+                        <td>
+                            <span class="badge ${s.status === 'Hyper-Growth' ? 'badge-danger' : (s.growth_cagr_pct > 0 ? 'badge-success' : 'badge-danger')}">
+                                ${s.status}
+                            </span>
+                        </td>
+                    </tr>
+                `).join('');
+
+                // Render CAGR Bar Chart
+                const cagrCtx = document.getElementById('future-cagr-chart').getContext('2d');
+                if (cagrChartInstance) cagrChartInstance.destroy();
+
+                const topSkills = data.full_skill_forecast_table.slice(0, 8);
+                cagrChartInstance = new Chart(cagrCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: topSkills.map(s => s.skill),
+                        datasets: [{
+                            label: 'Annual Growth CAGR (%)',
+                            data: topSkills.map(s => s.growth_cagr_pct),
+                            backgroundColor: topSkills.map(s => s.growth_cagr_pct > 0 ? '#10b981' : '#f43f5e'),
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { grid: { color: 'rgba(255, 255, 255, 0.08)' }, ticks: { color: '#9ca3af' } },
+                            x: { grid: { display: false }, ticks: { color: '#9ca3af', font: { size: 10 } } }
+                        }
+                    }
+                });
+
+                // Status Doughnut
+                const doughnutCtx = document.getElementById('future-status-doughnut').getContext('2d');
+                if (doughnutChartInstance) doughnutChartInstance.destroy();
+
+                doughnutChartInstance = new Chart(doughnutCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Hyper-Growth / Emerging', 'Steady Demand Core', 'Declining Legacy'],
+                        datasets: [{
+                            data: [
+                                data.emerging_technologies.length,
+                                data.full_skill_forecast_table.length - data.emerging_technologies.length - data.declining_technologies.length,
+                                data.declining_technologies.length
+                            ],
+                            backgroundColor: ['#6366f1', '#10b981', '#f43f5e']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'bottom', labels: { color: '#9ca3af' } } }
+                    }
+                });
+
+            } catch (err) {
+                console.error("Future skills load error:", err);
+            }
+        }
+
+        // ================= 6. RECRUITER ANALYTICS & HWEF WEIGHTS =================
+        async function loadRecruiterData() {
+            try {
+                // Load Weights
+                const wRes = await fetch('/api/hwef/weights');
+                const wData = await wRes.json();
+                const w = wData.weights;
+
+                document.getElementById('w-skill').value = w.skill_match;
+                document.getElementById('w-exp').value = w.experience;
+                document.getElementById('w-proj').value = w.projects;
+                document.getElementById('w-cert').value = w.certifications;
+                document.getElementById('w-ml').value = w.ml_prediction;
+                onWeightSliderChange();
+
+                // Mock batch candidate ranking
+                const sampleCandidates = [
+                    { candidate_name: "Alex Chen", candidate_skills: ["Python", "SQL", "PyTorch", "Transformers", "FastAPI"], candidate_years_exp: 5.0 },
+                    { candidate_name: "Sarah Jenkins", candidate_skills: ["Python", "SQL", "Pandas", "Scikit-Learn", "Tableau"], candidate_years_exp: 3.5 },
+                    { candidate_name: "Vikram Mehta", candidate_skills: ["Python", "Docker", "MLflow", "Kubernetes", "FastAPI"], candidate_years_exp: 4.2 },
+                    { candidate_name: "Priya Sharma", candidate_skills: ["SQL", "Tableau", "Power BI", "Excel"], candidate_years_exp: 2.0 }
+                ];
+
+                const rankRes = await fetch('/api/candidates/rank', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        candidates: sampleCandidates,
+                        required_skills: ["Python", "SQL", "TensorFlow", "Docker", "MLOps"],
+                        target_role: "Senior Machine Learning Engineer"
+                    })
+                });
+                const rankData = await rankRes.json();
+
+                const tbody = document.getElementById('recruiter-candidates-tbody');
+                tbody.innerHTML = rankData.rankings.map(c => `
+                    <tr>
+                        <td><strong>#${c.rank}</strong></td>
+                        <td>${c.candidate_name}</td>
+                        <td style="color:var(--accent-emerald); font-weight:700;">${c.job_fit_score}%</td>
+                        <td style="color:var(--accent-rose); font-weight:700;">${c.skill_gap_percentage}%</td>
+                        <td><span class="badge badge-primary">${c.fit_tier}</span></td>
+                    </tr>
+                `).join('');
+            } catch (err) {
+                console.error("Recruiter data error:", err);
+            }
+        }
+
+        function onWeightSliderChange() {
+            const ws = parseFloat(document.getElementById('w-skill').value);
+            const we = parseFloat(document.getElementById('w-exp').value);
+            const wp = parseFloat(document.getElementById('w-proj').value);
+            const wc = parseFloat(document.getElementById('w-cert').value);
+            const wm = parseFloat(document.getElementById('w-ml').value);
+
+            document.getElementById('lbl-w-skill').innerText = `Skill Match Weight: ${ws.toFixed(2)}`;
+            document.getElementById('lbl-w-exp').innerText = `Experience Weight: ${we.toFixed(2)}`;
+            document.getElementById('lbl-w-proj').innerText = `Project Relevance Weight: ${wp.toFixed(2)}`;
+            document.getElementById('lbl-w-cert').innerText = `Certifications Weight: ${wc.toFixed(2)}`;
+            document.getElementById('lbl-w-ml').innerText = `ML Classifier Prior: ${wm.toFixed(2)}`;
+        }
+
+        async function saveWeightsToServer() {
+            const ws = parseFloat(document.getElementById('w-skill').value);
+            const we = parseFloat(document.getElementById('w-exp').value);
+            const wp = parseFloat(document.getElementById('w-proj').value);
+            const wc = parseFloat(document.getElementById('w-cert').value);
+            const wm = parseFloat(document.getElementById('w-ml').value);
+
+            try {
+                const res = await fetch('/api/hwef/weights', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        skill_match: ws,
+                        experience: we,
+                        projects: wp,
+                        certifications: wc,
+                        ml_prediction: wm
+                    })
+                });
+                const data = await res.json();
+                alert("HWEF Fusion Weights updated and persisted successfully!");
+                runSkillGapAnalysis();
+            } catch (err) {
+                alert("Failed to save weights: " + err);
+            }
+        }
+
+        // ================= 7. ML MODEL BENCHMARKS =================
+        async function loadBenchmarks() {
+            try {
+                const res = await fetch('/api/models/benchmark');
+                const data = await res.json();
+
+                const tbody = document.getElementById('benchmarks-tbody');
+                const models = data.jds_models || [];
+                tbody.innerHTML = models.map((m, idx) => `
+                    <tr>
+                        <td><strong>#${idx + 1}</strong></td>
+                        <td><strong>${m.model}</strong></td>
+                        <td>${(m.accuracy * 100).toFixed(1)}%</td>
+                        <td style="color:var(--accent-emerald); font-weight:700;">${m.roc_auc.toFixed(3)}</td>
+                        <td>${m.f1_score.toFixed(3)}</td>
+                        <td>${m.precision.toFixed(3)}</td>
+                        <td>${m.recall.toFixed(3)}</td>
+                        <td>${m.balanced_accuracy.toFixed(3)}</td>
+                        <td>${m.brier_calibration.toFixed(3)}</td>
+                    </tr>
+                `).join('');
+            } catch (err) {
+                console.error("Benchmarks error:", err);
+            }
+        }
+
+        async function runHealthCheck() {
+            try {
+                const res = await fetch('/api/health');
+                const data = await res.json();
+                alert(`System Online! Version: ${data.version}\nEngines: HWEF, Semantic NLP, Knowledge Graph, Roadmap, Future Demand, Advanced ML all active.`);
+            } catch (err) {
+                alert("Health check failed: " + err);
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            runSkillGapAnalysis();
+            initKnowledgeGraph();
+            generatePersonalizedRoadmap();
+            loadFutureSkills();
+            loadRecruiterData();
+            loadBenchmarks();
+        });
+    </script>
+</body>
+</html>

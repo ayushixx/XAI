@@ -1,0 +1,403 @@
+{
+  "forecast_generated_horizon": "2026 - 2031 (5-Year Outlook)",
+  "top_skills_next_5_years": [
+    "Generative AI & LLMs",
+    "RAG Architectures",
+    "MLOps & Model Monitoring",
+    "Vector Databases (Milvus/Pinecone)",
+    "PyTorch",
+    "FastAPI",
+    "Docker & Kubernetes",
+    "Python",
+    "SQL",
+    "Apache Spark / PySpark"
+  ],
+  "emerging_technologies": [
+    {
+      "skill": "Generative AI & LLMs",
+      "category": "AI / GenAI",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 48.5,
+      "current_index": 4200,
+      "projected_demand_2yr": 9261,
+      "projected_demand_5yr": 30330,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "RAG Architectures",
+      "category": "AI / GenAI",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 54.2,
+      "current_index": 2800,
+      "projected_demand_2yr": 6657,
+      "projected_demand_5yr": 24410,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "MLOps & Model Monitoring",
+      "category": "DevOps / MLOps",
+      "status": "High Growth",
+      "growth_cagr_pct": 38.0,
+      "current_index": 3900,
+      "projected_demand_2yr": 7427,
+      "projected_demand_5yr": 19519,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "Vector Databases (Milvus/Pinecone)",
+      "category": "Data Infrastructure",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 62.1,
+      "current_index": 2400,
+      "projected_demand_2yr": 6306,
+      "projected_demand_5yr": 26861,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "PyTorch",
+      "category": "Deep Learning",
+      "status": "High Growth",
+      "growth_cagr_pct": 32.4,
+      "current_index": 5100,
+      "projected_demand_2yr": 8940,
+      "projected_demand_5yr": 20749,
+      "demand_score_100": 97.1,
+      "is_emerging": true,
+      "is_declining": false
+    }
+  ],
+  "declining_technologies": [
+    {
+      "skill": "Legacy SAS Programming",
+      "category": "Legacy Analytics",
+      "status": "Declining",
+      "growth_cagr_pct": -12.4,
+      "current_index": 1900,
+      "projected_demand_2yr": 1458,
+      "projected_demand_5yr": 980,
+      "demand_score_100": 59.2,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "Static On-Prem ETL (Informatica 9.x)",
+      "category": "Legacy ETL",
+      "status": "Declining",
+      "growth_cagr_pct": -16.8,
+      "current_index": 1400,
+      "projected_demand_2yr": 969,
+      "projected_demand_5yr": 558,
+      "demand_score_100": 55.1,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "VBA / Macro Scripting",
+      "category": "Legacy Automation",
+      "status": "Rapid Decline",
+      "growth_cagr_pct": -21.5,
+      "current_index": 1200,
+      "projected_demand_2yr": 739,
+      "projected_demand_5yr": 357,
+      "demand_score_100": 51.2,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "Hadoop MapReduce (Java)",
+      "category": "Legacy Big Data",
+      "status": "Rapid Decline",
+      "growth_cagr_pct": -28.0,
+      "current_index": 900,
+      "projected_demand_2yr": 466,
+      "projected_demand_5yr": 174,
+      "demand_score_100": 47.3,
+      "is_emerging": false,
+      "is_declining": true
+    }
+  ],
+  "growing_job_roles": [
+    {
+      "role": "AI Solutions Architect",
+      "growth_5yr_pct": "+68%",
+      "primary_driver": "Enterprise GenAI Integration",
+      "demand_tier": "Very High"
+    },
+    {
+      "role": "MLOps & Platform Engineer",
+      "growth_5yr_pct": "+52%",
+      "primary_driver": "Model Governance & Scale",
+      "demand_tier": "Very High"
+    },
+    {
+      "role": "Generative AI Engineer",
+      "growth_5yr_pct": "+85%",
+      "primary_driver": "LLM fine-tuning & Agentic workflows",
+      "demand_tier": "Extreme"
+    },
+    {
+      "role": "Data Engineer (Modern Lakehouse)",
+      "growth_5yr_pct": "+42%",
+      "primary_driver": "Iceberg, Delta & Real-time Streaming",
+      "demand_tier": "High"
+    },
+    {
+      "role": "Analytics Translator / Product Lead",
+      "growth_5yr_pct": "+35%",
+      "primary_driver": "Bridging C-suite to AI outputs",
+      "demand_tier": "High"
+    }
+  ],
+  "declining_job_roles": [
+    {
+      "role": "Manual Data Entry & Basic Reporting",
+      "decline_5yr_pct": "-45%",
+      "cause": "Automated LLM agents and BI self-serve"
+    },
+    {
+      "role": "Legacy SAS Report Operator",
+      "decline_5yr_pct": "-38%",
+      "cause": "Migration to Open Source Python / Cloud Spark"
+    },
+    {
+      "role": "Static Dashboard Maintenance Worker",
+      "decline_5yr_pct": "-30%",
+      "cause": "Autonomous GenAI analytics copilots"
+    }
+  ],
+  "recommended_upskilling_areas": [
+    {
+      "domain": "Generative AI & LLM Systems",
+      "core_stack": [
+        "Transformers",
+        "RAG Architectures",
+        "PyTorch",
+        "Vector Databases"
+      ],
+      "urgency": "Immediate (Highest Market Premium)"
+    },
+    {
+      "domain": "Enterprise MLOps & Production",
+      "core_stack": [
+        "Docker",
+        "Kubernetes",
+        "FastAPI",
+        "MLflow",
+        "Model Monitoring"
+      ],
+      "urgency": "High (Essential for Deployment)"
+    },
+    {
+      "domain": "Modern Cloud Lakehouses",
+      "core_stack": [
+        "PySpark",
+        "Apache Iceberg",
+        "SQL",
+        "Airflow"
+      ],
+      "urgency": "High (Data Foundation)"
+    }
+  ],
+  "full_skill_forecast_table": [
+    {
+      "skill": "Generative AI & LLMs",
+      "category": "AI / GenAI",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 48.5,
+      "current_index": 4200,
+      "projected_demand_2yr": 9261,
+      "projected_demand_5yr": 30330,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "RAG Architectures",
+      "category": "AI / GenAI",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 54.2,
+      "current_index": 2800,
+      "projected_demand_2yr": 6657,
+      "projected_demand_5yr": 24410,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "MLOps & Model Monitoring",
+      "category": "DevOps / MLOps",
+      "status": "High Growth",
+      "growth_cagr_pct": 38.0,
+      "current_index": 3900,
+      "projected_demand_2yr": 7427,
+      "projected_demand_5yr": 19519,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "Vector Databases (Milvus/Pinecone)",
+      "category": "Data Infrastructure",
+      "status": "Hyper-Growth",
+      "growth_cagr_pct": 62.1,
+      "current_index": 2400,
+      "projected_demand_2yr": 6306,
+      "projected_demand_5yr": 26861,
+      "demand_score_100": 99.7,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "PyTorch",
+      "category": "Deep Learning",
+      "status": "High Growth",
+      "growth_cagr_pct": 32.4,
+      "current_index": 5100,
+      "projected_demand_2yr": 8940,
+      "projected_demand_5yr": 20749,
+      "demand_score_100": 97.1,
+      "is_emerging": true,
+      "is_declining": false
+    },
+    {
+      "skill": "FastAPI",
+      "category": "Backend / AI Serving",
+      "status": "High Growth",
+      "growth_cagr_pct": 28.5,
+      "current_index": 4600,
+      "projected_demand_2yr": 7595,
+      "projected_demand_5yr": 16116,
+      "demand_score_100": 93.8,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Docker & Kubernetes",
+      "category": "Cloud & DevOps",
+      "status": "Steady Growth",
+      "growth_cagr_pct": 22.0,
+      "current_index": 6800,
+      "projected_demand_2yr": 10121,
+      "projected_demand_5yr": 18378,
+      "demand_score_100": 89.5,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Python",
+      "category": "Core Programming",
+      "status": "Dominant Core",
+      "growth_cagr_pct": 18.2,
+      "current_index": 14200,
+      "projected_demand_2yr": 19839,
+      "projected_demand_5yr": 32762,
+      "demand_score_100": 88.4,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "SQL",
+      "category": "Data Management",
+      "status": "Dominant Core",
+      "growth_cagr_pct": 14.5,
+      "current_index": 13800,
+      "projected_demand_2yr": 18092,
+      "projected_demand_5yr": 27158,
+      "demand_score_100": 85.1,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Apache Spark / PySpark",
+      "category": "Big Data",
+      "status": "Steady Growth",
+      "growth_cagr_pct": 16.8,
+      "current_index": 4900,
+      "projected_demand_2yr": 6684,
+      "projected_demand_5yr": 10651,
+      "demand_score_100": 84.6,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Scikit-Learn",
+      "category": "Classical ML",
+      "status": "Steady Core",
+      "growth_cagr_pct": 15.0,
+      "current_index": 7100,
+      "projected_demand_2yr": 9389,
+      "projected_demand_5yr": 14280,
+      "demand_score_100": 84.5,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Tableau / Power BI",
+      "category": "Business Intelligence",
+      "status": "Steady Demand",
+      "growth_cagr_pct": 12.0,
+      "current_index": 7500,
+      "projected_demand_2yr": 9408,
+      "projected_demand_5yr": 13217,
+      "demand_score_100": 82.0,
+      "is_emerging": false,
+      "is_declining": false
+    },
+    {
+      "skill": "Legacy SAS Programming",
+      "category": "Legacy Analytics",
+      "status": "Declining",
+      "growth_cagr_pct": -12.4,
+      "current_index": 1900,
+      "projected_demand_2yr": 1458,
+      "projected_demand_5yr": 980,
+      "demand_score_100": 59.2,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "Static On-Prem ETL (Informatica 9.x)",
+      "category": "Legacy ETL",
+      "status": "Declining",
+      "growth_cagr_pct": -16.8,
+      "current_index": 1400,
+      "projected_demand_2yr": 969,
+      "projected_demand_5yr": 558,
+      "demand_score_100": 55.1,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "VBA / Macro Scripting",
+      "category": "Legacy Automation",
+      "status": "Rapid Decline",
+      "growth_cagr_pct": -21.5,
+      "current_index": 1200,
+      "projected_demand_2yr": 739,
+      "projected_demand_5yr": 357,
+      "demand_score_100": 51.2,
+      "is_emerging": false,
+      "is_declining": true
+    },
+    {
+      "skill": "Hadoop MapReduce (Java)",
+      "category": "Legacy Big Data",
+      "status": "Rapid Decline",
+      "growth_cagr_pct": -28.0,
+      "current_index": 900,
+      "projected_demand_2yr": 466,
+      "projected_demand_5yr": 174,
+      "demand_score_100": 47.3,
+      "is_emerging": false,
+      "is_declining": true
+    }
+  ]
+}

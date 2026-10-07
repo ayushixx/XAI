@@ -12,7 +12,9 @@ def get_logger(name):
         ch.setFormatter(formatter)
         logger.addHandler(ch)
         
-        fh = logging.FileHandler(BASE_DIR / 'logs' / 'pipeline.log')
+        logs_dir = BASE_DIR / 'logs'
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        fh = logging.FileHandler(logs_dir / 'pipeline.log')
         fh.setFormatter(formatter)
         logger.addHandler(fh)
     return logger

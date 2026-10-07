@@ -1,0 +1,7 @@
+dataset,model,accuracy,roc_auc,f1_score,precision,recall,balanced_accuracy,brier_calibration,rank
+JDS,Logistic Regression,0.8417,0.8936,0.8533,0.8312,0.8767,0.8399,0.1246,1
+JDS,CatBoost,0.8129,0.8623,0.8219,0.8219,0.8219,0.8125,0.1427,2
+JDS,LightGBM,0.7914,0.8591,0.7972,0.8143,0.7808,0.7919,0.1532,3
+JDS,XGBoost,0.7914,0.8499,0.7972,0.8143,0.7808,0.7919,0.1631,4
+JDS,Random Forest,0.777,0.8464,0.7801,0.8088,0.7534,0.7782,0.1673,5
+JDS,Decision Tree,0.7842,0.7708,0.7945,0.7945,0.7945,0.7836,0.2132,6

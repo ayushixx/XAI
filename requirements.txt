@@ -8,3 +8,12 @@ seaborn
 statsmodels
 joblib
 pydantic
+fastapi
+uvicorn
+networkx
+sentence-transformers
+xgboost
+lightgbm
+catboost
+shap
+

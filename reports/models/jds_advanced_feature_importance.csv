@@ -1,0 +1,31 @@
+dataset,model,feature,importance
+JDS,Logistic Regression,big_data_skills,0.7533
+JDS,Logistic Regression,maths-stats_skills,1.4513
+JDS,Logistic Regression,coding_skills,0.5896
+JDS,Logistic Regression,ai_and_ml_skills,1.0425
+JDS,Logistic Regression,dashboard_and_storytelling_skills,1.1861
+JDS,Decision Tree,big_data_skills,0.0425
+JDS,Decision Tree,maths-stats_skills,0.2486
+JDS,Decision Tree,coding_skills,0.1033
+JDS,Decision Tree,ai_and_ml_skills,0.0534
+JDS,Decision Tree,dashboard_and_storytelling_skills,0.5523
+JDS,Random Forest,big_data_skills,0.1415
+JDS,Random Forest,maths-stats_skills,0.2468
+JDS,Random Forest,coding_skills,0.1637
+JDS,Random Forest,ai_and_ml_skills,0.1514
+JDS,Random Forest,dashboard_and_storytelling_skills,0.2966
+JDS,XGBoost,big_data_skills,0.071
+JDS,XGBoost,maths-stats_skills,0.2094
+JDS,XGBoost,coding_skills,0.1158
+JDS,XGBoost,ai_and_ml_skills,0.1275
+JDS,XGBoost,dashboard_and_storytelling_skills,0.4763
+JDS,LightGBM,big_data_skills,138.0
+JDS,LightGBM,maths-stats_skills,95.0
+JDS,LightGBM,coding_skills,80.0
+JDS,LightGBM,ai_and_ml_skills,51.0
+JDS,LightGBM,dashboard_and_storytelling_skills,33.0
+JDS,CatBoost,big_data_skills,15.9564
+JDS,CatBoost,maths-stats_skills,30.0411
+JDS,CatBoost,coding_skills,14.5905
+JDS,CatBoost,ai_and_ml_skills,15.181
+JDS,CatBoost,dashboard_and_storytelling_skills,24.2309
