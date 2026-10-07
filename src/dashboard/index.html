@@ -492,6 +492,12 @@
             <a class="nav-item" onclick="switchTab('recruiter-analytics')">
                 <i data-lucide="users"></i> Recruiter & Weights
             </a>
+            <a class="nav-item" onclick="switchTab('counterfactual')">
+                <i data-lucide="help-circle"></i> Counterfactual Optimizer
+            </a>
+            <a class="nav-item" onclick="switchTab('career-gps')">
+                <i data-lucide="navigation"></i> Career GPS Navigator
+            </a>
             <a class="nav-item" onclick="switchTab('model-benchmarks')">
                 <i data-lucide="cpu"></i> ML Model Benchmarks
             </a>
@@ -834,6 +840,132 @@
                 </div>
             </section>
 
+            <!-- ================= PAGE 8: COUNTERFACTUAL SKILL RECOMMENDATIONS ================= -->
+            <section id="tab-counterfactual" class="view-section">
+                <div class="grid-3" style="margin-bottom:24px;">
+                    <div class="metric-box">
+                        <span class="metric-label">Current Fit Baseline $f(X)$</span>
+                        <div class="metric-value" style="color:var(--text-secondary);" id="cf-base-val">72.0%</div>
+                        <span class="badge badge-primary">Baseline State</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Max Counterfactual Potential $f(X')$</span>
+                        <div class="metric-value" style="color:var(--accent-emerald);" id="cf-potential-val">91.0%</div>
+                        <span class="badge badge-success" id="cf-max-gain-badge">Max Gain: +19.0%</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Optimal Minimal Skill Bundle</span>
+                        <div class="metric-value" style="color:var(--accent-cyan);" id="cf-bundle-count">2 Skills</div>
+                        <span class="badge badge-primary" id="cf-bundle-target">Achieves 90%+ Target</span>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Left: Single-Skill Marginal Gains Bar Chart -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="bar-chart-2"></i> Skill Intervention Marginal Gains ($\Delta \text{Score}$)</div>
+                        </div>
+                        <div style="height:320px;">
+                            <canvas id="cf-impact-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Right: Optimal Skill Bundle & Synergy Combos -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"><i data-lucide="sparkles"></i> Synergistic Multi-Skill Combinations</div>
+                        </div>
+                        <div id="cf-bundle-summary-card" style="background:var(--bg-glass); border:1px solid var(--accent-primary); padding:14px; border-radius:var(--radius-md); margin-bottom:16px;">
+                            <h4 style="color:var(--accent-primary); font-size:13.5px; margin-bottom:4px;">🎯 Recommended Minimal Action Plan</h4>
+                            <div id="cf-bundle-text" style="font-size:13px; color:var(--text-secondary);">Loading optimal counterfactual set...</div>
+                        </div>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Skill Combination</th>
+                                    <th>New Score</th>
+                                    <th>Marginal Gain $\Delta$</th>
+                                    <th>Target Reached</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cf-combos-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Why It Was Recommended Explainability Cards -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="help-circle"></i> Counterfactual Explainability (Why Each Skill Was Recommended)</div>
+                    </div>
+                    <div class="grid-2" id="cf-explainability-cards"></div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 9: CAREER GPS NAVIGATOR ================= -->
+            <section id="tab-career-gps" class="view-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="navigation"></i> Career GPS Shortest Path Navigation (NetworkX Dijkstra / A*)</div>
+                        <div style="display:flex; gap:12px; align-items:center;">
+                            <select id="gps-algo-select" class="input-field" style="padding:6px 12px; font-size:12.5px;">
+                                <option value="dijkstra">Dijkstra Shortest Friction Path</option>
+                                <option value="astar">A* Heuristic Graph Search</option>
+                            </select>
+                            <button class="btn-primary" style="padding:8px 16px; font-size:13px;" onclick="runCareerGPSNavigation()">
+                                <i data-lucide="compass"></i> Recalculate Route
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom:20px;">
+                        <div class="input-group">
+                            <label class="input-label">Current Candidate Skills</label>
+                            <input id="gps-current-skills" class="input-field" value="Python, SQL" placeholder="e.g. Python, SQL">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Destination Career Role</label>
+                            <select id="gps-target-role" class="input-field" onchange="runCareerGPSNavigation()">
+                                <option value="AI Engineer">AI Engineer (Deep Learning & Architecture)</option>
+                                <option value="Generative AI Architect">Generative AI Architect (LLMs & RAG)</option>
+                                <option value="MLOps Platform Engineer">MLOps Platform Engineer</option>
+                                <option value="Senior Data Scientist">Senior Data Scientist</option>
+                                <option value="Data Engineer (Lakehouse)">Data Engineer (Lakehouse & Streaming)</option>
+                                <option value="Lead BI & Analytics Translator">Lead BI & Analytics Translator</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid-4" style="margin-bottom:24px;">
+                        <div class="metric-box">
+                            <span class="metric-label">Trajectory Path Length</span>
+                            <div class="metric-value" style="color:var(--accent-primary);" id="gps-path-length">6 Skills</div>
+                            <span style="font-size:12px; color:var(--text-secondary);">Minimal Graph Steps</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Estimated Time to Master</span>
+                            <div class="metric-value" style="color:var(--accent-cyan);" id="gps-est-time">5.1 Months</div>
+                            <span style="font-size:12px; color:var(--text-secondary);" id="gps-est-weeks">22 Weeks Total</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Projected Salary Growth</span>
+                            <div class="metric-value" style="color:var(--accent-emerald);" id="gps-salary-boost">+130.0%</div>
+                            <span class="badge badge-success">High Market Premium</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Target Role Market Comp</span>
+                            <div class="metric-value" style="color:var(--accent-amber);" id="gps-projected-comp">$240,164</div>
+                            <span style="font-size:12px; color:var(--text-secondary);">Baseline Potential</span>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-step GPS Milestones Trajectory -->
+                    <h4 style="font-size:15px; font-weight:700; margin-bottom:16px; color:var(--text-primary);">📍 Step-by-Step GPS Navigation Roadmap</h4>
+                    <div class="timeline" id="gps-timeline-container"></div>
+                </div>
+            </section>
+
         </main>
     </div>
 
@@ -854,628 +986,192 @@
         let radarChartInstance = null;
         let cagrChartInstance = null;
         let doughnutChartInstance = null;
+        let cfImpactChartInstance = null;
         let visNetwork = null;
         let graphNodesDataset = null;
         let graphEdgesDataset = null;
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-
-            event.currentTarget.classList.add('active');
-            const targetSection = document.getElementById(`tab-${tabId}`);
-            if (targetSection) targetSection.classList.add('active');
-
-            const pageTitleEl = document.getElementById('current-page-title');
-            const titles = {
-                'skill-gap': 'Skill Gap Analysis & Semantic Matching',
-                'candidate-analysis': 'Candidate Evaluation & Explainable AI (XAI)',
-                'knowledge-graph': 'NetworkX Skill Knowledge Graph Visualizer',
-                'learning-roadmap': 'AI-Powered Personalized Learning Roadmap',
-                'future-skills': 'Future Skill Demand Forecasting & Velocity',
-                'recruiter-analytics': 'Recruiter Talent Leaderboard & HWEF Weights',
-                'model-benchmarks': 'Advanced Machine Learning Model Benchmarks'
-            };
-            if (pageTitleEl && titles[tabId]) {
-                pageTitleEl.querySelector('span').innerText = titles[tabId];
-            }
-
-            if (tabId === 'knowledge-graph' && visNetwork) {
-                setTimeout(() => { visNetwork.fit(); }, 200);
-            }
-        }
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            document.documentElement.classList.toggle('light');
-            const icon = document.getElementById('theme-icon');
-            if (document.documentElement.classList.contains('light')) {
-                icon.setAttribute('data-lucide', 'sun');
-            } else {
-                icon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons();
-        }
-
-        function onRoleChange() {
-            const role = document.getElementById('sg-target-role').value;
-            if (ROLE_PRESETS[role]) {
-                document.getElementById('sg-required-skills').value = ROLE_PRESETS[role].join(', ');
-            }
-        }
-
-        // ================= 1. RUN SKILL GAP ANALYSIS =================
-        async function runSkillGapAnalysis() {
-            const candidateSkills = document.getElementById('sg-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const requiredSkills = document.getElementById('sg-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const targetRole = document.getElementById('sg-target-role').value;
+        // ================= 8. COUNTERFACTUAL SIMULATION ENGINE =================
+        async function runCounterfactualSimulation() {
+            const candidateSkills = document.getElementById('cf-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const requiredSkills = document.getElementById('cf-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+            const targetRole = document.getElementById('cf-target-role').value;
 
             try {
-                const res = await fetch('/api/hwef/evaluate', {
+                const res = await fetch('/api/v2/counterfactual/simulate', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                         candidate_name: "Active Candidate",
                         candidate_skills: candidateSkills,
                         required_skills: requiredSkills,
+                        target_role: targetRole,
                         candidate_years_exp: 3.5,
                         required_years_exp: 4.0,
-                        target_role: targetRole
+                        top_k: 5
                     })
                 });
                 const data = await res.json();
-                const evalData = data.evaluation;
+                const sim = data.counterfactual_simulation;
 
-                // Update metrics
-                document.getElementById('sg-fit-val').innerText = `${evalData.job_fit_score}%`;
-                document.getElementById('sg-gap-val').innerText = `${evalData.skill_gap_percentage}%`;
-                document.getElementById('sg-match-val').innerText = `${evalData.semantic_matching_details.match_rate_pct}%`;
+                // Baseline Metrics
+                document.getElementById('cf-base-fit').innerText = `${sim.baseline.job_fit_score}%`;
+                document.getElementById('cf-base-wri').innerText = `${sim.baseline.workforce_readiness_index}%`;
+                document.getElementById('cf-base-gap').innerText = `${sim.baseline.skill_gap_percentage}%`;
+                document.getElementById('cf-base-tier').innerText = sim.baseline.fit_tier;
 
-                // Render Pills
-                const matchedContainer = document.getElementById('sg-matched-pills');
-                matchedContainer.innerHTML = evalData.semantic_matching_details.matched_skills.map(m => 
-                    `<span class="badge badge-success" style="margin:4px;">${m.required_skill} ≈ ${m.matched_candidate_skill} (${Math.round(m.similarity_score * 100)}%)</span>`
-                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No direct semantic matches</span>';
+                // Optimal Bundle
+                const opt = sim.optimal_bundle;
+                document.getElementById('cf-opt-skills').innerText = opt.recommended_skills.join(' + ') || "None required";
+                document.getElementById('cf-opt-score').innerText = `${opt.counterfactual_job_fit}%`;
+                document.getElementById('cf-opt-gain').innerText = `+${opt.total_marginal_gain}%`;
+                document.getElementById('cf-opt-wri').innerText = `${opt.counterfactual_readiness_index}%`;
 
-                const missingContainer = document.getElementById('sg-missing-pills');
-                missingContainer.innerHTML = evalData.semantic_matching_details.missing_skills.map(m => 
-                    `<span class="badge badge-danger" style="margin:4px;">${m.skill}</span>`
-                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No missing required skills!</span>';
+                // Render Marginal Gains Bar Chart
+                const chartCtx = document.getElementById('cf-impact-chart').getContext('2d');
+                if (cfImpactChartInstance) cfImpactChartInstance.destroy();
 
-                const hiddenContainer = document.getElementById('sg-hidden-pills');
-                hiddenContainer.innerHTML = evalData.hidden_skill_gaps.map(h => 
-                    `<span class="badge badge-warning" style="margin:4px;">${h.skill} (Prereq for ${h.required_for})</span>`
-                ).join('') || '<span style="color:var(--text-muted); font-size:13px;">No hidden prerequisite blockers</span>';
+                const labels = sim.top_skill_recommendations.map(s => s.skill);
+                const gains = sim.top_skill_recommendations.map(s => s.marginal_gain);
+                const colors = ['#6366f1', '#10b981', '#06b6d4', '#f59e0b', '#ec4899'];
 
-                // Update XAI and Radar
-                updateXAI(evalData);
-            } catch (err) {
-                console.error("Analysis Error:", err);
-            }
-        }
-
-        // ================= 2. UPDATE XAI RADAR & ATTRIBUTION =================
-        function updateXAI(evalData) {
-            const bd = evalData.signal_breakdown;
-            document.getElementById('xai-gauge-score').innerText = evalData.job_fit_score;
-            document.getElementById('xai-gauge-tier').innerText = evalData.fit_tier;
-
-            const tbody = document.getElementById('xai-attribution-tbody');
-            tbody.innerHTML = `
-                <tr>
-                    <td><strong>Semantic Skill Match</strong></td>
-                    <td>${bd.skill_match.weight * 100}%</td>
-                    <td>${bd.skill_match.raw_score}</td>
-                    <td style="color:var(--accent-emerald);">+${bd.skill_match.weighted_contribution}</td>
-                    <td><span class="badge badge-success">High Relevance</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Experience Match</strong></td>
-                    <td>${bd.experience.weight * 100}%</td>
-                    <td>${bd.experience.raw_score}</td>
-                    <td style="color:var(--accent-emerald);">+${bd.experience.weighted_contribution}</td>
-                    <td><span class="badge badge-primary">Meets Benchmark</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Project Complexity</strong></td>
-                    <td>${bd.projects.weight * 100}%</td>
-                    <td>${bd.projects.raw_score}</td>
-                    <td style="color:var(--accent-emerald);">+${bd.projects.weighted_contribution}</td>
-                    <td><span class="badge badge-success">Portfolio Verified</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Industry Certifications</strong></td>
-                    <td>${bd.certifications.weight * 100}%</td>
-                    <td>${bd.certifications.raw_score}</td>
-                    <td style="color:var(--accent-emerald);">+${bd.certifications.weighted_contribution}</td>
-                    <td><span class="badge badge-warning">Standard Credentials</span></td>
-                </tr>
-                <tr>
-                    <td><strong>ML Predictive Prior</strong></td>
-                    <td>${bd.ml_prediction.weight * 100}%</td>
-                    <td>${bd.ml_prediction.raw_score}</td>
-                    <td style="color:var(--accent-emerald);">+${bd.ml_prediction.weighted_contribution}</td>
-                </tr>
-            `;
-
-            // Query SHAP TreeExplainer Endpoint
-            fetch('/api/v2/xai/candidate/candidate_001', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    candidate_name: "Active Candidate",
-                    target_role: evalData.target_role || "ML Engineer",
-                    candidate_features: {
-                        coding_skills: 8.5,
-                        ai_and_ml_skills: (evalData.semantic_matching_details.match_rate_pct / 10.0),
-                        maths_stats_skills: 8.0,
-                        big_data_skills: 7.2,
-                        dashboard_and_storytelling_skills: 7.0,
-                        skill_match_score: evalData.signal_breakdown.skill_match.raw_score,
-                        experience_score: evalData.signal_breakdown.experience.raw_score,
-                        project_score: evalData.signal_breakdown.projects.raw_score,
-                        certification_score: evalData.signal_breakdown.certifications.raw_score
-                    }
-                })
-            }).then(r => r.json()).then(shapData => {
-                if (shapData && shapData.feature_attributions_detailed) {
-                    document.getElementById('xai-shap-prior-label').innerHTML = `Expected Model Prior $\\mathbb{E}[f(x)]$: <strong>${shapData.base_value}</strong> | Engine: <span class="badge badge-primary">${shapData.explainer_engine}</span>`;
-                    
-                    const container = document.getElementById('xai-shap-bars-container');
-                    container.innerHTML = shapData.feature_attributions_detailed.map(attr => {
-                        const isPos = attr.direction === 'positive';
-                        const color = isPos ? '#10b981' : '#f43f5e';
-                        const widthPct = Math.min(100, Math.max(10, attr.impact_pct * 1.5));
-                        return `
-                            <div>
-                                <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
-                                    <span><strong>${attr.feature_name}</strong> (${attr.feature_value})</span>
-                                    <span style="color:${color}; font-weight:700;">${isPos ? '+' : ''}${attr.shap_value} SHAP (${attr.impact_pct}%)</span>
-                                </div>
-                                <div style="background:var(--bg-glass); border:1px solid var(--border-color); height:7px; border-radius:4px; overflow:hidden;">
-                                    <div style="background:${color}; width:${widthPct}%; height:100%; border-radius:4px;"></div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                }
-            }).catch(e => console.warn("SHAP fetch error:", e));
-
-
-            // Draw Radar Chart
-            const ctx = document.getElementById('xai-radar-chart').getContext('2d');
-            if (radarChartInstance) radarChartInstance.destroy();
-
-            radarChartInstance = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Semantic Skill', 'Experience', 'Projects', 'Certifications', 'ML Prior', 'Prerequisites'],
-                    datasets: [
-                        {
-                            label: 'Candidate Score',
-                            data: [
-                                bd.skill_match.raw_score,
-                                bd.experience.raw_score,
-                                bd.projects.raw_score,
-                                bd.certifications.raw_score,
-                                bd.ml_prediction.raw_score,
-                                Math.max(20, 100 - (evalData.hidden_skill_gaps.length * 15))
-                            ],
-                            backgroundColor: 'rgba(99, 102, 241, 0.25)',
-                            borderColor: '#6366f1',
-                            pointBackgroundColor: '#6366f1',
-                            borderWidth: 2
-                        },
-                        {
-                            label: 'Role Target Benchmark',
-                            data: [85, 80, 75, 70, 80, 90],
-                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                            borderColor: '#10b981',
-                            borderDash: [4, 4],
-                            borderWidth: 1.5
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            min: 0,
-                            max: 100,
-                            ticks: { display: false },
-                            grid: { color: 'rgba(255, 255, 255, 0.08)' },
-                            angleLines: { color: 'rgba(255, 255, 255, 0.08)' },
-                            pointLabels: { color: '#9ca3af', font: { size: 11 } }
-                        }
-                    },
-                    plugins: {
-                        legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
-                    }
-                }
-            });
-        }
-
-        // ================= 3. LOAD KNOWLEDGE GRAPH =================
-        async function initKnowledgeGraph() {
-            try {
-                const res = await fetch('/api/knowledge-graph/data');
-                const data = await res.json();
-
-                const container = document.getElementById('kg-network-container');
-                
-                // Color palette for domain categories
-                const domainColors = {
-                    "Core Programming": "#6366f1",
-                    "Data Management": "#06b6d4",
-                    "Math & Statistics": "#8b5cf6",
-                    "Data Engineering & Prep": "#3b82f6",
-                    "Data Analytics": "#14b8a6",
-                    "Data Visualization": "#ec4899",
-                    "Business Intelligence": "#f59e0b",
-                    "Machine Learning": "#10b981",
-                    "Artificial Intelligence": "#a855f7",
-                    "Generative AI": "#ef4444",
-                    "Cloud & DevOps": "#64748b",
-                    "MLOps": "#f97316"
-                };
-
-                const nodes = data.nodes.map(n => ({
-                    id: n.id,
-                    label: n.label,
-                    color: {
-                        background: domainColors[n.domain] || '#6366f1',
-                        border: '#ffffff',
-                        highlight: { background: '#ffffff', border: '#6366f1' }
-                    },
-                    font: { color: '#ffffff', size: 12 },
-                    shape: 'dot',
-                    size: 14 + (n.out_degree * 2),
-                    nodeData: n
-                }));
-
-                const edges = data.edges.map(e => ({
-                    from: e.source,
-                    to: e.target,
-                    arrows: 'to',
-                    color: { color: 'rgba(255, 255, 255, 0.2)', highlight: '#6366f1' },
-                    smooth: { type: 'cubicBezier' }
-                }));
-
-                graphNodesDataset = new vis.DataSet(nodes);
-                graphEdgesDataset = new vis.DataSet(edges);
-
-                const networkData = { nodes: graphNodesDataset, edges: graphEdgesDataset };
-                const options = {
-                    physics: {
-                        solver: 'forceAtlas2Based',
-                        forceAtlas2Based: { gravitationalConstant: -35, centralGravity: 0.01, springLength: 70, damping: 0.4 }
-                    },
-                    interaction: { hover: true, tooltipDelay: 100 }
-                };
-
-                visNetwork = new vis.Network(container, networkData, options);
-
-                visNetwork.on("click", function(params) {
-                    if (params.nodes.length > 0) {
-                        const nodeId = params.nodes[0];
-                        const clickedNode = nodes.find(n => n.id === nodeId);
-                        if (clickedNode) inspectNode(clickedNode.nodeData);
-                    }
-                });
-            } catch (err) {
-                console.error("KG Init Error:", err);
-            }
-        }
-
-        async function inspectNode(n) {
-            const insp = document.getElementById('kg-node-inspector');
-            try {
-                const res = await fetch(`/api/knowledge-graph/dependencies/${encodeURIComponent(n.id)}`);
-                const dep = await res.json();
-
-                insp.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                        <h3 style="font-size:18px; font-weight:700; color:var(--text-primary);">${n.label}</h3>
-                        <span class="badge badge-primary">${n.domain}</span>
-                    </div>
-                    <div class="grid-3" style="margin-bottom:16px;">
-                        <div class="metric-box"><span class="metric-label">Difficulty</span><div style="font-size:18px; font-weight:700;">Level ${n.difficulty}</div></div>
-                        <div class="metric-box"><span class="metric-label">Market Demand</span><div style="font-size:18px; font-weight:700; color:var(--accent-emerald);">${n.demand}/100</div></div>
-                        <div class="metric-box"><span class="metric-label">Level</span><div style="font-size:18px; font-weight:700;">${n.level}</div></div>
-                    </div>
-                    <div style="margin-bottom:10px;">
-                        <strong>Direct Prerequisites:</strong> ${dep.direct_prerequisites.length > 0 ? dep.direct_prerequisites.map(p => `<span class="badge badge-warning" style="margin:2px;">${p}</span>`).join('') : '<span style="color:var(--text-muted);">None (Foundational Entrypoint)</span>'}
-                    </div>
-                    <div>
-                        <strong>Unlocks Skills:</strong> ${dep.unlocks_skills.length > 0 ? dep.unlocks_skills.map(u => `<span class="badge badge-success" style="margin:2px;">${u}</span>`).join('') : '<span style="color:var(--text-muted);">Terminal/Specialized Skill</span>'}
-                    </div>
-                `;
-            } catch (err) {
-                console.error("Inspector error:", err);
-            }
-        }
-
-        async function findCareerTrajectory() {
-            const src = document.getElementById('kg-start-role').value;
-            const dst = document.getElementById('kg-target-role').value;
-            try {
-                const res = await fetch('/api/knowledge-graph/path', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ start_skill_or_role: src, target_skill_or_role: dst })
-                });
-                const data = await res.json();
-                const container = document.getElementById('kg-career-path-result');
-                container.innerHTML = `
-                    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:8px;">
-                        ${data.trajectory_path.map((p, idx) => `
-                            <span class="badge badge-primary" style="font-size:13px; padding:6px 12px;">Step ${idx+1}: ${p}</span>
-                            ${idx < data.trajectory_path.length - 1 ? '<i data-lucide="arrow-right" style="color:var(--text-muted); width:14px;"></i>' : ''}
-                        `).join('')}
-                    </div>
-                `;
-                lucide.createIcons();
-            } catch (err) {
-                console.error("Path search error:", err);
-            }
-        }
-
-        function fitGraph() {
-            if (visNetwork) visNetwork.fit();
-        }
-
-        function highlightCriticalPath() {
-            if (visNetwork) {
-                visNetwork.selectNodes(['Python', 'Linear Algebra', 'NumPy', 'Scikit-Learn', 'Deep Learning', 'PyTorch', 'Transformers', 'LLMs']);
-            }
-        }
-
-        // ================= 4. PERSONALIZED LEARNING ROADMAP =================
-        async function generatePersonalizedRoadmap() {
-            const candidateSkills = document.getElementById('sg-candidate-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const requiredSkills = document.getElementById('sg-required-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            const targetRole = document.getElementById('sg-target-role').value;
-
-            try {
-                const res = await fetch('/api/roadmap/generate', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        candidate_skills: candidateSkills,
-                        target_role: targetRole,
-                        target_role_skills: requiredSkills,
-                        hours_per_week: 10
-                    })
-                });
-                const data = await res.json();
-
-                document.getElementById('rm-weeks-val').innerText = `${data.total_estimated_weeks} Weeks`;
-                document.getElementById('rm-modules-val').innerText = `${data.roadmap_phases.length} Phases`;
-                document.getElementById('rm-leap-val').innerText = `${data.current_readiness_pct}% ➔ ${data.projected_final_readiness_pct}%`;
-
-                const timelineContainer = document.getElementById('rm-timeline-container');
-                timelineContainer.innerHTML = data.roadmap_phases.map((phase, idx) => `
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                                <h3 style="font-size:15px; font-weight:700; color:var(--text-primary);">${phase.timeframe}: ${phase.skills_covered.join(' & ')}</h3>
-                                <span class="badge badge-success">Target Readiness: ${phase.projected_readiness_after_phase}%</span>
-                            </div>
-                            ${phase.modules.map(m => `
-                                <div style="margin-top:8px; padding-top:8px; border-top:1px solid var(--border-color);">
-                                    <div style="font-weight:600; font-size:13.5px; color:var(--accent-primary);">${m.module_title}</div>
-                                    <div style="font-size:12.5px; color:var(--text-secondary); margin-top:2px;">
-                                        <strong>Format:</strong> ${m.learning_format} • <strong>Est Hours:</strong> ${m.estimated_hours}h
-                                    </div>
-                                    <div style="font-size:12.5px; color:var(--accent-emerald); margin-top:4px;">
-                                        🎯 <strong>Capstone:</strong> ${m.capstone_project}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `).join('');
-            } catch (err) {
-                console.error("Roadmap generation error:", err);
-            }
-        }
-
-        // ================= 5. FUTURE SKILL DEMAND =================
-        async function loadFutureSkills() {
-            try {
-                const res = await fetch('/api/future-skills/forecast');
-                const data = await res.json();
-
-                const tbody = document.getElementById('future-forecast-tbody');
-                tbody.innerHTML = data.full_skill_forecast_table.map(s => `
-                    <tr>
-                        <td><strong>${s.skill}</strong></td>
-                        <td><span class="badge badge-primary">${s.category}</span></td>
-                        <td style="color:${s.growth_cagr_pct > 0 ? 'var(--accent-emerald)' : 'var(--accent-rose)'}; font-weight:700;">
-                            ${s.growth_cagr_pct > 0 ? '+' : ''}${s.growth_cagr_pct}%
-                        </td>
-                        <td>${s.current_index.toLocaleString()}</td>
-                        <td>${s.projected_demand_2yr.toLocaleString()}</td>
-                        <td>${s.projected_demand_5yr.toLocaleString()}</td>
-                        <td>
-                            <span class="badge ${s.status === 'Hyper-Growth' ? 'badge-danger' : (s.growth_cagr_pct > 0 ? 'badge-success' : 'badge-danger')}">
-                                ${s.status}
-                            </span>
-                        </td>
-                    </tr>
-                `).join('');
-
-                // Render CAGR Bar Chart
-                const cagrCtx = document.getElementById('future-cagr-chart').getContext('2d');
-                if (cagrChartInstance) cagrChartInstance.destroy();
-
-                const topSkills = data.full_skill_forecast_table.slice(0, 8);
-                cagrChartInstance = new Chart(cagrCtx, {
+                cfImpactChartInstance = new Chart(chartCtx, {
                     type: 'bar',
                     data: {
-                        labels: topSkills.map(s => s.skill),
+                        labels: labels,
                         datasets: [{
-                            label: 'Annual Growth CAGR (%)',
-                            data: topSkills.map(s => s.growth_cagr_pct),
-                            backgroundColor: topSkills.map(s => s.growth_cagr_pct > 0 ? '#10b981' : '#f43f5e'),
+                            label: 'Marginal Score Gain (ΔScore %)',
+                            data: gains,
+                            backgroundColor: colors.slice(0, labels.length),
                             borderRadius: 6
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    afterLabel: function(context) {
+                                        const rec = sim.top_skill_recommendations[context.dataIndex];
+                                        return `New Score: ${rec.counterfactual_job_fit_score}%\nReadiness: ${rec.counterfactual_workforce_readiness}%`;
+                                    }
+                                }
+                            }
+                        },
                         scales: {
-                            y: { grid: { color: 'rgba(255, 255, 255, 0.08)' }, ticks: { color: '#9ca3af' } },
-                            x: { grid: { display: false }, ticks: { color: '#9ca3af', font: { size: 10 } } }
+                            y: {
+                                grid: { color: 'rgba(255, 255, 255, 0.08)' },
+                                ticks: { color: '#9ca3af', callback: v => `+${v}%` },
+                                suggestedMax: Math.max(...gains, 15) + 5
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: '#9ca3af', font: { size: 12, weight: 'bold' } }
+                            }
                         }
                     }
                 });
 
-                // Status Doughnut
-                const doughnutCtx = document.getElementById('future-status-doughnut').getContext('2d');
-                if (doughnutChartInstance) doughnutChartInstance.destroy();
+                // Synergies Table
+                const synTbody = document.getElementById('cf-synergies-tbody');
+                synTbody.innerHTML = sim.synergistic_combinations.map(combo => `
+                    <tr>
+                        <td><strong>${combo.skill_combination.join(' + ')}</strong></td>
+                        <td><span class="badge badge-primary">${combo.combination_size} Skills</span></td>
+                        <td style="color:var(--accent-emerald); font-weight:700;">+${combo.marginal_gain_fit}%</td>
+                        <td style="color:var(--accent-primary); font-weight:700;">${combo.counterfactual_job_fit}%</td>
+                        <td>${combo.counterfactual_readiness}%</td>
+                        <td><span class="badge badge-success">${combo.fit_tier}</span></td>
+                    </tr>
+                `).join('');
 
-                doughnutChartInstance = new Chart(doughnutCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Hyper-Growth / Emerging', 'Steady Demand Core', 'Declining Legacy'],
-                        datasets: [{
-                            data: [
-                                data.emerging_technologies.length,
-                                data.full_skill_forecast_table.length - data.emerging_technologies.length - data.declining_technologies.length,
-                                data.declining_technologies.length
-                            ],
-                            backgroundColor: ['#6366f1', '#10b981', '#f43f5e']
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { position: 'bottom', labels: { color: '#9ca3af' } } }
-                    }
-                });
+                // Explainability Cards (Why It Was Recommended)
+                const explainCards = document.getElementById('cf-explainability-cards');
+                explainCards.innerHTML = sim.top_skill_recommendations.map(rec => {
+                    const why = rec.why_recommended;
+                    return `
+                        <div style="background:var(--bg-glass); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:16px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <h4 style="font-size:16px; font-weight:700; color:var(--accent-primary);">${rec.skill}</h4>
+                                <span class="badge badge-success" style="font-size:12.5px;">+${rec.marginal_gain}% Fit Gain</span>
+                            </div>
+                            <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:var(--text-secondary); display:flex; flex-direction:column; gap:6px;">
+                                <li style="display:flex; align-items:center; gap:8px;">
+                                    <span style="color:var(--accent-emerald);">✔</span> Appears in <strong>${why.market_job_frequency_pct}%</strong> of target role jobs
+                                </li>
+                                <li style="display:flex; align-items:center; gap:8px;">
+                                    <span style="color:var(--accent-primary);">✔</span> Unlocks <strong>${why.downstream_skills_unlocked_count} downstream skills</strong> in the Knowledge Graph
+                                </li>
+                                <li style="display:flex; align-items:center; gap:8px;">
+                                    <span style="color:var(--accent-amber);">✔</span> Increases Job Fit by <strong>+${why.job_fit_increase_pct}%</strong> ($f(X') = ${rec.counterfactual_job_fit_score}\%$)
+                                </li>
+                                <li style="display:flex; align-items:center; gap:8px;">
+                                    <span style="color:var(--accent-cyan);">✔</span> Reduces Skill Gap by <strong>-${why.skill_gap_reduction_pct}%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    `;
+                }).join('');
 
             } catch (err) {
-                console.error("Future skills load error:", err);
+                console.error("Counterfactual Simulation Error:", err);
             }
         }
 
-        // ================= 6. RECRUITER ANALYTICS & HWEF WEIGHTS =================
-        async function loadRecruiterData() {
+        // ================= 9. CAREER GPS SHORTEST PATH NAVIGATION =================
+        async function runCareerGPSNavigation() {
+            const startRole = document.getElementById('gps-start-role').value;
+            const targetRole = document.getElementById('gps-target-role').value;
+            const algorithm = document.getElementById('gps-algorithm').value;
+            const userHours = parseInt(document.getElementById('gps-study-hours').value) || 12;
+
             try {
-                // Load Weights
-                const wRes = await fetch('/api/hwef/weights');
-                const wData = await wRes.json();
-                const w = wData.weights;
-
-                document.getElementById('w-skill').value = w.skill_match;
-                document.getElementById('w-exp').value = w.experience;
-                document.getElementById('w-proj').value = w.projects;
-                document.getElementById('w-cert').value = w.certifications;
-                document.getElementById('w-ml').value = w.ml_prediction;
-                onWeightSliderChange();
-
-                // Mock batch candidate ranking
-                const sampleCandidates = [
-                    { candidate_name: "Alex Chen", candidate_skills: ["Python", "SQL", "PyTorch", "Transformers", "FastAPI"], candidate_years_exp: 5.0 },
-                    { candidate_name: "Sarah Jenkins", candidate_skills: ["Python", "SQL", "Pandas", "Scikit-Learn", "Tableau"], candidate_years_exp: 3.5 },
-                    { candidate_name: "Vikram Mehta", candidate_skills: ["Python", "Docker", "MLflow", "Kubernetes", "FastAPI"], candidate_years_exp: 4.2 },
-                    { candidate_name: "Priya Sharma", candidate_skills: ["SQL", "Tableau", "Power BI", "Excel"], candidate_years_exp: 2.0 }
-                ];
-
-                const rankRes = await fetch('/api/candidates/rank', {
+                const res = await fetch('/api/v2/career-gps/navigate', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
-                        candidates: sampleCandidates,
-                        required_skills: ["Python", "SQL", "TensorFlow", "Docker", "MLOps"],
-                        target_role: "Senior Machine Learning Engineer"
-                    })
-                });
-                const rankData = await rankRes.json();
-
-                const tbody = document.getElementById('recruiter-candidates-tbody');
-                tbody.innerHTML = rankData.rankings.map(c => `
-                    <tr>
-                        <td><strong>#${c.rank}</strong></td>
-                        <td>${c.candidate_name}</td>
-                        <td style="color:var(--accent-emerald); font-weight:700;">${c.job_fit_score}%</td>
-                        <td style="color:var(--accent-rose); font-weight:700;">${c.skill_gap_percentage}%</td>
-                        <td><span class="badge badge-primary">${c.fit_tier}</span></td>
-                    </tr>
-                `).join('');
-            } catch (err) {
-                console.error("Recruiter data error:", err);
-            }
-        }
-
-        function onWeightSliderChange() {
-            const ws = parseFloat(document.getElementById('w-skill').value);
-            const we = parseFloat(document.getElementById('w-exp').value);
-            const wp = parseFloat(document.getElementById('w-proj').value);
-            const wc = parseFloat(document.getElementById('w-cert').value);
-            const wm = parseFloat(document.getElementById('w-ml').value);
-
-            document.getElementById('lbl-w-skill').innerText = `Skill Match Weight: ${ws.toFixed(2)}`;
-            document.getElementById('lbl-w-exp').innerText = `Experience Weight: ${we.toFixed(2)}`;
-            document.getElementById('lbl-w-proj').innerText = `Project Relevance Weight: ${wp.toFixed(2)}`;
-            document.getElementById('lbl-w-cert').innerText = `Certifications Weight: ${wc.toFixed(2)}`;
-            document.getElementById('lbl-w-ml').innerText = `ML Classifier Prior: ${wm.toFixed(2)}`;
-        }
-
-        async function saveWeightsToServer() {
-            const ws = parseFloat(document.getElementById('w-skill').value);
-            const we = parseFloat(document.getElementById('w-exp').value);
-            const wp = parseFloat(document.getElementById('w-proj').value);
-            const wc = parseFloat(document.getElementById('w-cert').value);
-            const wm = parseFloat(document.getElementById('w-ml').value);
-
-            try {
-                const res = await fetch('/api/hwef/weights', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        skill_match: ws,
-                        experience: we,
-                        projects: wp,
-                        certifications: wc,
-                        ml_prediction: wm
+                        start_role_or_skill: startRole,
+                        target_role: targetRole,
+                        algorithm: algorithm,
+                        user_hours_per_week: userHours
                     })
                 });
                 const data = await res.json();
-                alert("HWEF Fusion Weights updated and persisted successfully!");
-                runSkillGapAnalysis();
-            } catch (err) {
-                alert("Failed to save weights: " + err);
-            }
-        }
+                const gps = data.career_gps_navigation;
 
-        // ================= 7. ML MODEL BENCHMARKS =================
-        async function loadBenchmarks() {
-            try {
-                const res = await fetch('/api/models/benchmark');
-                const data = await res.json();
+                document.getElementById('gps-path-length').innerText = `${gps.total_skills_count} Skills`;
+                document.getElementById('gps-est-months').innerText = `${gps.estimated_completion_months} Months`;
+                document.getElementById('gps-salary-boost').innerText = `+${gps.salary_growth_projection.expected_salary_growth_pct}%`;
+                document.getElementById('gps-projected-comp').innerText = `$${gps.salary_growth_projection.target_role_compensation.toLocaleString()}`;
 
-                const tbody = document.getElementById('benchmarks-tbody');
-                const models = data.jds_models || [];
-                tbody.innerHTML = models.map((m, idx) => `
-                    <tr>
-                        <td><strong>#${idx + 1}</strong></td>
-                        <td><strong>${m.model}</strong></td>
-                        <td>${(m.accuracy * 100).toFixed(1)}%</td>
-                        <td style="color:var(--accent-emerald); font-weight:700;">${m.roc_auc.toFixed(3)}</td>
-                        <td>${m.f1_score.toFixed(3)}</td>
-                        <td>${m.precision.toFixed(3)}</td>
-                        <td>${m.recall.toFixed(3)}</td>
-                        <td>${m.balanced_accuracy.toFixed(3)}</td>
-                        <td>${m.brier_calibration.toFixed(3)}</td>
-                    </tr>
+                const timeline = document.getElementById('gps-timeline-container');
+                timeline.innerHTML = gps.navigation_path.map(step => `
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                <h4 style="font-size:16px; font-weight:700; color:var(--text-primary);">
+                                    Step ${step.step_number}: ${step.skill}
+                                    <span class="badge badge-primary" style="margin-left:8px; font-size:11px;">${step.domain}</span>
+                                </h4>
+                                <span class="badge badge-success">${step.estimated_study_weeks} Weeks (${step.learning_time_hours}h)</span>
+                            </div>
+                            <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+                                <strong>Milestone:</strong> ${step.milestone_title}
+                            </div>
+                            <div class="grid-3" style="font-size:12px; margin-top:8px; background:var(--bg-glass); padding:8px; border-radius:6px;">
+                                <div><strong>Difficulty:</strong> Level ${step.difficulty_level}/3</div>
+                                <div><strong>Demand:</strong> <span style="color:var(--accent-emerald);">${step.market_demand}/100</span></div>
+                                <div><strong>Downstream Unlocks:</strong> +${step.downstream_unlocks_count} Skills</div>
+                            </div>
+                        </div>
+                    </div>
                 `).join('');
+
             } catch (err) {
-                console.error("Benchmarks error:", err);
+                console.error("Career GPS Navigation Error:", err);
             }
         }
 
@@ -1483,7 +1179,7 @@
             try {
                 const res = await fetch('/api/health');
                 const data = await res.json();
-                alert(`System Online! Version: ${data.version}\nEngines: HWEF, Semantic NLP, Knowledge Graph, Roadmap, Future Demand, Advanced ML all active.`);
+                alert(`System Online! Version: ${data.version}\nEngines: HWEF, Semantic NLP, Knowledge Graph, Counterfactual, Career GPS, Roadmap, Advanced ML all active.`);
             } catch (err) {
                 alert("Health check failed: " + err);
             }
@@ -1497,6 +1193,8 @@
             loadFutureSkills();
             loadRecruiterData();
             loadBenchmarks();
+            runCounterfactualSimulation();
+            runCareerGPSNavigation();
         });
     </script>
 </body>

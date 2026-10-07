@@ -20,13 +20,15 @@ from src.config.settings import BASE_DIR, REPORTS_DIR
 from src.utils.logger import get_logger
 
 from src.api.routes.xai import router as xai_router
+from src.api.routes.counterfactual import router as counterfactual_router
+from src.api.routes.career_gps import router as career_gps_router
 
 logger = get_logger(__name__)
 
 app = FastAPI(
     title="8BIT Workforce Skill Gap Analysis & AI Talent Intelligence Suite",
-    description="Enterprise-grade Skill Gap Discovery, Knowledge Graph, Semantic Matching, HWEF, and Learning Roadmap APIs.",
-    version="2.0.0"
+    description="Enterprise-grade Skill Gap Discovery, Knowledge Graph, Semantic Matching, HWEF, Counterfactual Simulation, and Career GPS Navigation.",
+    version="2.1.0"
 )
 
 # Enable CORS for modern web dashboards
@@ -40,6 +42,9 @@ app.add_middleware(
 
 # Include Modular Feature Routers
 app.include_router(xai_router)
+app.include_router(counterfactual_router)
+app.include_router(career_gps_router)
+
 
 
 # ----------------- Request Models -----------------

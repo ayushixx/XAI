@@ -19,6 +19,8 @@ from src.advanced_modeling.advanced_models import run_advanced_modeling
 from src.knowledge_graph.graph_engine import get_knowledge_graph
 from src.future_demand.future_demand_engine import get_demand_engine
 from src.hwef.hwef_engine import get_hwef_engine
+from src.counterfactual.counterfactual_engine import get_counterfactual_engine
+from src.career_gps.career_gps_engine import get_career_gps_engine
 
 logger = get_logger(__name__)
 
@@ -66,6 +68,26 @@ def main():
     # 10. Hybrid Weighted Evaluation Fusion Initialization
     logger.info('Running Phase 10: HWEF Engine Calibration & Readiness Testing')
     hwef = get_hwef_engine()
+
+    # 11. Counterfactual Skill Recommendation Engine
+    logger.info('Running Phase 11: Counterfactual Explainability & What-If Simulation')
+    cf_engine = get_counterfactual_engine()
+    cf_sample = cf_engine.simulate_counterfactuals(
+        candidate_skills=["Python", "SQL"],
+        required_skills=["Python", "SQL", "TensorFlow", "Docker", "MLOps"],
+        target_role="Senior Machine Learning Engineer"
+    )
+    logger.info(f"Counterfactual optimal bundle: {cf_sample['optimal_minimal_bundle']['recommended_bundle']} (+{cf_sample['optimal_minimal_bundle']['total_score_boost']}% gain)")
+
+    # 12. Career GPS Shortest Path Navigation
+    logger.info('Running Phase 12: Career GPS Graph Optimization (Dijkstra / A*)')
+    gps_engine = get_career_gps_engine()
+    gps_sample = gps_engine.navigate_career_path(
+        current_skills=["Python", "SQL"],
+        target_role="AI Engineer",
+        algorithm="dijkstra"
+    )
+    logger.info(f"Career GPS Path: {' -> '.join([step['skill'] for step in gps_sample['gps_trajectory']])} ({gps_sample['estimated_learning_time_months']} months)")
     
     print("\n=======================================================")
     print("8BIT AI WORKFORCE & SKILL GAP SUITE COMPLETE")
@@ -74,6 +96,8 @@ def main():
     print("• Classical & Advanced Models (LR, DT, RF, XGB, LGBM, CatBoost) saved to models/")
     print("• Interactive Knowledge Graph & Prerequisite Trees saved to data/knowledge_graph/")
     print("• 5-Year Future Skill Demand Forecasts saved to reports/future_demand/")
+    print("• Counterfactual Optimization & Minimal Skill Bundle Simulator Active")
+    print("• Career GPS Shortest Path Navigation (Dijkstra / A*) Active")
     print("• Evaluation & Attribution Reports saved to reports/models/")
     print("• Web UI & REST API ready: launch with 'uvicorn src.api.app:app --reload'")
     print("=======================================================")
