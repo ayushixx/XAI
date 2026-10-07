@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent))
 
+import src.utils.env_setup  # Preload dynamic libraries on macOS
 from src.utils.logger import get_logger
 from src.audit.data_inventory import discover_and_inventory
 from src.cleaning.clean_data_science_jobs import clean_ds_jobs

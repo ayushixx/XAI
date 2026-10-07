@@ -4,6 +4,7 @@ import pandas as pd
 from typing import Dict, Any, List
 from pathlib import Path
 
+import src.utils.env_setup
 import xgboost as xgb
 from src.config.settings import PROCESSED_DIR, DEMAND_DIR, REPORTS_DIR
 from src.utils.logger import get_logger

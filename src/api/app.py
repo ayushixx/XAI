@@ -1,4 +1,5 @@
 import json
+import src.utils.env_setup
 import pandas as pd
 from typing import List, Dict, Any, Optional
 from pathlib import Path

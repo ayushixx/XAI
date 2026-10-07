@@ -10,6 +10,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
+import src.utils.env_setup
 # Advanced Gradient Boosting Algorithms
 import xgboost as xgb
 import lightgbm as lgb

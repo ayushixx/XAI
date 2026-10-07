@@ -16,4 +16,5 @@ xgboost
 lightgbm
 catboost
 shap
+tabulate
 
