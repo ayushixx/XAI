@@ -1,4 +1,4 @@
-# 8BIT Workforce Signal Engine & AI Talent Intelligence Suite v3.0
+# Workforce Signal Engine & AI Talent Intelligence Suite v3.0
 
 Enterprise-grade AI Skill Gap Analysis, Counterfactual Skill Optimization, Career GPS Navigation, Knowledge Graph Discovery, Semantic Matching (SBERT), Hybrid Weighted Evaluation Fusion (HWEF), and Explainable AI (SHAP / XAI) Platform.
 
